@@ -12,7 +12,7 @@ License
 aie may be used under the terms of either the GNU Lesser General
 Public License (LGPL) or the Eclipse Public License (EPL).
 
-For more information please see http://sqville.com/aie/license
+For more information please see Link to license
 
 Demos
 ===========
@@ -30,7 +30,7 @@ Here is a quick start guide.
 Learn more
 ==========
 
-* About qooxdoo
+* About aie
   http://sqville.com/aie/about
 
 * Release notes
