@@ -1,7 +1,7 @@
 About
 =====
 
-AIE (Appearance Is Everything) is a collection of advanced themes for the Qooxdoo javascript framework.
+aie (Appearance Is Everything) is a collection of advanced themes for the Qooxdoo javascript framework.
 
 For more information please see http://sqville.com/aie
 
