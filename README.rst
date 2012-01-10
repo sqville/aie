@@ -31,7 +31,7 @@ Learn more
 ==========
 
 * About aie
-  http://sqville.com/aie/about
+  Link to notes
 
 * Release notes
   Link to notes
