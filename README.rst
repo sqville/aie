@@ -12,18 +12,18 @@ License
 aie may be used under the terms of either the GNU Lesser General
 Public License (LGPL) or the Eclipse Public License (EPL).
 
-For more information please see Link to license
+This is to keep in line with qooxdoo's licensing structure.
 
 Demos
 ===========
 
-Demos can be seen here.
+Demos can be seen here. <Link to demos once live>
 
 
 Quick start
 ===========
 
-Here is a quick start guide.
+Here is a quick start guide. <Link to quick start guide once live>
 
 
 
