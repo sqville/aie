@@ -8,8 +8,8 @@ For more information please see http://sqville.com/aie
 Roadmap
 =======
 
-Version: "Go Live"
-Release Date: TBD
+Version: "Go Live".
+Release Date: TBD.
 Details: An objective of aie will be to provide familiar and unique themes. This version will only cover the "familiar"
 part of the objective. Themes included will be Windows 7 and OSX and possibly iOS.
 
