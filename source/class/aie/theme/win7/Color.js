@@ -38,9 +38,9 @@ qx.Theme.define("aie.theme.win7.Color",
 
     "border-lead" : "#888888",
 
-    "border-light" : "white",
+    "border-light" : "#E2E3EA",
     "border-light-shadow" : "#DCDFE4",
-    "border-dark-shadow" : "#A7A6AA",
+    "border-dark-shadow" : "#ABADB3",
     "border-dark" : "#85878C",
 
     // alias for compatibility reasons

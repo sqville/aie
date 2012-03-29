@@ -78,14 +78,12 @@ qx.Theme.define("aie.theme.win7.Decoration",
 
     "inset" :
     {
-      decorator : qx.ui.decoration.Double,
+      decorator : qx.ui.decoration.Single,
 
       style :
       {
         width : 1,
-        innerWidth: 1,
-        color : [ "border-dark-shadow", "border-light", "border-light", "border-dark-shadow" ],
-        innerColor : [ "border-dark", "border-light-shadow", "border-light-shadow", "border-dark" ]
+        color : [ "border-dark-shadow", "#E2E3EA", "#DBDFE6", "#E3E9EF" ]
       }
     },
 
