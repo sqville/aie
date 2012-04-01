@@ -27,30 +27,30 @@ qx.Theme.define("aie.theme.win7.Font",
   {
     "default" :
     {
-      size : 11,
-      lineHeight : 1.4,
-      family : [ "Lucida Grande", "Tahoma", "Verdana", "Bitstream Vera Sans", "Liberation Sans" ]
+      size : 12,
+      //lineHeight : 1.4,
+      family : [ "Segoe UI", "Tahoma", "Verdana", "Bitstream Vera Sans", "Liberation Sans" ]
     },
 
     "bold" :
     {
-      size : 11,
-      lineHeight : 1.4,
-      family : [ "Lucida Grande", "Tahoma", "Verdana", "Bitstream Vera Sans", "Liberation Sans" ],
+      size : 12,
+      //lineHeight : 1.4,
+      family : [ "Segoe UI", "Lucida Grande", "Tahoma", "Verdana", "Bitstream Vera Sans", "Liberation Sans" ],
       bold : true
     },
 
     "small" :
     {
-      size : 10,
-      lineHeight : 1.4,
-      family : [ "Lucida Grande", "Tahoma", "Verdana", "Bitstream Vera Sans", "Liberation Sans" ]
+      size : 11,
+      //lineHeight : 1.4,
+      family : [ "Segoe UI", "Lucida Grande", "Tahoma", "Verdana", "Bitstream Vera Sans", "Liberation Sans" ]
     },
 
     "monospace" :
     {
-      size : 11,
-      lineHeight : 1.4,
+      size : 12,
+      //lineHeight : 1.4,
       family : [ "DejaVu Sans Mono", "Courier New", "monospace" ]
     }
   }

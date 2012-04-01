@@ -307,7 +307,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         if (invalid && !disabled) {
           backgroundColor = "background-invalid";
         } else if (focused && !invalid && !disabled) {
-          backgroundColor = "background-focused";
+          backgroundColor = "white";
         } else if (disabled) {
           backgroundColor = "background-disabled";
         } else {
@@ -368,7 +368,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         if (invalid && !disabled) {
           backgroundColor = "background-invalid";
         } else if (focused && !invalid && !disabled) {
-          backgroundColor = "background-focused";
+          backgroundColor = "background-field";
         } else if (disabled) {
           backgroundColor = "background-disabled";
         } else {
@@ -383,9 +383,19 @@ qx.Theme.define("aie.theme.win7.Appearance",
         } else {
           textColor = undefined;
         }
+        
+        var decorator;
+        if (states.hovered){
+          decorator = "focused-inset";
+        } else if (states.focused) {
+          decorator = "focused-inset";
+          //alert(states.focused);
+        } else {
+          decorator = "inset";
+        }
 
         return {
-          decorator       : states.focused ? "focused-inset" : "inset",
+          decorator       : decorator,
           padding         : [ 2, 3 ],
           textColor       : textColor,
           backgroundColor : backgroundColor
@@ -1129,21 +1139,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
             padding = [ 3, 4 ];
           }
         }
-
-        var icon = "decoration/arrows/";
-        if (states.left) {
-          icon += "left.gif";
-        } else if (states.right) {
-          icon += "right.gif";
-        } else if (states.up) {
-          icon += "up.gif";
-        } else {
-          icon += "down.gif";
-        }
-
+        
         return {
-          padding : padding,
-          icon : icon
+          padding : padding
         }
       }
     },

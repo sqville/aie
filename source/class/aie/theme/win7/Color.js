@@ -26,7 +26,7 @@ qx.Theme.define("aie.theme.win7.Color",
 {
   colors :
   {
-    "background" : "#EBE9ED",
+    "background" : "#F0F0F0",
     "background-light" : "#F3F0F5",
     "background-focused" : "#F3F8FD",
     "background-focused-inner" : "#DBEAF9",
@@ -42,6 +42,8 @@ qx.Theme.define("aie.theme.win7.Color",
     "border-light-shadow" : "#DCDFE4",
     "border-dark-shadow" : "#ABADB3",
     "border-dark" : "#85878C",
+    
+    "border-default-top" : "#ABADB3",
 
     // alias for compatibility reasons
     "border-main" : "#85878C",

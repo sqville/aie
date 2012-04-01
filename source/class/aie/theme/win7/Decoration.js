@@ -83,7 +83,8 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         width : 1,
-        color : [ "border-dark-shadow", "#E2E3EA", "#DBDFE6", "#E3E9EF" ]
+        /*top, right, bottom, left*/
+        color : [ "border-default-top", "#DBDFE6", "#E3E9EF", "#E2E3EA" ]
       }
     },
 
@@ -150,14 +151,12 @@ qx.Theme.define("aie.theme.win7.Decoration",
 
     "focused-inset" :
     {
-      decorator : qx.ui.decoration.Double,
+      decorator : qx.ui.decoration.Single,
 
       style :
       {
         width : 1,
-        innerWidth: 1,
-        color : [ "border-focused-dark-shadow", "border-focused-light", "border-focused-light", "border-focused-dark-shadow" ],
-        innerColor : [ "border-focused-dark", "border-focused-light-shadow", "border-focused-light-shadow", "border-focused-dark" ]
+        color : [ "#5794BF", "#B7D5EA", "#C7E2F1", "#C5DAED" ]
       }
     },
 
