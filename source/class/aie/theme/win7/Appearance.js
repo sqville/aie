@@ -2516,7 +2516,19 @@ qx.Theme.define("aie.theme.win7.Appearance",
       VIRTUAL WIDGETS
     ---------------------------------------------------------------------------
     */
-    "virtual-list" : "list",
+    //"virtual-list" : "list",
+    "virtual-list":
+    {
+    	alias : "list",
+    	include : "list",
+    	
+    	style : function(states)
+    	{
+    		return {
+    			itemHeight: 21
+    		}
+    	}
+    },
     "virtual-list/row-layer" : "row-layer",
 
     "row-layer" : "widget",
