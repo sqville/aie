@@ -629,7 +629,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          backgroundColor : "background"
+          backgroundColor : "transparent"
         };
       }
     },
@@ -653,9 +653,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          padding : [ 12, 9 ],
+          padding : [ 12, 19 ],
           marginTop: 10,
-          decorator  : "groove"
+          decorator  : "aie-win7-groupbox"
         };
       }
     },

@@ -185,7 +185,23 @@ qx.Theme.define("aie.theme.win7.Decoration",
         innerColor : "invalid"
       }
     },
+    
+    
+    /*
+    ---------------------------------------------------------------------------
+      GROUPBOX
+    ---------------------------------------------------------------------------
+    */
 
+	"aie-win7-groupbox" :
+    {
+      decorator: aie.theme.win7.decoration.groupbox.GroupBox
+
+      /*style :
+      {
+        statename : "none"
+      }*/
+    },
 
 
     /*

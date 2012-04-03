@@ -40,17 +40,17 @@
 	
 	_whlb : function(vA) //BOTTOM LEFT #7
     {
-  		return "<div style='width:" + vA[0] + "px;height:" + vA[1] + "px;position:absolute;overflow:hidden;left:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;height:" + vA[1] + "px;left:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
     },
 	
 	_whrb : function(vA) //BOTTOM RIGHT #9
     {
-  		return "<div style='width:" + vA[0] + "px;height:" + vA[1] + "px;position:absolute;overflow:hidden;right:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;height:" + vA[1] + "px;right:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
     },
 	
-	_hlrb : function(vA)
+	_hlrb : function(vA) //BOTTOM
     {
-  		return "<div style='height:" + vA[0] + "px;position:absolute;overflow:hidden;left:" + vA[1] + "px;right:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
+  		return "<div style='position:absolute;overflow:hidden;height:" + vA[0] + "px;left:" + vA[1] + "px;right:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
     },
 	
 	_lrtb : function(vA)
@@ -60,14 +60,18 @@
 	
 	_wltb : function(vA)
     {
-  		return "<div style='width:" + vA[0] + "px;position:absolute;overflow:hidden;left:" + vA[1] + "px;top:" + vA[2] + "px;bottom:" + vA[3] + "background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;left:" + vA[1] + "px;top:" + vA[2] + "px;bottom:" + vA[3] + "background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
     },
 	
 	_wrtb : function(vA)
     {
-  		return "<div style='width:" + vA[0] + "px;position:absolute;overflow:hidden;right:" + vA[1] + "px;bottom:" + vA[3] + "px;top:" + vA[2] + "background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;right:" + vA[1] + "px;bottom:" + vA[3] + "px;top:" + vA[2] + "background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
     },
-	
+    
+	_hltb : function(vA) //BOTTOM
+    {
+  		return "<div style='height:" + vA[0] + "px;position:absolute;overflow:hidden;left:" + vA[1] + "px;top:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
+    },
     
     _aiegd : function(vArr, vW, vH, vLADJ, vHSt, vSR, vSG, vSB, vER, vEG, vEB, vADJ)
     {
