@@ -21,7 +21,7 @@
 
 ************************************************************************ */
 
-qx.Class.define("aie.theme.win7.painter.groupbox.GroupBox",
+qx.Class.define("aie.theme.win7.painter.checkbox.CheckBox",
 {
   extend : aie.theme.Painter,
 
@@ -37,7 +37,7 @@ qx.Class.define("aie.theme.win7.painter.groupbox.GroupBox",
      *
      * @type member
      */
-    getGroupBox: function(vS){
+    getDefaultCheckBox: function(vS){
 		
 		var h_hlrt = [];
 		var h_whlt = [];

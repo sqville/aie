@@ -416,52 +416,52 @@ qx.Theme.define("aie.theme.win7.Appearance",
         // already by replacing the current image with a disabled version
         // (if available). If no disabled image is found, the opacity style
         // is used.
-        var icon;
+        var decorator;
 
         // Checked
         if (states.checked) {
           if (states.disabled) {
-            icon = "checkbox-checked";
+            decorator = "checkbox-checked";
           } else if (states.focused) {
-            icon = "checkbox-checked-focused";
+            decorator = "checkbox-checked-focused";
           } else if (states.pressed) {
-            icon = "checkbox-checked-pressed";
+            decorator = "checkbox-checked-pressed";
           } else if (states.hovered) {
-            icon = "checkbox-checked-hovered";
+            decorator = "checkbox-checked-hovered";
           } else {
-            icon = "checkbox-checked";
+            decorator = "checkbox-checked";
           }
 
         // Undetermined
         } else if (states.undetermined) {
           if (states.disabled) {
-            icon = "checkbox-undetermined";
+            decorator = "checkbox-undetermined";
           } else if (states.focused) {
-            icon = "checkbox-undetermined-focused";
+            decorator = "checkbox-undetermined-focused";
           } else if (states.hovered) {
-            icon = "checkbox-undetermined-hovered";
+            decorator = "checkbox-undetermined-hovered";
           } else {
-            icon = "checkbox-undetermined";
+            decorator = "checkbox-undetermined";
           }
 
         // Focused & Pressed & Hovered (when enabled)
         } else if (!states.disabled) {
           if (states.focused) {
-            icon = "checkbox-focused";
+            decorator = "checkbox-focused";
           } else if (states.pressed) {
-            icon = "checkbox-pressed";
+            decorator = "checkbox-pressed";
           } else if (states.hovered ) {
-            icon = "checkbox-hovered";
+            decorator = "checkbox-hovered";
           }
         }
 
         // Unchecked
-        icon = icon || "checkbox";
+        decorator = decorator || "checkbox";
 
         var invalid = states.invalid && !states.disabled ? "-invalid" : "";
 
         return {
-          icon: "decoration/form/" + icon + invalid + ".png",
+          //decorator: decorator,
           gap: 6
         }
       }

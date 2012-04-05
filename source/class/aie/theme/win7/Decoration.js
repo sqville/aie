@@ -283,6 +283,31 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
 
+    
+    /*
+    ---------------------------------------------------------------------------
+      CHECKBOX
+    ---------------------------------------------------------------------------
+    */
+
+	"aie-win7-std-checkbox" :
+    {
+      decorator: aie.theme.win7.decoration.CheckBox,
+      style :
+      {
+        statename : "default"
+      }
+    },
+
+    "aie-win7-std-checkbox-unchkd-hovered" :
+    {
+      decorator: aie.theme.win7.decoration.CheckBox,
+      style :
+      {
+        statename : "default-hovered"
+      }
+    },
+
 
     /*
     ---------------------------------------------------------------------------

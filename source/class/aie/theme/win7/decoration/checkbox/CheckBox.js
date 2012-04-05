@@ -18,7 +18,7 @@
 /**
  * 
  */
-qx.Class.define("aie.theme.win7.decoration.groupbox.GroupBox",
+qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 {
   extend : qx.core.Object,
   
@@ -53,19 +53,53 @@ qx.Class.define("aie.theme.win7.decoration.groupbox.GroupBox",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultgraywhite = self.aiebankdefaultgraywhite;
+  		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
+		var aiebankinactivewindowgray = self.aiebankinactivewindowgray;
+		var aiebankactivewindowstatusbarblue = self.activewindowstatusbarblue;
+		var aiebankinactivewindowstatusbarblue = self.inactivewindowstatusbarblue;
 				
 		var dechtml;	
 		var wrappedhtml;
 		
-		if (!aiebankdefaultgraywhite) {
-  			aiebankdefaultgraywhite = self.aiebankdefaultgraywhite = this._generateBank("default", "default_graywhite");
-  		}
-		dechtml = aiebankdefaultgraywhite;
+		switch (this.getPaintgroupname()) {
+			case "active-window-blue":
+				if (!aiebankactivewindowblue) {
+  					aiebankactivewindowblue = self.aiebankactivewindowblue = this._generateBank("caption", "active-window-blue");
+  				}
+				dechtml = aiebankactivewindowblue;
+				break;
+				
+			case "inactive-window-gray":
+				if (!aiebankinactivewindowgray) {
+  					aiebankinactivewindowgray = self.aiebankinactivewindowgray = this._generateBank("caption", "inactive-window-gray");
+  				}
+				dechtml = aiebankinactivewindowgray;
+				break;
+				
+			case "active-window-statusbar-blue":
+				if (!aiebankactivewindowstatusbarblue) {
+  					aiebankactivewindowstatusbarblue = self.aiebankactivewindowstatusbarblue = this._generateBank("statusbar", "active-window-statusbar-blue");
+  				}
+				dechtml = aiebankactivewindowstatusbarblue;
+				break;
+				
+			case "inactive-window-statusbar-blue":
+				if (!aiebankinactivewindowstatusbarblue) {
+  					aiebankinactivewindowstatusbarblue = self.aiebankinactivewindowstatusbarblue = this._generateBank("statusbar", "inactive-window-statusbar-blue");
+  				}
+				dechtml = aiebankinactivewindowstatusbarblue;
+				break;
+			
+			default:
+				if (!aiebankactivewindowblue) {
+  					aiebankactivewindowblue = self.aiebankactivewindowblue = this._generateBank("active-window-blue");
+  				}
+				dechtml = aiebankactivewindowblue;
+		}
 		
 		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
-		
-	  return wrappedhtml;
+
+	  return wrappedhtml;	  
 	  
     },
 
