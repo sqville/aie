@@ -24,6 +24,24 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
   
   implement : [qx.ui.decoration.IDecorator],
   
+    /*
+  *****************************************************************************
+     PROPERTIES
+  *****************************************************************************
+  */
+
+  properties :
+  {	
+	/** Directs Painter on how to paint the Decorator **/
+    statename :
+    {
+      check : "String",
+      nullable : true,
+	  themeable : true
+    }
+  },
+  
+  
   /*
   *****************************************************************************
      CONSTRUCTOR
@@ -54,47 +72,33 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 		var self = this.self(arguments);
 		
   		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
-		var aiebankinactivewindowgray = self.aiebankinactivewindowgray;
-		var aiebankactivewindowstatusbarblue = self.activewindowstatusbarblue;
-		var aiebankinactivewindowstatusbarblue = self.inactivewindowstatusbarblue;
+		var aiebankdunchkhov = self.aiebankdunchkhov;
+		var aiebankchkchked = self.aiebankchkchked;
+		//var aiebankinactivewindowstatusbarblue = self.inactivewindowstatusbarblue;
 				
 		var dechtml;	
 		var wrappedhtml;
 		
-		switch (this.getPaintgroupname()) {
-			case "active-window-blue":
-				if (!aiebankactivewindowblue) {
-  					aiebankactivewindowblue = self.aiebankactivewindowblue = this._generateBank("caption", "active-window-blue");
+		switch (this.getStatename()) {
+			case "default":
+				if (!aiebankdefaultstdchkbox) {
+  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
   				}
-				dechtml = aiebankactivewindowblue;
+				dechtml = aiebankdefaultstdchkbox;
 				break;
 				
-			case "inactive-window-gray":
-				if (!aiebankinactivewindowgray) {
-  					aiebankinactivewindowgray = self.aiebankinactivewindowgray = this._generateBank("caption", "inactive-window-gray");
+			case "default-hovered":
+				if (!aiebankdunchkhov) {
+  					aiebankdunchkhov = self.aiebankdunchkhov = this._generateBank("na", "default-hovered");
   				}
-				dechtml = aiebankinactivewindowgray;
-				break;
-				
-			case "active-window-statusbar-blue":
-				if (!aiebankactivewindowstatusbarblue) {
-  					aiebankactivewindowstatusbarblue = self.aiebankactivewindowstatusbarblue = this._generateBank("statusbar", "active-window-statusbar-blue");
-  				}
-				dechtml = aiebankactivewindowstatusbarblue;
-				break;
-				
-			case "inactive-window-statusbar-blue":
-				if (!aiebankinactivewindowstatusbarblue) {
-  					aiebankinactivewindowstatusbarblue = self.aiebankinactivewindowstatusbarblue = this._generateBank("statusbar", "inactive-window-statusbar-blue");
-  				}
-				dechtml = aiebankinactivewindowstatusbarblue;
+				dechtml = aiebankdunchkhov;
 				break;
 			
 			default:
-				if (!aiebankactivewindowblue) {
-  					aiebankactivewindowblue = self.aiebankactivewindowblue = this._generateBank("active-window-blue");
+				if (!aiebankdefaultstdchkbox) {
+  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
   				}
-				dechtml = aiebankactivewindowblue;
+				dechtml = aiebankdefaultstdchkbox;
 		}
 		
 		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
@@ -144,10 +148,10 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 	
 	_generateBank : function(area, s)
 	{
-	  var bp = new aie.theme.win7.painter.groupbox.GroupBox(); 
+	  var bp = new aie.theme.win7.painter.checkbox.CheckBox(); 
 	  var str = "";
 	  
-	  str = bp.getGroupBox(s);
+	  str = bp.getDefaultCheckBox(s);
 
 	  return str;
 	}

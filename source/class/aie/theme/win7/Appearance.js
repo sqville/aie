@@ -427,9 +427,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
           } else if (states.pressed) {
             decorator = "checkbox-checked-pressed";
           } else if (states.hovered) {
-            decorator = "checkbox-checked-hovered";
+            decorator = "aie-win7-std-checkbox-unchkd-hovered";
           } else {
-            decorator = "checkbox-checked";
+            decorator = "aie-win7-std-checkbox-unchkd-hovered";
           }
 
         // Undetermined
@@ -441,7 +441,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
           } else if (states.hovered) {
             decorator = "checkbox-undetermined-hovered";
           } else {
-            decorator = "checkbox-undetermined";
+            decorator = "aie-win7-std-checkbox";
           }
 
         // Focused & Pressed & Hovered (when enabled)
@@ -451,17 +451,18 @@ qx.Theme.define("aie.theme.win7.Appearance",
           } else if (states.pressed) {
             decorator = "checkbox-pressed";
           } else if (states.hovered ) {
-            decorator = "checkbox-hovered";
+            decorator = "aie-win7-std-checkbox-unchkd-hovered";
           }
         }
 
         // Unchecked
-        decorator = decorator || "checkbox";
+        decorator = "aie-win7-std-checkbox";
 
         var invalid = states.invalid && !states.disabled ? "-invalid" : "";
 
         return {
-          //decorator: decorator,
+          decorator: decorator,
+          paddingLeft: 20,
           gap: 6
         }
       }
