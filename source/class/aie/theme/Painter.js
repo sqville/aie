@@ -60,12 +60,12 @@
 	
 	_wltb : function(vA)
     {
-  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;left:" + vA[1] + "px;top:" + vA[2] + "px;bottom:" + vA[3] + "background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;left:" + vA[1] + "px;top:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
     },
 	
 	_wrtb : function(vA)
     {
-  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;right:" + vA[1] + "px;bottom:" + vA[3] + "px;top:" + vA[2] + "background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;right:" + vA[1] + "px;bottom:" + vA[3] + "px;top:" + vA[2] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
     },
     
 	_hltb : function(vA) //BOTTOM
