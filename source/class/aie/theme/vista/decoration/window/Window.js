@@ -116,7 +116,7 @@ qx.Class.define("aie.theme.vista.decoration.window.Window",
 		}
 		
 		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
-
+		
 	  return wrappedhtml;	  
 	  
     },
