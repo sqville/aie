@@ -74,7 +74,9 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
   		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
 		var aiebankdunchkhov = self.aiebankdunchkhov;
 		var aiebankchkchked = self.aiebankchkchked;
-		//var aiebankinactivewindowstatusbarblue = self.inactivewindowstatusbarblue;
+		var aiebankdchkdisab = self.aiebankdchkdisab;
+		var aiebankdchkpressed = self.aiebankdchkpressed;
+		var aiebankdchkchkedpressed = self.aiebankdchkchkedpressed;
 				
 		var dechtml;	
 		var wrappedhtml;
@@ -87,6 +89,27 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 				dechtml = aiebankdefaultstdchkbox;
 				break;
 				
+			case "default-checked":
+				if (!aiebankchkchked) {
+  					aiebankchkchked = self.aiebankchkchked = this._generateBank("na", "default-checked");
+  				}
+				dechtml = aiebankchkchked;
+				break;
+				
+			case "default-pressed":
+				if (!aiebankdchkpressed) {
+  					aiebankdchkpressed = self.aiebankdchkpressed = this._generateBank("na", "default-pressed");
+  				}
+				dechtml = aiebankdchkpressed;
+				break;
+				
+			case "default-chked-pressed":
+				if (!aiebankdchkchkedpressed) {
+  					aiebankdchkchkedpressed = self.aiebankdchkchkedpressed = this._generateBank("na", "default-chked-pressed");
+  				}
+				dechtml = aiebankdchkchkedpressed;
+				break;
+				
 			case "default-hovered":
 				if (!aiebankdunchkhov) {
   					aiebankdunchkhov = self.aiebankdunchkhov = this._generateBank("na", "default-hovered");
@@ -94,11 +117,12 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 				dechtml = aiebankdunchkhov;
 				break;
 			
-			default:
-				if (!aiebankdefaultstdchkbox) {
-  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
+			case "default-disabled":
+				if (!aiebankdchkdisab) {
+  					aiebankdchkdisab = self.aiebankdchkdisab = this._generateBank("na", "default-disabled");
   				}
-				dechtml = aiebankdefaultstdchkbox;
+				dechtml = aiebankdchkdisab;
+				break;
 		}
 		
 		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";

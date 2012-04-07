@@ -421,21 +421,21 @@ qx.Theme.define("aie.theme.win7.Appearance",
         // Checked
         if (states.checked) {
           if (states.disabled) {
-            decorator = "checkbox-checked";
-          } else if (states.focused) {
+            decorator = "aie-win7-std-checkbox-disabled";
+          } /*else if (states.focused) {
             decorator = "checkbox-checked-focused";
-          } else if (states.pressed) {
-            decorator = "checkbox-checked-pressed";
+          }*/ else if (states.pressed) {
+            decorator = "aie-win7-std-checkbox-chkd-pressed";
           } else if (states.hovered) {
-            decorator = "aie-win7-std-checkbox-unchkd-hovered";
+            decorator = "aie-win7-std-checkbox-chkd-hovered";
           } else {
-            decorator = "aie-win7-std-checkbox-unchkd-hovered";
+            decorator = "aie-win7-std-checkbox-chkd";
           }
 
         // Undetermined
-        } else if (states.undetermined) {
+        } /*else if (states.undetermined) {
           if (states.disabled) {
-            decorator = "checkbox-undetermined";
+            decorator = "aie-win7-std-checkbox-disabled";
           } else if (states.focused) {
             decorator = "checkbox-undetermined-focused";
           } else if (states.hovered) {
@@ -445,18 +445,21 @@ qx.Theme.define("aie.theme.win7.Appearance",
           }
 
         // Focused & Pressed & Hovered (when enabled)
-        } else if (!states.disabled) {
-          if (states.focused) {
+        }*/ else if (!states.disabled) {
+          /*if (states.focused) {
             decorator = "checkbox-focused";
-          } else if (states.pressed) {
-            decorator = "checkbox-pressed";
+          }*/ if (states.pressed) {
+            decorator = "aie-win7-std-checkbox-pressed";
           } else if (states.hovered ) {
             decorator = "aie-win7-std-checkbox-unchkd-hovered";
+          } else {
+            decorator = "aie-win7-std-checkbox";
           }
+          
         }
 
         // Unchecked
-        decorator = "aie-win7-std-checkbox";
+        //decorator = "aie-win7-std-checkbox";
 
         var invalid = states.invalid && !states.disabled ? "-invalid" : "";
 

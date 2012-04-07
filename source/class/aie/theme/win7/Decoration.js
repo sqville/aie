@@ -298,6 +298,33 @@ qx.Theme.define("aie.theme.win7.Decoration",
         statename : "default"
       }
     },
+    
+    "aie-win7-std-checkbox-chkd" :
+    {
+      decorator: aie.theme.win7.decoration.checkbox.CheckBox,
+      style :
+      {
+        statename : "default-checked"
+      }
+    },
+    
+    "aie-win7-std-checkbox-pressed" :
+    {
+      decorator: aie.theme.win7.decoration.checkbox.CheckBox,
+      style :
+      {
+        statename : "default-pressed"
+      }
+    },
+    
+    "aie-win7-std-checkbox-chkd-pressed" :
+    {
+      decorator: aie.theme.win7.decoration.checkbox.CheckBox,
+      style :
+      {
+        statename : "default-chked-pressed"
+      }
+    },
 
     "aie-win7-std-checkbox-unchkd-hovered" :
     {
@@ -308,6 +335,14 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
 
+	"aie-win7-std-checkbox-disabled" :
+    {
+      decorator: aie.theme.win7.decoration.checkbox.CheckBox,
+      style :
+      {
+        statename : "default-disabled"
+      }
+    },
 
     /*
     ---------------------------------------------------------------------------
