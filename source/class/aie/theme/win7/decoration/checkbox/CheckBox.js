@@ -77,6 +77,7 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 		var aiebankdchkdisab = self.aiebankdchkdisab;
 		var aiebankdchkpressed = self.aiebankdchkpressed;
 		var aiebankdchkchkedpressed = self.aiebankdchkchkedpressed;
+		var aiebankdchkhov = self.aiebankdchkhov;
 				
 		var dechtml;	
 		var wrappedhtml;
@@ -110,6 +111,13 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 				dechtml = aiebankdchkchkedpressed;
 				break;
 				
+			case "default-chked-hovered":
+				if (!aiebankdchkhov) {
+  					aiebankdchkhov = self.aiebankdchkhov = this._generateBank("na", "default-chk-hovered");
+  				}
+				dechtml = aiebankdchkhov;
+				break;
+			
 			case "default-hovered":
 				if (!aiebankdunchkhov) {
   					aiebankdunchkhov = self.aiebankdunchkhov = this._generateBank("na", "default-hovered");

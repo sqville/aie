@@ -465,7 +465,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
         return {
           decorator: decorator,
-          paddingLeft: 20,
+          paddingLeft: 18,
+          height: 17,
           gap: 6
         }
       }
