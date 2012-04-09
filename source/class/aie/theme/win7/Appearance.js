@@ -433,19 +433,20 @@ qx.Theme.define("aie.theme.win7.Appearance",
           }
 
         // Undetermined
-        } /*else if (states.undetermined) {
-          if (states.disabled) {
+        } else if (states.undetermined) {
+          /*if (states.disabled) {
             decorator = "aie-win7-std-checkbox-disabled";
           } else if (states.focused) {
             decorator = "checkbox-undetermined-focused";
-          } else if (states.hovered) {
+          } if (states.hovered) {
             decorator = "checkbox-undetermined-hovered";
           } else {
             decorator = "aie-win7-std-checkbox";
-          }
+          }*/
+          decorator = "aie-win7-std-checkbox-mixed";
 
         // Focused & Pressed & Hovered (when enabled)
-        }*/ else if (!states.disabled) {
+        } else if (!states.disabled) {
           /*if (states.focused) {
             decorator = "checkbox-focused";
           }*/ if (states.pressed) {
@@ -466,7 +467,6 @@ qx.Theme.define("aie.theme.win7.Appearance",
         return {
           decorator: decorator,
           paddingLeft: 18,
-          height: 17,
           gap: 6
         }
       }

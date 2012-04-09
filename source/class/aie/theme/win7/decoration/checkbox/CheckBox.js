@@ -78,9 +78,13 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 		var aiebankdchkpressed = self.aiebankdchkpressed;
 		var aiebankdchkchkedpressed = self.aiebankdchkchkedpressed;
 		var aiebankdchkhov = self.aiebankdchkhov;
+		var aiebankdchkmixed = self.aiebankdchkmixed;
 				
 		var dechtml;	
-		var wrappedhtml;
+		var aiecanvasdiv;
+		var aiepositionwrapper;
+		var aiechkleft;
+		var aiechktop;
 		
 		switch (this.getStatename()) {
 			case "default":
@@ -124,6 +128,13 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
   				}
 				dechtml = aiebankdunchkhov;
 				break;
+				
+			case "default-mixed":
+				if (!aiebankdchkmixed) {
+  					aiebankdchkmixed = self.aiebankdchkmixed = this._generateBank("na", "default-mixed");
+  				}
+				dechtml = aiebankdchkmixed;
+				break;
 			
 			case "default-disabled":
 				if (!aiebankdchkdisab) {
@@ -133,9 +144,14 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 				break;
 		}
 		
-		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
+		aiechkleft = "0px";
+		aiechktop = "1px"; //NEED code to calculate height of parent widget
+		aiecanvasdiv = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:" + aiechkleft + ";top:" + aiechktop + "'>" + dechtml + "</div>";
+		//aiecanvasdiv = "<div style='width:100%;height:100%;margin-top:auto;margin-bottom:auto;position:absolute;overflow:hidden'>" + dechtml + "</div>";
+		aiepositionwrapper ="<div style='width:100%;height:100%;position:relative;overflow:hidden;left:0px;top:0px'>" + aiecanvasdiv + "</div>";
+		//aiepositionwrapper ="<div style='margin-top:auto;margin-bottom:auto;position:relative;overflow:hidden;left:0px;top:0px'>" + aiecanvasdiv + "</div>";
 
-	  return wrappedhtml;	  
+	  return aiepositionwrapper;	  
 	  
     },
 
@@ -143,8 +159,8 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
      // interface implementation
     resize : function(element, width, height)
     {
-	  //element.style.width = width + "px";
-      //element.style.height = height + "px";
+	  element.style.width = width + "px";
+      element.style.height = height + "px";
     },
 
 
