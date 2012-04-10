@@ -404,27 +404,31 @@ qx.Theme.define("aie.theme.win7.Appearance",
     },
 
     "textarea" : "textfield",
-
+    
     "checkbox":
     {
       alias : "atom",
 
       style : function(states)
       {
-        // The "disabled" icon is set to an icon **without** the -disabled
-        // suffix on purpose. This is because the Image widget handles this
-        // already by replacing the current image with a disabled version
-        // (if available). If no disabled image is found, the opacity style
-        // is used.
+        return {
+          icon: "",
+          gap: 6
+        }
+      }
+    },
+
+    "checkbox/icon" : {
+      style : function(states)
+      {
+
         var decorator;
 
         // Checked
         if (states.checked) {
           if (states.disabled) {
             decorator = "aie-win7-std-checkbox-disabled";
-          } /*else if (states.focused) {
-            decorator = "checkbox-checked-focused";
-          }*/ else if (states.pressed) {
+          } else if (states.pressed) {
             decorator = "aie-win7-std-checkbox-chkd-pressed";
           } else if (states.hovered) {
             decorator = "aie-win7-std-checkbox-chkd-hovered";
@@ -434,22 +438,11 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
         // Undetermined
         } else if (states.undetermined) {
-          /*if (states.disabled) {
-            decorator = "aie-win7-std-checkbox-disabled";
-          } else if (states.focused) {
-            decorator = "checkbox-undetermined-focused";
-          } if (states.hovered) {
-            decorator = "checkbox-undetermined-hovered";
-          } else {
-            decorator = "aie-win7-std-checkbox";
-          }*/
           decorator = "aie-win7-std-checkbox-mixed";
 
         // Focused & Pressed & Hovered (when enabled)
         } else if (!states.disabled) {
-          /*if (states.focused) {
-            decorator = "checkbox-focused";
-          }*/ if (states.pressed) {
+            if (states.pressed) {
             decorator = "aie-win7-std-checkbox-pressed";
           } else if (states.hovered ) {
             decorator = "aie-win7-std-checkbox-unchkd-hovered";
@@ -459,15 +452,12 @@ qx.Theme.define("aie.theme.win7.Appearance",
           
         }
 
-        // Unchecked
-        //decorator = "aie-win7-std-checkbox";
-
-        var invalid = states.invalid && !states.disabled ? "-invalid" : "";
-
         return {
-          decorator: decorator,
-          paddingLeft: 18,
-          gap: 6
+          decorator : decorator,
+          //padding : padding,
+          alignY: "middle",
+          width: 13, // use 12 to allow the inset of the decorator to be applied
+          height: 13
         }
       }
     },
@@ -507,7 +497,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         var invalid = states.invalid && !states.disabled ? "-invalid" : "";
 
         return {
-          icon: "decoration/form/" + icon + invalid + ".png",
+          icon: "",
           shadow: undefined
         }
       }

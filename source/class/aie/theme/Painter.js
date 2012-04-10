@@ -73,6 +73,25 @@
   		return "<div style='height:" + vA[0] + "px;position:absolute;overflow:hidden;left:" + vA[1] + "px;top:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ")'></div>";
     },
     
+    
+    /*
+    ---------------------------------------------------------------------------
+      PAINTING WITH OPACITY
+    ---------------------------------------------------------------------------
+    */
+   
+    _whlt_op : function(vA) //TOP LEFT #1
+    {
+  		return "<div style='width:" + vA[0] + "px;height:" + vA[1] + "px;position:absolute;overflow:hidden;left:" + vA[2] + "px;top:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ");opacity:" + vA[7] + ";-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = " + vA[7]*100 + ");filter: alpha(opacity = " + vA[7]*100 + ")'></div>";
+    },
+    
+    
+    /*
+    ---------------------------------------------------------------------------
+      DYNAMIC PAINTING
+    ---------------------------------------------------------------------------
+    */
+    
     _aiegd : function(vArr, vW, vH, vLADJ, vHSt, vSR, vSG, vSB, vER, vEG, vEB, vADJ)
     {
   		var sr, er, sg, eg, sb, eb, rspread, gspread, bspread, rcd, gcd, bcd, areah;

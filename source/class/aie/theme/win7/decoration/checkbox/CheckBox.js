@@ -145,13 +145,14 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 		}
 		
 		aiechkleft = "0px";
-		aiechktop = "1px"; //NEED code to calculate height of parent widget
-		aiecanvasdiv = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:" + aiechkleft + ";top:" + aiechktop + "'>" + dechtml + "</div>";
-		//aiecanvasdiv = "<div style='width:100%;height:100%;margin-top:auto;margin-bottom:auto;position:absolute;overflow:hidden'>" + dechtml + "</div>";
+		aiechktop = "4px"; //NEED code to calculate height of parent widget
+		//textpar = this.getLayoutParent();
+		//aiecanvasdiv = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:" + aiechkleft + ";top:" + aiechktop + "'>" + dechtml + "</div>";
+		aiecanvasdiv = "<div style='position:absolute;overflow:hidden'>" + dechtml + "</div>";
 		aiepositionwrapper ="<div style='width:100%;height:100%;position:relative;overflow:hidden;left:0px;top:0px'>" + aiecanvasdiv + "</div>";
 		//aiepositionwrapper ="<div style='margin-top:auto;margin-bottom:auto;position:relative;overflow:hidden;left:0px;top:0px'>" + aiecanvasdiv + "</div>";
 
-	  return aiepositionwrapper;	  
+	  return aiecanvasdiv;	  
 	  
     },
 
