@@ -11,7 +11,14 @@ Roadmap
 Version: "Go Live".
 Release Date: TBD.
 Details: An objective of aie will be to provide familiar and unique themes. This version will only cover the "familiar"
-part of the objective. Themes included will be Windows 7 and OSX and possibly iOS.
+part of the objective. Themes included will be Windows 7 and OSX.
+
+Your Opinion
+============
+We would love to hear your opinion on qooxdoo themes. Our overarching goal is to build something that will be used. 
+If you believe that a particular look and feel would be used more than others then please let us know by dropping us
+a line at feedback@sqville.com.
+Thanks!
 
 License
 =======
