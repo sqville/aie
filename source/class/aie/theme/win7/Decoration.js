@@ -361,6 +361,84 @@ qx.Theme.define("aie.theme.win7.Decoration",
         statename : "default-disabled"
       }
     },
+    
+     /*
+    ---------------------------------------------------------------------------
+      RADIOBUTTON
+    ---------------------------------------------------------------------------
+    */
+
+	"aie-win7-std-radiobutton" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default"
+      }
+    },
+    
+    "aie-win7-std-radiobutton-chkd" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-checked"
+      }
+    },
+    
+    "aie-win7-std-radiobutton-pressed" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-pressed"
+      }
+    },
+    
+    "aie-win7-std-radiobutton-chkd-pressed" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-chked-pressed"
+      }
+    },
+    
+    "aie-win7-std-radiobutton-chkd-hovered" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-chked-hovered"
+      }
+    },
+    
+    "aie-win7-std-radiobutton-mixed" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-mixed"
+      }
+    },
+
+    "aie-win7-std-radiobutton-unchkd-hovered" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-hovered"
+      }
+    },
+
+	"aie-win7-std-radiobutton-disabled" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-disabled"
+      }
+    },
 
     /*
     ---------------------------------------------------------------------------

@@ -411,6 +411,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
+        
+        
         return {
           icon: "",
           gap: 6
@@ -469,36 +471,55 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
-        // "disabled" state is not handled here with purpose. The image widget
-        // does handle this already by replacing the current image with a
-        // disabled version (if available). If no disabled image is found the
-        // opacity style is used.
-        var icon;
-        if (states.checked && states.focused) {
-          icon = "radiobutton-checked-focused";
-        } else if (states.checked && states.disabled) {
-          icon = "radiobutton-checked-disabled";
-        } else if (states.checked && states.pressed) {
-          icon = "radiobutton-checked-pressed";
-        } else if (states.checked && states.hovered) {
-          icon = "radiobutton-checked-hovered";
-        } else if (states.checked) {
-          icon = "radiobutton-checked";
-        } else if (states.focused) {
-          icon = "radiobutton-focused";
-        } else if (states.pressed) {
-          icon = "radiobutton-pressed";
-        } else if (states.hovered) {
-          icon = "radiobutton-hovered";
-        } else {
-          icon = "radiobutton";
+      	
+      	
+        return {
+          
+          shadow: undefined
+        }
+      }
+    },
+    
+    "radiobutton/icon" : {
+      style : function(states)
+      {
+
+        var decorator;
+
+        // Checked
+        if (states.checked) {
+          if (states.disabled) {
+            decorator = "aie-win7-std-radiobutton-disabled";
+          } else if (states.pressed) {
+            decorator = "aie-win7-std-radiobutton-chkd-pressed";
+          } else if (states.hovered) {
+            decorator = "aie-win7-std-radiobutton-chkd-hovered";
+          } else {
+            decorator = "aie-win7-std-radiobutton-chkd";
+          }
+
+        // Undetermined
+        } else if (states.undetermined) {
+          decorator = "aie-win7-std-radiobutton-mixed";
+
+        // Focused & Pressed & Hovered (when enabled)
+        } else if (!states.disabled) {
+            if (states.pressed) {
+            decorator = "aie-win7-std-radiobutton-pressed";
+          } else if (states.hovered ) {
+            decorator = "aie-win7-std-radiobutton-unchkd-hovered";
+          } else {
+            decorator = "aie-win7-std-radiobutton";
+          }
+          
         }
 
-        var invalid = states.invalid && !states.disabled ? "-invalid" : "";
-
         return {
-          icon: "",
-          shadow: undefined
+          decorator : decorator,
+          //padding : padding,
+          alignY: "middle",
+          width: 12, // use 12 to allow the inset of the decorator to be applied
+          height: 12
         }
       }
     },

@@ -71,7 +71,7 @@ qx.Class.define("aie.theme.win7.decoration.radiobutton.RadioButton",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
+  		var aiebankdefaultstdrdobut = self.aiebankdefaultstdrdobut;
 		var aiebankdunchkhov = self.aiebankdunchkhov;
 		var aiebankchkchked = self.aiebankchkchked;
 		var aiebankdchkdisab = self.aiebankdchkdisab;
@@ -85,10 +85,10 @@ qx.Class.define("aie.theme.win7.decoration.radiobutton.RadioButton",
 		
 		switch (this.getStatename()) {
 			case "default":
-				if (!aiebankdefaultstdchkbox) {
-  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
+				if (!aiebankdefaultstdrdobut) {
+  					aiebankdefaultstdrdobut = self.aiebankdefaultstdrdobut = this._generateBank("na", "default");
   				}
-				dechtml = aiebankdefaultstdchkbox;
+				dechtml = aiebankdefaultstdrdobut;
 				break;
 				
 			case "default-checked":
@@ -114,7 +114,7 @@ qx.Class.define("aie.theme.win7.decoration.radiobutton.RadioButton",
 				
 			case "default-chked-hovered":
 				if (!aiebankdchkhov) {
-  					aiebankdchkhov = self.aiebankdchkhov = this._generateBank("na", "default-chk-hovered");
+  					aiebankdchkhov = self.aiebankdchkhov = this._generateBank("na", "default-chked-hovered");
   				}
 				dechtml = aiebankdchkhov;
 				break;
