@@ -198,19 +198,25 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
-        if (states.pressed || states.abandoned || states.checked) {
-          var decorator = !states.inner && states.focused ? "focused-inset" : "inset";
-          var padding = [ 4, 3, 2, 5 ];
-        } else {
-          var decorator = !states.inner && states.focused ? "focused-outset" : "outset";
-          var padding = [ 3, 4 ];
+        var decorator;
+
+        if (states.pressed)
+        {
+          decorator = "aie-win7-std-button-pressed";
+        }
+        else if (states.hovered)
+        {
+          decorator = "aie-win7-std-button-hovered";
+        }
+        else
+        {
+          decorator = "aie-win7-std-button-default";
         }
 
         return {
-          backgroundColor : states.abandoned ? "button-abandoned" : states.hovered ? "button-hovered" : states.checked ? "button-checked" : "button",
-          decorator : decorator,
-          padding : padding
-        };
+          decorator : decorator
+          //shadow : states.invalid && !states.disabled ? "button-invalid-shadow" : undefined
+        }
       }
     },
 
@@ -222,7 +228,10 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          center : true
+          center : true,
+          padding : [3, 9],
+          height : 21,
+          icon : ""
         };
       }
     },

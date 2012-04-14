@@ -72,19 +72,11 @@ qx.Class.define("aie.theme.win7.decoration.button.Button",
 		var self = this.self(arguments);
 		
   		var aiebankdefaultstdbutton = self.aiebankdefaultstdbutton;
-		var aiebankbuttonhov = self.aiebankbuttonhov;
-		var aiebankchkchked = self.aiebankchkchked;
-		var aiebankdchkdisab = self.aiebankdchkdisab;
-		var aiebankdchkpressed = self.aiebankdchkpressed;
-		var aiebankdchkchkedpressed = self.aiebankdchkchkedpressed;
-		var aiebankdchkhov = self.aiebankdchkhov;
-		var aiebankdchkmixed = self.aiebankdchkmixed;
+		var aiebankstdbuttonhov = self.aiebankstdbuttonhov;
+		var aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed;
 				
 		var dechtml;	
 		var aiecanvasdiv;
-		var aiepositionwrapper;
-		var aiechkleft;
-		var aiechktop;
 		
 		switch (this.getStatename()) {
 			case "default":
@@ -94,53 +86,18 @@ qx.Class.define("aie.theme.win7.decoration.button.Button",
 				dechtml = aiebankdefaultstdbutton;
 				break;
 				
-			case "default-checked":
-				if (!aiebankchkchked) {
-  					aiebankchkchked = self.aiebankchkchked = this._generateBank("na", "default-checked");
+			case "pressed":
+				if (!aiebankdstdbuttonpressed) {
+  					aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed = this._generateBank("na", "default-pressed");
   				}
-				dechtml = aiebankchkchked;
-				break;
-				
-			case "default-pressed":
-				if (!aiebankdchkpressed) {
-  					aiebankdchkpressed = self.aiebankdchkpressed = this._generateBank("na", "default-pressed");
-  				}
-				dechtml = aiebankdchkpressed;
-				break;
-				
-			case "default-chked-pressed":
-				if (!aiebankdchkchkedpressed) {
-  					aiebankdchkchkedpressed = self.aiebankdchkchkedpressed = this._generateBank("na", "default-chked-pressed");
-  				}
-				dechtml = aiebankdchkchkedpressed;
-				break;
-				
-			case "default-chked-hovered":
-				if (!aiebankdchkhov) {
-  					aiebankdchkhov = self.aiebankdchkhov = this._generateBank("na", "default-chk-hovered");
-  				}
-				dechtml = aiebankdchkhov;
+				dechtml = aiebankdstdbuttonpressed;
 				break;
 			
-			case "default-hovered":
-				if (!aiebankbuttonhov) {
-  					aiebankbuttonhov = self.aiebankbuttonhov = this._generateBank("na", "default-hovered");
+			case "hovered":
+				if (!aiebankstdbuttonhov) {
+  					aiebankstdbuttonhov = self.aiebankstdbuttonhov = this._generateBank("na", "default-hovered");
   				}
-				dechtml = aiebankbuttonhov;
-				break;
-				
-			case "default-mixed":
-				if (!aiebankdchkmixed) {
-  					aiebankdchkmixed = self.aiebankdchkmixed = this._generateBank("na", "default-mixed");
-  				}
-				dechtml = aiebankdchkmixed;
-				break;
-			
-			case "default-disabled":
-				if (!aiebankdchkdisab) {
-  					aiebankdchkdisab = self.aiebankdchkdisab = this._generateBank("na", "default-disabled");
-  				}
-				dechtml = aiebankdchkdisab;
+				dechtml = aiebankstdbuttonhov;
 				break;
 		}
 		

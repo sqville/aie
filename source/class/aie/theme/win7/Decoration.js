@@ -282,6 +282,94 @@ qx.Theme.define("aie.theme.win7.Decoration",
         insets: [0]
       }
     },
+    
+    
+    /*
+    ---------------------------------------------------------------------------
+      BUTTON
+    ---------------------------------------------------------------------------
+    */
+    
+    "aie-win7-std-button-checked-focused" :
+    {
+      decorator: aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "checked-focused"
+      }
+    },
+
+    "aie-win7-std-button-disabled" :
+    {
+      decorator : aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "disabled"
+      }
+    },
+
+    "aie-win7-std-button-pressed" :
+    {
+      decorator : aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "pressed"
+      }
+    },
+	
+	"aie-win7-std-button-checked" :
+    {
+      decorator : aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "checked"
+      }
+    },
+	
+	"aie-win7-std-button-hovered" :
+    {
+      decorator : aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "hovered"
+      }
+    },
+	
+	"aie-win7-std-button-preselected" :
+    {
+      decorator : aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "preselected"
+      }
+    },
+	
+	"aie-win7-std-button-focused" :
+    {
+      decorator : aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "focused"
+      }
+    },
+	
+	"aie-win7-std-button-default" :
+    {
+      decorator : aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "default"
+      }
+    },
+    
 
     
     /*
