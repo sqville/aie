@@ -289,16 +289,6 @@ qx.Theme.define("aie.theme.win7.Decoration",
       BUTTON
     ---------------------------------------------------------------------------
     */
-    
-    "aie-win7-std-button-checked-focused" :
-    {
-      decorator: aie.theme.win7.decoration.button.Button,
-
-      style :
-      {
-        statename : "checked-focused"
-      }
-    },
 
     "aie-win7-std-button-disabled" :
     {
@@ -320,16 +310,6 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
 	
-	"aie-win7-std-button-checked" :
-    {
-      decorator : aie.theme.win7.decoration.button.Button,
-
-      style :
-      {
-        statename : "checked"
-      }
-    },
-	
 	"aie-win7-std-button-hovered" :
     {
       decorator : aie.theme.win7.decoration.button.Button,
@@ -337,16 +317,6 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         statename : "hovered"
-      }
-    },
-	
-	"aie-win7-std-button-preselected" :
-    {
-      decorator : aie.theme.win7.decoration.button.Button,
-
-      style :
-      {
-        statename : "preselected"
       }
     },
 	

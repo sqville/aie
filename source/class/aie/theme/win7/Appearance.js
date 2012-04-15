@@ -208,6 +208,14 @@ qx.Theme.define("aie.theme.win7.Appearance",
         {
           decorator = "aie-win7-std-button-hovered";
         }
+        else if (states.focused && !states.inner)
+        {
+          decorator = "aie-win7-std-button-focused";
+        }
+        else if (states.disabled)
+        {
+          decorator = "aie-win7-std-button-disabled";
+        }
         else
         {
           decorator = "aie-win7-std-button-default";
