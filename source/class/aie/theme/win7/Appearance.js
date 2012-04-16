@@ -360,7 +360,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
     /*
     ---------------------------------------------------------------------------
-      FORM FIELDS
+      FORM FIELDS Blah
     ---------------------------------------------------------------------------
     */
     "form-renderer-label" : {
@@ -413,6 +413,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
         return {
           decorator       : decorator,
+          height : 21,
           padding         : [ 2, 3 ],
           textColor       : textColor,
           backgroundColor : backgroundColor
@@ -428,8 +429,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
-        
-        
+
         return {
           icon: "",
           gap: 6
@@ -1703,7 +1703,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
         }
 
         return {
-          backgroundColor : background
+          backgroundColor : background,
+          height : 23
         };
       }
     },
@@ -1874,7 +1875,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
     /*
     ---------------------------------------------------------------------------
-      COMBOBOX
+      COMBOBOX Blah
     ---------------------------------------------------------------------------
     */
 
@@ -1889,7 +1890,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         } else if (states.invalid) {
           backgroundColor = "background-invalid";
         } else if (states.focused) {
-          backgroundColor = "background-light";
+          backgroundColor = "background-field";
         } else {
           backgroundColor = "background-field";
         }
@@ -1904,14 +1905,31 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
     "combobox/button" :
     {
-      alias : "button",
-      include : "button",
+      //alias : "button",
+      //include : "button",
 
       style : function(states)
       {
+      	var decorator;
+      	
+      	if (states.pressed)
+        {
+          decorator = "aie-win7-std-cbobutton-pressed";
+        }
+        else if (states.hovered)
+        {
+          decorator = "aie-win7-std-cbobutton-hovered";
+        }
+        else
+        {
+          decorator = "aie-win7-std-cbobutton-default";
+        }
+      	
         return {
-          icon : "decoration/arrows/down.gif",
-          backgroundColor : states.hovered ? "button-hovered" : "button"
+          //icon : "decoration/arrows/down.gif",
+          //decorator : decorator,
+          icon : ""
+          //backgroundColor : states.hovered ? "button-hovered" : "button"
         };
       }
     },
