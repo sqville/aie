@@ -237,7 +237,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           center : true,
-          padding : [3, 9],
+          padding : [0, 0],
+          paddingRight: 2,
           height : 21,
           icon : ""
         };
@@ -1687,12 +1688,44 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
     "selectbox" :
     {
-      include: "button-frame",
+      //include: "button-frame",
+      //alias : "atom",
 
       style : function(states)
       {
-        var background = "button";
-        if (states.invalid && !states.disabled) {
+		var decorator;     
+        
+        if (states.pressed)
+        {
+          decorator = "aie-win7-std-button-pressed";
+        }
+        else if (states.checked && states.hovered) {
+        	decorator = "aie-win7-std-button-pressed";
+        }
+        else if (states.focused && !states.inner)
+        {
+          decorator = "aie-win7-std-button-pressed";
+        }
+        else if (states.abandoned) {
+        	decorator = "aie-win7-std-button-pressed";
+        }
+        else if (!states.abandoned && !states.hovered && states.checked) {
+        	decorator = "aie-win7-std-button-pressed";
+        }
+        else if (states.hovered && !states.checked)
+        {
+          decorator = "aie-win7-std-button-hovered";
+        }
+        else if (states.disabled)
+        {
+          decorator = "aie-win7-std-button-disabled";
+        }
+        else
+        {
+          decorator = "aie-win7-std-button-default";
+        }
+        
+        /*if (states.invalid && !states.disabled) {
           background = "background-invalid";
         } else if (states.abandoned) {
           background = "button-abandoned";
@@ -1700,11 +1733,13 @@ qx.Theme.define("aie.theme.win7.Appearance",
           background = "button-hovered";
         } else if (!states.abandoned && !states.hovered && states.checked) {
           background = "button-checked";
-        }
+        }*/
+        
 
         return {
-          backgroundColor : background,
-          height : 23
+          decorator : decorator,
+          height : 21,
+          paddingLeft : 6
         };
       }
     },
@@ -1720,7 +1755,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          source : "decoration/arrows/down.gif",
+          source : "",
           paddingRight : 4,
           paddingLeft : 5
         };
