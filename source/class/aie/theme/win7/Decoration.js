@@ -340,6 +340,38 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
     
+    
+    /*
+    ---------------------------------------------------------------------------
+      BUTTON ARROWS
+    ---------------------------------------------------------------------------
+    */
+    "aie-win7-selectbox-down-arrow" :
+    {
+      decorator : aie.theme.win7.decoration.resource.DownArrow,
+
+      style :
+      {
+        statename : "default"
+      }
+    },
+    
+    
+    /*
+    ---------------------------------------------------------------------------
+      COMBO BOX
+    ---------------------------------------------------------------------------
+    */
+    "aie-win7-std-cbobutton-default" :
+    {
+      decorator : aie.theme.win7.decoration.resource.DownArrow,
+
+      style :
+      {
+        statename : "default"
+      }
+    },
+    
 
     
     /*

@@ -1688,42 +1688,11 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
     "selectbox" :
     {
-      //include: "button-frame",
-      //alias : "atom",
+      include: "button-frame",
 
       style : function(states)
       {
-		var decorator;     
-        
-        if (states.pressed)
-        {
-          decorator = "aie-win7-std-button-pressed";
-        }
-        else if (states.checked && states.hovered) {
-        	decorator = "aie-win7-std-button-pressed";
-        }
-        else if (states.focused && !states.inner)
-        {
-          decorator = "aie-win7-std-button-pressed";
-        }
-        else if (states.abandoned) {
-        	decorator = "aie-win7-std-button-pressed";
-        }
-        else if (!states.abandoned && !states.hovered && states.checked) {
-        	decorator = "aie-win7-std-button-pressed";
-        }
-        else if (states.hovered && !states.checked)
-        {
-          decorator = "aie-win7-std-button-hovered";
-        }
-        else if (states.disabled)
-        {
-          decorator = "aie-win7-std-button-disabled";
-        }
-        else
-        {
-          decorator = "aie-win7-std-button-default";
-        }
+		//var decorator;     
         
         /*if (states.invalid && !states.disabled) {
           background = "background-invalid";
@@ -1737,9 +1706,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
         
 
         return {
-          decorator : decorator,
+          //decorator : decorator,
           height : 21,
-          paddingLeft : 6
+          paddingLeft : 4
         };
       }
     },
@@ -1756,8 +1725,12 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           source : "",
-          paddingRight : 4,
-          paddingLeft : 5
+          decorator : "aie-win7-selectbox-down-arrow",
+          //padding:6,
+          paddingRight : 6,
+          paddingLeft : 7,
+          width: 7,
+          height: 7
         };
       }
     },
@@ -1949,11 +1922,11 @@ qx.Theme.define("aie.theme.win7.Appearance",
       	
       	if (states.pressed)
         {
-          decorator = "aie-win7-std-cbobutton-pressed";
+          decorator = "aie-win7-std-cbobutton-default";
         }
         else if (states.hovered)
         {
-          decorator = "aie-win7-std-cbobutton-hovered";
+          decorator = "aie-win7-std-cbobutton-default";
         }
         else
         {
@@ -1962,7 +1935,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       	
         return {
           //icon : "decoration/arrows/down.gif",
-          //decorator : decorator,
+          decorator : decorator,
           icon : ""
           //backgroundColor : states.hovered ? "button-hovered" : "button"
         };
