@@ -1918,24 +1918,32 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
-      	var decorator;
+      	var decorator, width, height;
       	
       	if (states.pressed)
         {
           decorator = "aie-win7-std-cbobutton-default";
+          width = 17;
+          height = 21;
         }
         else if (states.hovered)
         {
           decorator = "aie-win7-std-cbobutton-default";
+          width = 17;
+          height = 21;
         }
         else
         {
           decorator = "aie-win7-std-cbobutton-default";
+          width = 7;
+          height = 7;
         }
       	
         return {
           //icon : "decoration/arrows/down.gif",
           decorator : decorator,
+          width: width,
+          height: height,
           icon : ""
           //backgroundColor : states.hovered ? "button-hovered" : "button"
         };
