@@ -351,9 +351,7 @@ qx.Theme.define("aie.theme.win7.Decoration",
       decorator : aie.theme.win7.decoration.resource.DownArrow,
 
       style :
-      {
-        statename : "default"
-      }
+      {}
     },
     
     
@@ -367,9 +365,7 @@ qx.Theme.define("aie.theme.win7.Decoration",
       decorator : aie.theme.win7.decoration.resource.DownArrow,
 
       style :
-      {
-        statename : "default"
-      }
+      {}
     },
     
 

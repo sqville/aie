@@ -1910,6 +1910,36 @@ qx.Theme.define("aie.theme.win7.Appearance",
         };
       }
     },
+    
+    "combobox/button/icon":
+    {
+
+      style : function(states)
+      {
+      	
+      	var decorator
+      	
+      	if (states.pressed)
+        {
+          decorator = "aie-win7-std-cbobutton-default";
+        }
+        else if (states.hovered)
+        {
+          decorator = "aie-win7-std-cbobutton-default";
+        }
+        else
+        {
+          decorator = "aie-win7-std-cbobutton-default";
+        }
+
+        return {
+          decorator: decorator,
+          alignY: "middle",
+          width: 7,
+          height: 7
+        }
+      }
+    },
 
     "combobox/button" :
     {
@@ -1918,7 +1948,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
-      	var decorator, width, height;
+      	/*var decorator
       	
       	if (states.pressed)
         {
@@ -1937,13 +1967,13 @@ qx.Theme.define("aie.theme.win7.Appearance",
           decorator = "aie-win7-std-cbobutton-default";
           width = 7;
           height = 7;
-        }
+        }*/
       	
         return {
           //icon : "decoration/arrows/down.gif",
-          decorator : decorator,
-          width: width,
-          height: height,
+          //decorator : decorator,
+          width: 17,
+          height: 21,
           icon : ""
           //backgroundColor : states.hovered ? "button-hovered" : "button"
         };
