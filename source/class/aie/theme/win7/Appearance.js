@@ -1906,7 +1906,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
         return {
           decorator       : states.focused ? "focused-inset" : "inset",
           textColor       : states.disabled ? "text-disabled" : undefined,
-          backgroundColor : backgroundColor
+          backgroundColor : backgroundColor,
+          height: 21
         };
       }
     },
@@ -1916,26 +1917,11 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
-      	
-      	var decorator
-      	
-      	if (states.pressed)
-        {
-          decorator = "aie-win7-std-cbobutton-default";
-        }
-        else if (states.hovered)
-        {
-          decorator = "aie-win7-std-cbobutton-default";
-        }
-        else
-        {
-          decorator = "aie-win7-std-cbobutton-default";
-        }
 
         return {
-          decorator: decorator,
-          alignY: "middle",
+          decorator: "aie-win7-std-cbobutton-default",
           width: 7,
+          paddingLeft: 6,
           height: 7
         }
       }
@@ -1948,34 +1934,23 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
-      	/*var decorator
+      	var decorator;
       	
       	if (states.pressed)
         {
-          decorator = "aie-win7-std-cbobutton-default";
-          width = 17;
-          height = 21;
+          decorator = "aie-win7-std-cbobutton-pressed";
         }
         else if (states.hovered)
         {
-          decorator = "aie-win7-std-cbobutton-default";
-          width = 17;
-          height = 21;
+          decorator = "aie-win7-std-cbobutton-hovered";
         }
-        else
-        {
-          decorator = "aie-win7-std-cbobutton-default";
-          width = 7;
-          height = 7;
-        }*/
+
       	
         return {
-          //icon : "decoration/arrows/down.gif",
-          //decorator : decorator,
+          decorator : decorator,
           width: 17,
           height: 21,
           icon : ""
-          //backgroundColor : states.hovered ? "button-hovered" : "button"
         };
       }
     },
@@ -1991,8 +1966,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           decorator : undefined,
-          padding: [2, 3],
-          backgroundColor: undefined
+          paddingLeft: 2,
+          height: 19
         };
       }
     },

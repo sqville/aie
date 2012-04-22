@@ -368,6 +368,26 @@ qx.Theme.define("aie.theme.win7.Decoration",
       {}
     },
     
+    "aie-win7-std-cbobutton-hovered" :
+    {
+      decorator : aie.theme.win7.decoration.button.ComboboxButton,
+
+      style :
+      {
+        statename : "hovered"
+      }
+    },
+    
+    "aie-win7-std-cbobutton-pressed" :
+    {
+      decorator : aie.theme.win7.decoration.button.ComboboxButton,
+
+      style :
+      {
+        statename : "pressed"
+      }
+    },
+    
 
     
     /*
