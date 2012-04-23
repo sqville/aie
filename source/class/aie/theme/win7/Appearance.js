@@ -93,8 +93,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           decorator : "main",
-          backgroundColor : "background-pane",
-          shadow : "shadow-small"
+          backgroundColor : "background-pane"
+          //shadow : "shadow-small"
         }
       }
     },
