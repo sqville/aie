@@ -1921,8 +1921,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
         return {
           decorator: "aie-win7-std-cbobutton-default",
           width: 7,
-          paddingLeft: 6,
-          height: 7
+          height: 7,
+          alignX: "center"
         }
       }
     },
@@ -1950,7 +1950,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
           decorator : decorator,
           width: 17,
           height: 21,
-          icon : ""
+          icon : "",
+          alignX: "center"
         };
       }
     },
@@ -1967,7 +1968,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
         return {
           decorator : undefined,
           paddingLeft: 2,
-          height: 19
+          marginRight: 0,
+          height: 21
         };
       }
     },
