@@ -1904,7 +1904,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         }
 
         return {
-          decorator       : states.focused ? "focused-inset" : "inset",
+          //decorator       : states.focused ? "focused-inset" : "inset",
           textColor       : states.disabled ? "text-disabled" : undefined,
           backgroundColor : backgroundColor,
           height: 21
