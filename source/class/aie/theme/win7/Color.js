@@ -32,7 +32,7 @@ qx.Theme.define("aie.theme.win7.Color",
     "background-focused-inner" : "#DBEAF9",
     "background-disabled" : "#F4F4F4",
     "background-selected" : "#3399FF",
-    "background-field" : "white",
+    "background-field" : "#FFFFFF",
     "background-pane" : "#FAFBFE",
     "background-invalid" : "#FFE0E0",
 

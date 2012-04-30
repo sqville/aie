@@ -1904,7 +1904,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         }
 
         return {
-          //decorator       : states.focused ? "focused-inset" : "inset",
+          decorator       : states.focused ? "aie-win7-std-cbobox-focused" : "aie-win7-std-cbobox-default",
           textColor       : states.disabled ? "text-disabled" : undefined,
           backgroundColor : backgroundColor,
           height: 21
@@ -1951,6 +1951,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
           width: 17,
           height: 21,
           icon : "",
+          paddingLeft: 5,
           alignX: "center"
         };
       }
@@ -1967,6 +1968,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           decorator : undefined,
+          backgroundColor : "transparent",
           paddingLeft: 2,
           marginRight: 0,
           height: 21

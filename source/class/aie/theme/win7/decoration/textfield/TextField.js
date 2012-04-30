@@ -67,26 +67,26 @@ qx.Class.define("aie.theme.win7.decoration.textfield.TextField",
 		var self = this.self(arguments);
 		
 		var aiebankstdtextfielddefault = self.aiebankstdtextfielddefault;
-		var aiebankstdtextfieldhov = self.aiebankstdtextfieldhov;
-		var aiebankdstdcbobuttonpressed = self.aiebankdstdcbobuttonpressed;
+		var aiebankstdtextfieldfocused = self.aiebankstdtextfieldfocused;
+		//var aiebankstdtextfieldpressed = self.aiebankstdtextfieldpressed;
 				
 		var dechtml;	
 		var aiecanvasdiv;
 		
 		switch (this.getStatename()) {
 				
-			case "pressed":
-				if (!aiebankdstdcbobuttonpressed) {
-  					aiebankdstdcbobuttonpressed = self.aiebankdstdcbobuttonpressed = this._generateBank("na", "pressed");
+			/*case "pressed":
+				if (!aiebankstdtextfieldpressed) {
+  					aiebankstdtextfieldpressed = self.aiebankstdtextfieldpressed = this._generateBank("na", "pressed");
   				}
-				dechtml = aiebankdstdcbobuttonpressed;
-				break;
+				dechtml = aiebankstdtextfieldpressed;
+				break;*/
 			
-			case "hovered":
-				if (!aiebankstdtextfieldhov) {
-  					aiebankstdtextfieldhov = self.aiebankstdtextfieldhov = this._generateBank("na", "hovered");
+			case "focused":
+				if (!aiebankstdtextfieldfocused) {
+  					aiebankstdtextfieldfocused = self.aiebankstdtextfieldfocused = this._generateBank("na", "focused");
   				}
-				dechtml = aiebankstdtextfieldhov;
+				dechtml = aiebankstdtextfieldfocused;
 				break;
 				
 			default :
@@ -120,13 +120,13 @@ qx.Class.define("aie.theme.win7.decoration.textfield.TextField",
     tint : function(element, bgcolor)
     {
 
-      /*var Color = qx.theme.manager.Color.getInstance();
+      var Color = qx.theme.manager.Color.getInstance();
 
       if (bgcolor == null) {
         bgcolor = "yellow";
       }
 
-      element.style.backgroundColor = Color.resolve(bgcolor) || "";*/
+      element.style.backgroundColor = Color.resolve(bgcolor) || "";
 
     },
 
@@ -148,40 +148,120 @@ qx.Class.define("aie.theme.win7.decoration.textfield.TextField",
 	
 	_generateBank : function(area, vS)
 	{ 
-	  var str = "";
+	  var fh_str = "";
 	  
 	  var painter1 = new aie.theme.Painter();
+	  var h_whlt = [];
+	  var h_hlrt = [];
+	  var h_whrt = [];
+	  var h_wltb = [];
+	  var h_wrtb = [];
+	  var h_whlb = [];
+	  var h_whrb = [];
+	  var h_hlrb = [];
 	  
 	  switch(vS) {
 	  	case "default" :
+	  		/** Top Left **/
+		  	h_whlt.push([1,1,0,0,214,215,217],
+		  		[1,1,1,0,187,189,194],
+		  		[1,1,1,1,233,236,240]);
+		  	
+		  	/** Top Right **/
+		  	h_whrt.push([1,1,0,0,214,215,217],
+		  		[1,1,1,0,187,189,194],
+		  		[1,1,1,1,233,236,240]);
+		  	
+		  	/** Top **/
+		  	h_hlrt.push([1,2,2,0,171,173,179]);
+		  	
+		  	/** Left Side **/
+		  	h_wltb.push([1,0,1,1,226,227,234]);
+		  	
+		  	/** Right Side **/
+		  	h_wrtb.push([1,0,1,1,219,223,230]);
+		  	
+		  	/** Bottom Left **/
+		  	h_whlb.push([1,1,0,0,235,235,238],
+		  		[1,1,1,1,233,236,240]);
+		  	
+		  	/** Bottom Right **/
+		  	h_whrb.push([1,1,0,0,235,235,238],
+		  		[1,1,1,1,233,236,240]);
+		  	
+		  	/** Bottom **/
+		  	h_hlrb.push([1,1,1,0,227,233,239]);
+		  	
+		  	var fh = [];
+			fh_str = fh.concat(
+				h_hlrt.map(painter1._hlrt),
+				h_whlt.map(painter1._whlt),
+				h_whrt.map(painter1._whrt),
+				h_wltb.map(painter1._wltb),
+				h_wrtb.map(painter1._wrtb),
+				h_whlb.map(painter1._whlb),
+				h_whrb.map(painter1._whrb),
+				h_hlrb.map(painter1._hlrb)
+			).join("");
+	  	
+	  	break;
+	  	
+	  	/*case "pressed" :
 	  	
 		  	var h_whlt = [];
 			h_whlt.push([15,1,0,0,44,98,139]);
 			
-			str = h_whlt.map(painter1._whlt).join("");
+			fh_str = h_whlt.map(painter1._whlt).join("");
 	  	
-	  	break;
+	  	break;*/
 	  	
-	  	case "pressed" :
-	  	
-		  	var h_whlt = [];
-			h_whlt.push([15,1,0,0,44,98,139]);
-			
-			str = h_whlt.map(painter1._whlt).join("");
-	  	
-	  	break;
-	  	
-	  	case "hovered" :
-	  	
-	  		var h_whlt = [];
-		    h_whlt.push([15,1,0,0,60,127,177]);
-	  	
-	  		str = h_whlt.map(painter1._whlt).join("");
+	  	case "focused" :
+	  		/** Top Left **/
+		  	h_whlt.push([1,1,0,0,173,196,215],
+		  		[1,1,1,0,92,147,188],
+		  		[1,1,1,1,198,222,238]);
+		  	
+		  	/** Top Right **/
+		  	h_whrt.push([1,1,0,0,173,196,215],
+		  		[1,1,1,0,92,147,188],
+		  		[1,1,1,1,198,222,238]);
+		  	
+		  	/** Top **/
+		  	h_hlrt.push([1,2,2,0,61,123,173]);
+		  	
+		  	/** Left Side **/
+		  	h_wltb.push([1,0,1,1,181,207,231]);
+		  	
+		  	/** Right Side **/
+		  	h_wrtb.push([1,0,1,1,164,201,227]);
+		  	
+		  	/** Bottom Left **/
+		  	h_whlb.push([1,1,0,0,218,228,237],
+		  		[1,1,1,1,198,222,238]);
+		  	
+		  	/** Bottom Right **/
+		  	h_whrb.push([1,1,0,0,218,228,237],
+		  		[1,1,1,1,198,222,238]);
+		  	
+		  	/** Bottom **/
+		  	h_hlrb.push([1,1,1,0,183,217,237]);
+		  	
+		  	var fh = [];
+			fh_str = fh.concat(
+				h_hlrt.map(painter1._hlrt),
+				h_whlt.map(painter1._whlt),
+				h_whrt.map(painter1._whrt),
+				h_wltb.map(painter1._wltb),
+				h_wrtb.map(painter1._wrtb),
+				h_whlb.map(painter1._whlb),
+				h_whrb.map(painter1._whrb),
+				h_hlrb.map(painter1._hlrb)
+			).join("");
 	  	
 	  	break;
 	  }
 
-	  return str;
+	  return fh_str;
 	  
 	}
   }

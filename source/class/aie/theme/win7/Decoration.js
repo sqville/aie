@@ -360,6 +360,26 @@ qx.Theme.define("aie.theme.win7.Decoration",
       COMBO BOX
     ---------------------------------------------------------------------------
     */
+    "aie-win7-std-cbobox-default" :
+    {
+      decorator : aie.theme.win7.decoration.textfield.TextField,
+
+      style :
+      {
+      	statename : "default"
+      }
+    },
+    
+    "aie-win7-std-cbobox-focused" :
+    {
+      decorator : aie.theme.win7.decoration.textfield.TextField,
+
+      style :
+      {
+      	statename : "focused"
+      }
+    },
+    
     "aie-win7-std-cbobutton-default" :
     {
       decorator : aie.theme.win7.decoration.resource.DownArrow,
