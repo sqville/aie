@@ -85,6 +85,21 @@
   		return "<div style='width:" + vA[0] + "px;height:" + vA[1] + "px;position:absolute;overflow:hidden;left:" + vA[2] + "px;top:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ");opacity:" + vA[7] + ";-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = " + vA[7]*100 + ");filter: alpha(opacity = " + vA[7]*100 + ")'></div>";
     },
     
+    _whrt_op : function(vA) //TOP RIGHT #3
+    {
+  		return "<div style='width:" + vA[0] + "px;height:" + vA[1] + "px;position:absolute;overflow:hidden;right:" + vA[2] + "px;top:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ");opacity:" + vA[7] + ";-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = " + vA[7]*100 + ");filter: alpha(opacity = " + vA[7]*100 + ")'></div>";
+    },
+    
+    _whlb_op : function(vA) //BOTTOM LEFT #7
+    {
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;height:" + vA[1] + "px;left:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ");opacity:" + vA[7] + ";-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = " + vA[7]*100 + ");filter: alpha(opacity = " + vA[7]*100 + ")'></div>";
+    },
+    
+    _whrb_op : function(vA) //BOTTOM RIGHT #9
+    {
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;height:" + vA[1] + "px;right:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ");opacity:" + vA[7] + ";-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = " + vA[7]*100 + ");filter: alpha(opacity = " + vA[7]*100 + ")'></div>";
+    },
+    
     
     /*
     ---------------------------------------------------------------------------

@@ -566,6 +566,33 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
 
+    
+    /*
+    ---------------------------------------------------------------------------
+      LIST
+    ---------------------------------------------------------------------------
+    */
+    "aie-win7-std-list-default" :
+    {
+      decorator : aie.theme.win7.decoration.list.List,
+
+      style :
+      {
+      	statename : "default"
+      }
+    },
+    
+    "aie-win7-std-list-focused" :
+    {
+      decorator : aie.theme.win7.decoration.list.List,
+
+      style :
+      {
+      	statename : "focused"
+      }
+    },
+    
+    
     /*
     ---------------------------------------------------------------------------
       LIST ITEM

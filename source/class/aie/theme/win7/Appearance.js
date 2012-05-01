@@ -333,7 +333,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         }
 
         return {
-          decorator       : states.focused ? "focused-inset" : "inset",
+          decorator       : states.focused ? "aie-win7-std-list-default" : "aie-win7-std-list-default",
           backgroundColor : backgroundColor
         };
       }
