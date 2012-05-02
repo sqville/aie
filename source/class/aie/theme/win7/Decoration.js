@@ -240,6 +240,18 @@ qx.Theme.define("aie.theme.win7.Decoration",
     ---------------------------------------------------------------------------
     */
 
+    "aie-win7-shadow-small" :
+    {
+      decorator : aie.theme.win7.decoration.shadow.Shadow,
+
+      style : {
+        statename : "small-shadow",
+        boxshadowcolor: "#878787"
+        //baseImage : "decoration/shadow/shadow-small.png",
+        //insets    : [ 0, 3, 3, 0 ]
+      }
+    },
+    
     "shadow" :
     {
       decorator : qx.ui.decoration.Grid,

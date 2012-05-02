@@ -18,7 +18,7 @@
 /**
  * 
  */
-qx.Class.define("aie.theme.win7.decoration.list.List",
+qx.Class.define("aie.theme.win7.decoration.shadow.Shadow",
 {
   extend : qx.core.Object,
   
@@ -38,6 +38,45 @@ qx.Class.define("aie.theme.win7.decoration.list.List",
       check : "String",
       nullable : true,
 	  themeable : true
+    },
+    
+     /** CSS3 box shadow horizontal. */
+    boxshadowhorizontal :
+    {
+      check : "Number",
+      init : 2,
+      themeable : true
+    },
+    
+    /** CSS3 box shadow horizontal. */
+    boxshadowvertical :
+    {
+      check : "Number",
+      init : 2,
+      themeable : true
+    },
+    
+    /** CSS3 box shadow horizontal. */
+    boxshadowblur :
+    {
+      check : "Number",
+      init : 1,
+      themeable : true
+    },
+    
+    boxshadowcolor :
+    {
+      check : "String",
+      init : "#000000",
+      nullable : true,
+	  themeable : true
+    },
+    
+    boxshadowspread :
+    {
+      check : "Number",
+      init : 0,
+      themeable : true
     }
   },
   
@@ -64,50 +103,17 @@ qx.Class.define("aie.theme.win7.decoration.list.List",
   	// interface implementation
     getMarkup : function()
     {
-		var self = this.self(arguments);
+		var bsh = this.getBoxshadowhorizontal();
+		var bsv = this.getBoxshadowvertical();
+		var bsb = this.getBoxshadowblur();
+		var bss = this.getBoxshadowspread();
+		var bsc = this.getBoxshadowcolor();
 		
-		var aiebankstdlistdefault = self.aiebankstdlistdefault;
-		var aiebankstdlistfocused = self.aiebankstdlistfocused;
-		//var aiebankstdtextfieldpressed = self.aiebankstdtextfieldpressed;
-				
-		var dechtml;	
-		var aiecanvasdiv;
-		
-		switch (this.getStatename()) {
-				
-			/*case "pressed":
-				if (!aiebankstdtextfieldpressed) {
-  					aiebankstdtextfieldpressed = self.aiebankstdtextfieldpressed = this._generateBank("na", "pressed");
-  				}
-				dechtml = aiebankstdtextfieldpressed;
-				break;*/
-			
-			case "focused":
-				if (!aiebankstdlistfocused) {
-  					aiebankstdlistfocused = self.aiebankstdlistfocused = this._generateBank("na", "focused");
-  				}
-				dechtml = aiebankstdlistfocused;
-				break;
-				
-			default :
-				if (!aiebankstdlistdefault) {
-  					aiebankstdlistdefault = self.aiebankstdlistdefault = this._generateBank("na", "default");
-  				}
-				dechtml = aiebankstdlistdefault;
-				break;
-			
-			break;
-			
-		}
-		
-		aiecanvasdiv = "<div style='position:absolute;overflow:hidden'>" + dechtml + "</div>";
-		//aiecanvasdiv = "<div style='position:absolute;overflow:hidden;-moz-box-shadow: 1px 1px 4px #000000;-webkit-box-shadow: 1px 1px 4px #000000;box-shadow: 1px 1px 4px #000000;filter: progid: DXImageTransform.Microsoft.Shadow(strength = 1, direction = 135, color = '#000000');'>" + dechtml + "</div>";
-		
-		/*-moz-box-shadow: 1px 1px 4px #000000;
--webkit-box-shadow: 1px 1px 4px #000000;
-box-shadow: 1px 1px 4px #000000;
-filter: progid: DXImageTransform.Microsoft.Shadow(strength = 1, direction = 135, color = '#000000');
--ms-filter: "progid: DXImageTransform.Microsoft.Shadow(strength = 1, Direction = 135, Color = '#000000')";*/
+		var aiecanvasdiv = "<div style='position:absolute;overflow:hidden;";
+		aiecanvasdiv += "-moz-box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
+		aiecanvasdiv += "-webkit-box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
+		aiecanvasdiv += "box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
+		aiecanvasdiv += "'></div>";
 
 	  return aiecanvasdiv;
 	  

@@ -92,8 +92,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          decorator : "main",
-          backgroundColor : "background-pane"
+          //decorator : "main",
+          backgroundColor : "background-pane",
+          shadow : "aie-win7-shadow-small"
           //shadow : "shadow-small"
         }
       }
@@ -334,7 +335,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
         return {
           decorator       : states.focused ? "aie-win7-std-list-default" : "aie-win7-std-list-default",
-          backgroundColor : backgroundColor
+          backgroundColor : backgroundColor,
+          paddingBottom: 1,
+          paddingTop: 1
         };
       }
     },
