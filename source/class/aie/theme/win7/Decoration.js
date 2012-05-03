@@ -245,10 +245,11 @@ qx.Theme.define("aie.theme.win7.Decoration",
       decorator : aie.theme.win7.decoration.shadow.Shadow,
 
       style : {
-        statename : "small-shadow",
-        boxshadowcolor: "#878787"
-        //baseImage : "decoration/shadow/shadow-small.png",
-        //insets    : [ 0, 3, 3, 0 ]
+        boxshadowhorizontal : 2,
+        boxshadowvertical : 3,
+        boxshadowcolor : "#919191",
+        boxshadowblur : 3,
+        boxshadowspread : 0
       }
     },
     
