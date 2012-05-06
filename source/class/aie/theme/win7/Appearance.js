@@ -1129,8 +1129,19 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
       style : function(states)
       {
+        var decorator = "";
+        
+        if (states.vertical) {
+        	decorator = "aie-win7-std-scrollbar-vertical";
+        } 
+        else if (states.horizontal) {
+        	decorator = "aie-win7-std-scrollbar-horizontal";
+        }
+        
         return {
-          backgroundColor : "background-light"
+          //backgroundColor : "background-light",
+          width : 16,
+          decorator : decorator
         }
       }
     },

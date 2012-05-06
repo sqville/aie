@@ -605,6 +605,30 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
     
+    /*
+    ---------------------------------------------------------------------------
+      SCROLLBAR
+    ---------------------------------------------------------------------------
+    */
+    "aie-win7-std-scrollbar-vertical" :
+    {
+      decorator : aie.theme.win7.decoration.scrollbar.ScrollBar,
+
+      style :
+      {
+      	statename : "vertical"
+      }
+    },
+    
+    "aie-win7-std-scrollbar-horizontal" :
+    {
+      decorator : aie.theme.win7.decoration.scrollbar.ScrollBar,
+
+      style :
+      {
+      	statename : "horizontal"
+      }
+    },
     
     /*
     ---------------------------------------------------------------------------

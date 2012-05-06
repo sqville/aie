@@ -99,7 +99,10 @@
     {
   		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;height:" + vA[1] + "px;right:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ");opacity:" + vA[7] + ";-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = " + vA[7]*100 + ");filter: alpha(opacity = " + vA[7]*100 + ")'></div>";
     },
-    
+    _wltb_op : function(vA)
+    {
+  		return "<div style='position:absolute;overflow:hidden;width:" + vA[0] + "px;left:" + vA[1] + "px;top:" + vA[2] + "px;bottom:" + vA[3] + "px;background-color:" + "rgb(" + vA[4] + "," + vA[5] + "," + vA[6] + ");opacity:" + vA[7] + ";-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = " + vA[7]*100 + ");filter: alpha(opacity = " + vA[7]*100 + ")'></div>";
+    },
     
     /*
     ---------------------------------------------------------------------------
