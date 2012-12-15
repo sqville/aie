@@ -30,7 +30,7 @@ This is to keep in line with qooxdoo's licensing structure.
 Demos
 ===========
 
-Demos can be seen here. <Link to demos once live>
+Demos can be seen here. www.sqville.com/examples/index.html
 
 
 Quick start
