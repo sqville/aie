@@ -1166,11 +1166,12 @@ qx.Theme.define("aie.theme.win7.Appearance",
     "scrollbar/button" :
     {
       alias : "button",
-      include : "button",
+      /*include : "button",*/
 
       style : function(states)
       {
         var padding;
+        var decorator;
         if (states.up || states.down)
         {
           if (states.pressed || states.abandoned || states.checked) {
@@ -1189,7 +1190,13 @@ qx.Theme.define("aie.theme.win7.Appearance",
         }
         
         return {
-          padding : padding
+          padding : padding,
+          center : true,
+          /*padding : [0, 0],
+          paddingRight: 2,*/
+          height : 16,
+          width : 18,
+          icon : ""
         }
       }
     },
