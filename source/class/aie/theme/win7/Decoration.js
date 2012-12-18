@@ -353,6 +353,23 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
     
+    /*
+    ---------------------------------------------------------------------------
+      SCROLLBAR BUTTON
+    ---------------------------------------------------------------------------
+    */
+    
+    "aie-win7-std-scrollbarbuttonup-default" :
+    {
+      decorator : aie.theme.win7.decoration.button.ScrollbarButton,
+
+      style :
+      {
+        statename : "default-up"
+      }
+    },
+    
+    
     
     /*
     ---------------------------------------------------------------------------
@@ -362,6 +379,14 @@ qx.Theme.define("aie.theme.win7.Decoration",
     "aie-win7-selectbox-down-arrow" :
     {
       decorator : aie.theme.win7.decoration.resource.DownArrow,
+
+      style :
+      {}
+    },
+    
+    "aie-win7-scrollbarbutton-up-arrow" :
+    {
+      decorator : aie.theme.win7.decoration.resource.ScrollUpArrow,
 
       style :
       {}

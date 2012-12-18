@@ -1140,7 +1140,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         
         return {
           //backgroundColor : "background-light",
-          width : 16,
+          width : 18,
           decorator : decorator
         }
       }
@@ -1166,37 +1166,74 @@ qx.Theme.define("aie.theme.win7.Appearance",
     "scrollbar/button" :
     {
       alias : "button",
-      /*include : "button",*/
+      include : "button",
 
       style : function(states)
       {
         var padding;
         var decorator;
         if (states.up || states.down)
-        {
-          if (states.pressed || states.abandoned || states.checked) {
+	        {
+	          if (states.pressed)
+	        {
+	          decorator = "aie-win7-std-button-pressed";
+	        }
+	        else if (states.hovered)
+	        {
+	          decorator = "aie-win7-std-button-hovered";
+	        }
+	        else if (states.focused && !states.inner)
+	        {
+	          decorator = "aie-win7-std-button-focused";
+	        }
+	        else if (states.disabled)
+	        {
+	          decorator = "aie-win7-std-button-disabled";
+	        }
+	        else
+	        {
+	          decorator = "aie-win7-std-scrollbarbuttonup-default";
+	        }
+	        
+          /*if (states.pressed || states.abandoned || states.checked) {
             padding = [ 5, 2, 3, 4 ];
           } else {
             padding = [ 4, 3 ];
-          }
+          }*/
         }
         else
         {
-          if (states.pressed || states.abandoned || states.checked) {
+          /*if (states.pressed || states.abandoned || states.checked) {
             padding = [ 4, 3, 2, 5 ];
           } else {
             padding = [ 3, 4 ];
-          }
+          }*/
         }
         
         return {
-          padding : padding,
+          /*padding : padding,*/
           center : true,
-          /*padding : [0, 0],
-          paddingRight: 2,*/
-          height : 16,
-          width : 18,
+          /*padding : [0, 0],*/
+          paddingLeft: 2,
+          decorator : decorator,
+          height : 18,
+          width : 16,
           icon : ""
+        }
+      }
+    },
+    
+    "scrollbar/button-begin/icon":
+    {
+
+      style : function(states)
+      {
+
+        return {
+          decorator: "aie-win7-scrollbarbutton-up-arrow",
+          width: 9,
+          height: 6,
+          alignX: "center"
         }
       }
     },
