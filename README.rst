@@ -30,24 +30,6 @@ This is to keep in line with qooxdoo's licensing structure.
 Demos
 ===========
 
-Demos can be seen here. www.sqville.com/examples/index.html
+Demo: www.sqville.com/examples/index.html
 
-
-Quick start
-===========
-
-Here is a quick start guide. <Link to quick start guide once live>
-
-
-
-Learn more
-==========
-
-* About aie
-  Link to notes
-
-* Release notes
-  Link to notes
-
-* User manual
-  Link to manual
+More to come in the future.
