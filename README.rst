@@ -33,3 +33,7 @@ Demos
 Demo: www.sqville.com/examples/index.html
 
 More to come in the future.
+
+How it Works
+============
+
