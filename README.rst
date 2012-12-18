@@ -36,4 +36,5 @@ More to come in the future.
 
 How it Works
 ============
+https://github.com/sqville/aie/wiki
 
