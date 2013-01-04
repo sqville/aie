@@ -1,0 +1,15 @@
+#
+# All directories
+#
+# Please comment on purpose.
+
+# Emacs backup files
+
+# SDK build dir
+
+
+# OSX file system
+
+
+# Eclipse
+/.project
