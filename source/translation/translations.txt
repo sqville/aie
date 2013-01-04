@@ -1,3 +1,0 @@
-/**
- * Holder text. Nothing important
- */
