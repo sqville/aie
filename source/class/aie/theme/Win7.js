@@ -23,10 +23,6 @@
  */
 qx.Theme.define("aie.theme.Win7",
 {
-<<<<<<< HEAD
-=======
-  title : "Windows 7",
->>>>>>> master/master
 
   meta :
   {
