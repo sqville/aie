@@ -2,7 +2,7 @@
 
    Appearance is Everything (AIE) - Advanced themes for the Qooxdoo Ajax framework
 
-   http://www.sqville.com/aie/index.html
+   http://www.sqville.com/
    
    Copyright (C) 2008 SQville, Chris Eskew
 
