@@ -7,10 +7,10 @@ aie (Appearance Is Everything) is a collection of advanced themes for the Qooxdo
 Roadmap
 =======
 
-Version: "Go Live".
+Themes: Win7, Metro, OSX
 Release Date: TBD.
 Details: An objective of aie will be to provide familiar and unique themes. This version will only cover the "familiar"
-part of the objective. Themes included will be Windows 7 and OSX.
+part of the objective. Themes included will be Windows 7 (Win7), Microsoft's Metro (Metro) and Apple's OS X (OSX).
 
 Your Opinion
 ============
