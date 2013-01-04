@@ -13,6 +13,7 @@
  */
 qx.Theme.define("aie.theme.Win7",
 {
+
   meta :
   {
     color : aie.theme.win7.Color,
