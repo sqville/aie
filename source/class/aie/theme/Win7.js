@@ -1,8 +1,8 @@
 /* ************************************************************************
 
-   Copyright:
+   Copyright: TBD
 
-   License:
+   License: TBD
 
    Authors: SQville Software
 
