@@ -72,13 +72,14 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 		var self = this.self(arguments);
 		
   		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
-		var aiebankdunchkhov = self.aiebankdunchkhov;
+		var aiebankunchkhov = self.aiebankunchkhov;
 		var aiebankchkchked = self.aiebankchkchked;
-		var aiebankdchkdisab = self.aiebankdchkdisab;
-		var aiebankdchkpressed = self.aiebankdchkpressed;
-		var aiebankdchkchkedpressed = self.aiebankdchkchkedpressed;
-		var aiebankdchkhov = self.aiebankdchkhov;
-		var aiebankdchkmixed = self.aiebankdchkmixed;
+		var aiebankchkdisab = self.aiebankchkdisab;
+		var aiebankdisab = self.aiebankdisab;
+		var aiebankchkpressed = self.aiebankchkpressed;
+		var aiebankchkchkedpressed = self.aiebankchkchkedpressed;
+		var aiebankchkhov = self.aiebankchkhov;
+		var aiebankchkmixed = self.aiebankchkmixed;
 				
 		var dechtml;	
 		var aiecanvasdiv;
@@ -102,45 +103,52 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 				break;
 				
 			case "default-pressed":
-				if (!aiebankdchkpressed) {
-  					aiebankdchkpressed = self.aiebankdchkpressed = this._generateBank("na", "default-pressed");
+				if (!aiebankchkpressed) {
+  					aiebankchkpressed = self.aiebankchkpressed = this._generateBank("na", "default-pressed");
   				}
-				dechtml = aiebankdchkpressed;
+				dechtml = aiebankchkpressed;
 				break;
 				
 			case "default-chked-pressed":
-				if (!aiebankdchkchkedpressed) {
-  					aiebankdchkchkedpressed = self.aiebankdchkchkedpressed = this._generateBank("na", "default-chked-pressed");
+				if (!aiebankchkchkedpressed) {
+  					aiebankchkchkedpressed = self.aiebankchkchkedpressed = this._generateBank("na", "default-chked-pressed");
   				}
-				dechtml = aiebankdchkchkedpressed;
+				dechtml = aiebankchkchkedpressed;
 				break;
 				
 			case "default-chked-hovered":
-				if (!aiebankdchkhov) {
-  					aiebankdchkhov = self.aiebankdchkhov = this._generateBank("na", "default-chk-hovered");
+				if (!aiebankchkhov) {
+  					aiebankchkhov = self.aiebankchkhov = this._generateBank("na", "default-chk-hovered");
   				}
-				dechtml = aiebankdchkhov;
+				dechtml = aiebankchkhov;
 				break;
 			
 			case "default-hovered":
-				if (!aiebankdunchkhov) {
-  					aiebankdunchkhov = self.aiebankdunchkhov = this._generateBank("na", "default-hovered");
+				if (!aiebankunchkhov) {
+  					aiebankunchkhov = self.aiebankunchkhov = this._generateBank("na", "default-hovered");
   				}
-				dechtml = aiebankdunchkhov;
+				dechtml = aiebankunchkhov;
 				break;
 				
 			case "default-mixed":
-				if (!aiebankdchkmixed) {
-  					aiebankdchkmixed = self.aiebankdchkmixed = this._generateBank("na", "default-mixed");
+				if (!aiebankchkmixed) {
+  					aiebankchkmixed = self.aiebankchkmixed = this._generateBank("na", "default-mixed");
   				}
-				dechtml = aiebankdchkmixed;
+				dechtml = aiebankchkmixed;
 				break;
 			
 			case "default-disabled":
-				if (!aiebankdchkdisab) {
-  					aiebankdchkdisab = self.aiebankdchkdisab = this._generateBank("na", "default-disabled");
+				if (!aiebankdisab) {
+  					aiebankdisab = self.aiebankdisab = this._generateBank("na", "default-disabled");
   				}
-				dechtml = aiebankdchkdisab;
+				dechtml = aiebankdisab;
+				break;
+				
+			case "default-chkd-disabled":
+				if (!aiebankchkdisab) {
+  					aiebankchkdisab = self.aiebankchkdisab = this._generateBank("na", "default-chkd-disabled");
+  				}
+				dechtml = aiebankchkdisab;
 				break;
 		}
 		

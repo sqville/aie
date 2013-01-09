@@ -526,6 +526,15 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
     
+    "aie-win7-std-checkbox-chkd-disabled" :
+    {
+      decorator: aie.theme.win7.decoration.checkbox.CheckBox,
+      style :
+      {
+        statename : "default-chkd-disabled"
+      }
+    },
+    
      /*
     ---------------------------------------------------------------------------
       RADIOBUTTON

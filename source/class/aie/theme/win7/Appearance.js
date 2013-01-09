@@ -451,7 +451,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         // Checked
         if (states.checked) {
           if (states.disabled) {
-            decorator = "aie-win7-std-checkbox-disabled";
+            decorator = "aie-win7-std-checkbox-chkd-disabled";
           } else if (states.pressed) {
             decorator = "aie-win7-std-checkbox-chkd-pressed";
           } else if (states.hovered) {
@@ -473,7 +473,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
           } else {
             decorator = "aie-win7-std-checkbox";
           }
-          
+        
+        } else if (states.disabled && !states.checked) {
+        	decorator = "aie-win7-std-checkbox-disabled";
         }
 
         return {
