@@ -44,9 +44,9 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 		
 		var fh_str = "";
 		
-		if (vS == "default" || vS == "default-checked" || vS == "default-hovered" || vS == "default-pressed" || vS == "default-chked-hovered" || vS == "default-chked-pressed"){
+		if (vS == "default" || vS == "default-checked" || vS == "default-hovered" || vS == "default-pressed" || vS == "default-disabled" || vS == "default-chked-disabled" || vS == "default-chked-hovered" || vS == "default-chked-pressed"){
 			var vr, vg, vb;
-			if (vS == "default" || vS == "default-checked") {
+			if (vS == "default" || vS == "default-checked" || vS == "default-disabled" || vS == "default-chked-disabled") {
 				vr = 142;
 				vg = 143;
 				vb = 143;
@@ -103,8 +103,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 		} 
 		
 		
-		switch (vS) {
-			case "default":
+		if (vS == "default" || vS == "default-disabled") {
 				h_whlt.push([2,1,5,0,145,146,146],
 				[1,1,3,1,185,186,186],
 				[1,1,4,1,219,219,219],
@@ -197,9 +196,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 				[1,1,8,10,186,187,187],
 				[2,1,5,11,142,143,143]);
 				
-				break;
-				
-			case "default-pressed":
+		} else if (vS == "default-pressed") {
 				h_whlt.push([2,1,5,0,53,100,132],
 				[1,1,3,1,106,154,176],
 				[1,1,4,1,161,205,217],
@@ -292,9 +289,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 				[1,1,8,10,108,156,178],
 				[2,1,5,11,48,96,129]);
 				
-				break;
-				
-			case "default-chked-pressed":
+		} else if (vS == "default-chked-pressed") {
 				h_whlt.push([2,1,5,0,49,102,142],
 				[1,1,3,1,108,153,184],
 				[1,1,4,1,157,196,220],
@@ -387,9 +382,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 				[1,1,8,10,109,155,186],
 				[2,1,5,11,44,98,139]);
 				
-				break;
-				
-			case "default-checked":
+		} else if (vS == "default-checked" || vS == "default-chked-disabled") {
 				h_whlt.push([2,1,5,0,145,146,146],
 				[1,1,3,1,185,186,186],
 				[1,1,4,1,219,219,219],
@@ -482,9 +475,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 				[1,1,8,10,186,187,187],
 				[2,1,5,11,142,143,143]);
 				
-				break;
-			
-			case "default-chked-hovered":
+		} else if (vS == "default-chked-hovered") {
 				h_whlt.push([2,1,5,0,89,137,165],
 				[1,1,3,1,143,183,200],
 				[1,1,4,1,188,221,229],
@@ -576,9 +567,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 				[1,1,8,10,145,184,201],
 				[2,1,5,11,85,134,163]);
 				
-				break;
-			
-			case "default-hovered":
+		} else if (vS == "default-hovered") {
 				h_whlt.push([2,1,5,0,89,137,165],
 				[1,1,3,1,143,183,200],
 				[1,1,4,1,188,221,229],
@@ -671,18 +660,19 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 				[1,1,8,10,145,184,201],
 				[2,1,5,11,85,134,163]);
 				
-				break;
-				
-				case "default-disabled":
-				h_whlt.push([13,1,0,0,177,177,177]);
-				
-				break;
-				
-				case "default-mixed":
+
+		} else if (vS == "default-mixed") {
 				h_whlt.push([13,1,0,0,142,143,143]);
-				
-				break;
-	
+		}
+		
+		if (vS == "default-chked-disabled" || vS == "default-disabled") {
+			h_whlt_op.push([6,12,3,0,255,255,255,.5],
+				[3,6,0,3,255,255,255,.5],
+				[3,6,9,3,255,255,255,.5],
+				[2,2,1,1,255,255,255,.5],
+				[2,2,9,1,255,255,255,.5],
+				[2,2,1,9,255,255,255,.5],
+				[2,2,9,9,255,255,255,.5]);
 		}
 		
 		var fh = [];
@@ -692,6 +682,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 		).join("");
 		//fh_str = h_whlt.map(this._whlt).join("");
 		
+
 		return fh_str;
 	}
     

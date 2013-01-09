@@ -239,7 +239,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
         return {
           center : true,
           padding : [0, 0],
-          paddingRight: 2,
+          paddingRight: 14,
+          paddingLeft: 12,
           height : 21,
           icon : ""
         };
@@ -510,7 +511,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         // Checked
         if (states.checked) {
           if (states.disabled) {
-            decorator = "aie-win7-std-radiobutton-disabled";
+            decorator = "aie-win7-std-radiobutton-chkd-disabled";
           } else if (states.pressed) {
             decorator = "aie-win7-std-radiobutton-chkd-pressed";
           } else if (states.hovered) {
@@ -533,6 +534,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
             decorator = "aie-win7-std-radiobutton";
           }
           
+        } else if (states.disabled && !states.checked) {
+        	decorator = "aie-win7-std-radiobutton-disabled";
         }
 
         return {

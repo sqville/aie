@@ -603,6 +603,15 @@ qx.Theme.define("aie.theme.win7.Decoration",
         statename : "default-disabled"
       }
     },
+    
+    "aie-win7-std-radiobutton-chkd-disabled" :
+    {
+      decorator: aie.theme.win7.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-chked-disabled"
+      }
+    },
 
     
     /*
