@@ -271,11 +271,28 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          icon : "decoration/arrows/down.gif"
+          paddingRight : 1,
+          paddingLeft : 7
         };
       }
     },
+    
+    "splitbutton/arrow/icon" :
+	{
 
+      style : function(states)
+      {
+
+        return {
+          decorator : "aie-win7-selectbox-down-arrow",
+          //padding:6,
+          paddingRight : 6,
+          paddingLeft : 7,
+          width: 7,
+          height: 7
+        }
+      }
+    },
 
 
 
