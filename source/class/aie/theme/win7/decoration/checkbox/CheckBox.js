@@ -146,7 +146,7 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 				
 			case "default-chkd-disabled":
 				if (!aiebankchkdisab) {
-  					aiebankchkdisab = self.aiebankchkdisab = this._generateBank("na", "default-chkd-disabled");
+					aiebankchkdisab = self.aiebankchkdisab = aiebankchkchked + this._generateBank("na", "default-chkd-disabled");
   				}
 				dechtml = aiebankchkdisab;
 				break;

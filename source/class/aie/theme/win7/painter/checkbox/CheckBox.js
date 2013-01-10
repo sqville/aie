@@ -301,7 +301,7 @@ qx.Class.define("aie.theme.win7.painter.checkbox.CheckBox",
 				[13,1,0,12,44,98,139]);
 				
 				
-			} else if (vS == "default-checked" || vS == "default-chkd-disabled") {
+			} else if (vS == "default-checked") {
 				h_whlt.push([13,1,0,0,142,143,143],
 				[1,11,0,1,142,143,143],
 				[7,1,1,1,244,244,244],

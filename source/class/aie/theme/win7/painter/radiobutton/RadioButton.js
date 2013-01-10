@@ -44,9 +44,9 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 		
 		var fh_str = "";
 		
-		if (vS == "default" || vS == "default-checked" || vS == "default-hovered" || vS == "default-pressed" || vS == "default-disabled" || vS == "default-chked-disabled" || vS == "default-chked-hovered" || vS == "default-chked-pressed"){
+		if (vS == "default" || vS == "default-checked" || vS == "default-hovered" || vS == "default-pressed" || vS == "default-chked-hovered" || vS == "default-chked-pressed"){
 			var vr, vg, vb;
-			if (vS == "default" || vS == "default-checked" || vS == "default-disabled" || vS == "default-chked-disabled") {
+			if (vS == "default" || vS == "default-checked") {
 				vr = 142;
 				vg = 143;
 				vb = 143;
@@ -103,7 +103,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 		} 
 		
 		
-		if (vS == "default" || vS == "default-disabled") {
+		if (vS == "default") {
 				h_whlt.push([2,1,5,0,145,146,146],
 				[1,1,3,1,185,186,186],
 				[1,1,4,1,219,219,219],
@@ -382,7 +382,7 @@ qx.Class.define("aie.theme.win7.painter.radiobutton.RadioButton",
 				[1,1,8,10,109,155,186],
 				[2,1,5,11,44,98,139]);
 				
-		} else if (vS == "default-checked" || vS == "default-chked-disabled") {
+		} else if (vS == "default-checked") {
 				h_whlt.push([2,1,5,0,145,146,146],
 				[1,1,3,1,185,186,186],
 				[1,1,4,1,219,219,219],

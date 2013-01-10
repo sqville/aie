@@ -136,14 +136,14 @@ qx.Class.define("aie.theme.win7.decoration.radiobutton.RadioButton",
 			
 			case "default-disabled":
 				if (!aiebankdisab) {
-  					aiebankdisab = self.aiebankdisab = this._generateBank("na", "default-disabled");
+  					aiebankdisab = self.aiebankdisab = aiebankdefaultstdrdobut + this._generateBank("na", "default-disabled");
   				}
 				dechtml = aiebankdisab;
 				break;
 				
 			case "default-chked-disabled":
 				if (!aiebankchkdisab) {
-  					aiebankchkdisab = self.aiebankchkdisab = this._generateBank("na", "default-chked-disabled");
+  					aiebankchkdisab = self.aiebankchkdisab = aiebankchkchked + this._generateBank("na", "default-chked-disabled");
   				}
 				dechtml = aiebankchkdisab;
 				break;
