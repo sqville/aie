@@ -1059,10 +1059,11 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         var decorator;
+        var backgroundcolor = "background";
         var marginTop=0, marginRight=0, marginBottom=0, marginLeft=0;
 
         if (states.barTop || states.barBottom) {
-          var paddingTop=2, paddingBottom=2, paddingLeft=6, paddingRight=6;
+          var paddingTop=0, paddingBottom=0, paddingLeft=1, paddingRight=5;
         } else {
           var paddingTop=6, paddingBottom=6, paddingLeft=6, paddingRight=6;
         }
@@ -1086,13 +1087,28 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
         if (states.checked)
         {
-          if (states.barTop || states.barBottom)
+          backgroundcolor = "white";
+          if (states.barTop)
           {
+            paddingTop = 2;
+            paddingBottom = 2;
+            paddingRight += 2;
+            paddingLeft += 2;
+            marginBottom = 1;
+          }
+          else if (states.barBottom){
+          	marginTop = -1;
             paddingLeft += 2;
             paddingRight += 2;
           }
+          else if (states.barLeft){
+          	marginRight = 1;
+          	paddingTop += 2;
+            paddingBottom += 2;
+          }
           else
           {
+            marginLeft = 1;
             paddingTop += 2;
             paddingBottom += 2;
           }
@@ -1101,8 +1117,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
         {
           if (states.barTop || states.barBottom)
           {
-            marginBottom += 2;
-            marginTop += 2;
+            marginBottom = 2;
+            marginTop = 2;
           }
           else if (states.barLeft || states.barRight)
           {
@@ -1116,7 +1132,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
           if (!states.firstTab)
           {
             if (states.barTop || states.barBottom) {
-              marginLeft = -4;
+              marginLeft = -2;
+              marginRight = -2;
+              marginTop = 0;
             } else {
               marginTop = -4;
             }
@@ -1125,20 +1143,27 @@ qx.Theme.define("aie.theme.win7.Appearance",
           if (!states.lastTab)
           {
             if (states.barTop || states.barBottom) {
-              marginRight = -4;
+              marginRight = -2;
             } else {
               marginBottom = -4;
             }
+          }
+          
+          if (states.firstTab){
+          	if (states.barTop || states.barBottom) {
+          		paddingLeft -= 2;
+          	}
           }
         }
 
         return {
           zIndex : states.checked ? 10 : 5,
           decorator : decorator,
-          backgroundColor : "background",
+          backgroundColor : backgroundcolor,
           padding : [ paddingTop, paddingRight, paddingBottom, paddingLeft ],
           margin : [ marginTop, marginRight, marginBottom, marginLeft ],
-          textColor : states.disabled ? "text-disabled" : undefined
+          textColor : states.disabled ? "text-disabled" : undefined,
+          height: 19
         };
       }
     },

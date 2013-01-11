@@ -886,69 +886,49 @@ qx.Theme.define("aie.theme.win7.Decoration",
 
     "tabview-page-button-top" :
     {
-      decorator : qx.ui.decoration.Double,
+      decorator : qx.ui.decoration.Single,
 
       style :
       {
         width : 1,
-        color : [ "border-light-shadow", "border-dark", "border-dark", "border-light-shadow" ],
-
-        innerWidth : 1,
-        innerColor : [ "border-light", "border-dark-shadow", "border-dark-shadow", "border-light" ],
-
-        widthBottom : 0,
-        innerWidthBottom : 0
+        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ],
+        widthBottom : 0
       }
     },
 
     "tabview-page-button-bottom" :
     {
-      decorator : qx.ui.decoration.Double,
+      decorator : qx.ui.decoration.Single,
 
       style :
       {
         width : 1,
-        color : [ "border-light-shadow", "border-dark", "border-dark", "border-light-shadow" ],
-
-        innerWidth : 1,
-        innerColor : [ "border-light", "border-dark-shadow", "border-dark-shadow", "border-light" ],
-
-        widthTop : 0,
-        innerWidthTop : 0
+        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ],
+        widthTop : 0
       }
     },
 
     "tabview-page-button-left" :
     {
-      decorator : qx.ui.decoration.Double,
+      decorator : qx.ui.decoration.Single,
 
       style :
       {
         width : 1,
-        color : [ "border-light-shadow", "border-dark", "border-dark", "border-light-shadow" ],
-
-        innerWidth : 1,
-        innerColor : [ "border-light", "border-dark-shadow", "border-dark-shadow", "border-light" ],
-
-        widthRight : 0,
-        innerWidthRight : 0
+        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ],
+        widthRight : 0
       }
     },
 
     "tabview-page-button-right" :
     {
-      decorator : qx.ui.decoration.Double,
+      decorator : qx.ui.decoration.Single,
 
       style :
       {
         width : 1,
-        color : [ "border-light-shadow", "border-dark", "border-dark", "border-light-shadow" ],
-
-        innerWidth : 1,
-        innerColor : [ "border-light", "border-dark-shadow", "border-dark-shadow", "border-light" ],
-
-        widthLeft : 0,
-        innerWidthLeft : 0
+        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ],
+        widthLeft : 0
       }
     },
 
