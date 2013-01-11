@@ -80,6 +80,7 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
 		var aiebankchkchkedpressed = self.aiebankchkchkedpressed;
 		var aiebankchkhov = self.aiebankchkhov;
 		var aiebankchkmixed = self.aiebankchkmixed;
+		var aiebankchkmixeddisab = self.aiebankchkmixeddisab;
 				
 		var dechtml;	
 		var aiecanvasdiv;
@@ -135,6 +136,13 @@ qx.Class.define("aie.theme.win7.decoration.checkbox.CheckBox",
   					aiebankchkmixed = self.aiebankchkmixed = this._generateBank("na", "default-mixed");
   				}
 				dechtml = aiebankchkmixed;
+				break;
+				
+			case "default-mixed-disabled":
+				if (!aiebankchkmixeddisab) {
+  					aiebankchkmixeddisab = self.aiebankchkmixeddisab = aiebankchkmixed + this._generateBank("na", "default-mixed-disabled");
+  				}
+				dechtml = aiebankchkmixeddisab;
 				break;
 			
 			case "default-disabled":

@@ -201,9 +201,22 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         var decorator;
 
-        if (states.pressed)
+        /*if (states.checked && states.focused && !states.inner)
+        {
+        	
+        }*/
+        if (states.disabled)
+        {
+          decorator = "aie-win7-std-button-disabled";
+        }
+        else if (states.pressed)
         {
           decorator = "aie-win7-std-button-pressed";
+        }
+        else if (states.checked)
+        {
+          /*Supports ToggleButton's checked state*/
+          decorator = "aie-win7-std-button-checked";
         }
         else if (states.hovered)
         {
@@ -212,10 +225,6 @@ qx.Theme.define("aie.theme.win7.Appearance",
         else if (states.focused && !states.inner)
         {
           decorator = "aie-win7-std-button-focused";
-        }
-        else if (states.disabled)
-        {
-          decorator = "aie-win7-std-button-disabled";
         }
         else
         {
@@ -478,8 +487,11 @@ qx.Theme.define("aie.theme.win7.Appearance",
           }
 
         // Undetermined
-        } else if (states.undetermined) {
+        } else if (states.undetermined && !states.disabled) {
           decorator = "aie-win7-std-checkbox-mixed";
+          
+        } else if (states.undetermined && states.disabled) {
+            decorator = "aie-win7-std-checkbox-mixed-disabled"
 
         // Focused & Pressed & Hovered (when enabled)
         } else if (!states.disabled) {
@@ -611,7 +623,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
         return {
           icon : "decoration/arrows/up-small.gif",
           padding : states.pressed ? [2, 2, 0, 4] : [1, 3, 1, 3],
-          backgroundColor : states.hovered ? "button-hovered" : "button"
+          backgroundColor : states.hovered ? "button-hovered" : "button",
+          height: 6,
+          width: 17
         }
       }
     },
@@ -626,7 +640,9 @@ qx.Theme.define("aie.theme.win7.Appearance",
         return {
           icon : "decoration/arrows/down-small.gif",
           padding : states.pressed ? [2, 2, 0, 4] : [1, 3, 1, 3],
-          backgroundColor : states.hovered ? "button-hovered" : "button"
+          backgroundColor : states.hovered ? "button-hovered" : "button",
+          height: 6,
+          width: 17
         };
       }
     },
@@ -970,7 +986,10 @@ qx.Theme.define("aie.theme.win7.Appearance",
         {
           return {
             marginTop : 2,
-            marginBottom: 2
+            marginBottom: 2,
+            paddingRight: 1,
+            paddingLeft: 7,
+            height: 17
           }
         }
         else
@@ -994,7 +1013,10 @@ qx.Theme.define("aie.theme.win7.Appearance",
         {
           return {
             marginTop : 2,
-            marginBottom: 2
+            marginBottom: 2,
+            paddingRight: 1,
+            paddingLeft: 7,
+            height: 17
           }
         }
         else
@@ -1012,14 +1034,25 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          backgroundColor : "background",
-          decorator : "outset",
-          padding : 10
+          backgroundColor : "white",
+          decorator : "aie-tabview-border",
+          padding : 4
         };
       }
     },
 
-    "tabview-page" : "widget",
+    /*"tabview-page" : "widget",*/
+   
+   "tabview-page" :
+   {
+   	style : function(states)
+      {
+        return {
+          backgroundColor : "background",
+          padding : 4
+        };
+      }
+   },
 
     "tabview-page/button" :
     {

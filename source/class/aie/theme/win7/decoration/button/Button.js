@@ -76,6 +76,7 @@ qx.Class.define("aie.theme.win7.decoration.button.Button",
 		var aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed;
 		var aiebankdstdbuttonfocused = self.aiebankdstdbuttonfocused;
 		var aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled;
+		var aiebankdstdbuttonchecked = self.aiebankdstdbuttonchecked;
 				
 		var dechtml;	
 		var aiecanvasdiv;
@@ -114,6 +115,13 @@ qx.Class.define("aie.theme.win7.decoration.button.Button",
   					aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled = this._generateBank("na", "default-disabled");
   				}
 				dechtml = aiebankdstdbuttondisabled;
+				break;
+				
+			case "checked":
+				if (!aiebankdstdbuttonchecked) {
+  					aiebankdstdbuttonchecked = self.aiebankdstdbuttonchecked = this._generateBank("na", "default-checked");
+  				}
+				dechtml = aiebankdstdbuttonchecked;
 				break;
 		}
 		

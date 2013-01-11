@@ -186,6 +186,18 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
     
+    "aie-tabview-border" :
+    {
+      decorator : qx.ui.decoration.Single,
+      
+      style :
+      {
+        width : 1,
+        /*top, right, bottom, left*/
+        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ]
+      }
+    },
+    
     
     /*
     ---------------------------------------------------------------------------
@@ -340,6 +352,16 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         statename : "focused"
+      }
+    },
+    
+    "aie-win7-std-button-checked" :
+    {
+      decorator : aie.theme.win7.decoration.button.Button,
+
+      style :
+      {
+        statename : "checked"
       }
     },
 	
@@ -505,6 +527,15 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         statename : "default-mixed"
+      }
+    },
+    
+    "aie-win7-std-checkbox-mixed-disabled" :
+    {
+      decorator: aie.theme.win7.decoration.checkbox.CheckBox,
+      style :
+      {
+        statename : "default-mixed-disabled"
       }
     },
 
