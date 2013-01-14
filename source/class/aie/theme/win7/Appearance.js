@@ -1090,15 +1090,16 @@ qx.Theme.define("aie.theme.win7.Appearance",
           backgroundcolor = "white";
           if (states.barTop)
           {
-            paddingBottom = 2;
+            paddingBottom = 1;
             paddingRight += 2;
             paddingLeft += 2;
             marginBottom = 1;
           }
           else if (states.barBottom){
-          	marginTop = -1;
+          	marginTop = 1;
             paddingLeft += 2;
             paddingRight += 2;
+            paddingTop = 1;
           }
           else if (states.barLeft){
           	marginRight = 1;
@@ -1116,8 +1117,28 @@ qx.Theme.define("aie.theme.win7.Appearance",
         {
           if (states.barTop || states.barBottom)
           {
-            marginBottom = 2;
+            /*NEED TO CHANGE decorator to aie-tabviewbutton-default
+             NOT Checked */
+            if (states.barTop && states.hovered){
+            	decorator = "aie-tabviewbutton-default-hovered";
+            } else if (states.barTop && !states.hovered) {
+            	decorator = "aie-tabviewbutton-default";
+            } else if (states.barBottom && states.hovered) {
+            	decorator = "aie-tabviewbutton-default-bottom-hovered";
+            } else {
+            	decorator = "aie-tabviewbutton-default-bottom";
+            }
             marginTop = 2;
+            marginBottom = 2;
+            if (states.barTop){
+            	paddingTop = 2;
+            	
+            } else {
+            	paddingTop = 0;
+            	paddingBottom = 2;
+            	
+            }
+            
             if (states.firstTab) {
             	marginLeft = 2;
             }

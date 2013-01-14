@@ -73,10 +73,8 @@ qx.Class.define("aie.theme.win7.decoration.button.TabViewButton",
 		
   		var aiebankdefaultstdbutton = self.aiebankdefaultstdbutton;
 		var aiebankstdbuttonhov = self.aiebankstdbuttonhov;
-		var aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed;
-		var aiebankdstdbuttonfocused = self.aiebankdstdbuttonfocused;
-		var aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled;
-		var aiebankdstdbuttonchecked = self.aiebankdstdbuttonchecked;
+		var aiebankdefaultbuttonbtm = self.aiebankdefaultbuttonbtm;
+		var aiebankbuttonbtmhov = self.aiebankbuttonbtmhov;
 				
 		var dechtml;	
 		var aiecanvasdiv;
@@ -88,13 +86,6 @@ qx.Class.define("aie.theme.win7.decoration.button.TabViewButton",
   				}
 				dechtml = aiebankdefaultstdbutton;
 				break;
-				
-			case "pressed":
-				if (!aiebankdstdbuttonpressed) {
-  					aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed = this._generateBank("na", "default-pressed");
-  				}
-				dechtml = aiebankdstdbuttonpressed;
-				break;
 			
 			case "hovered":
 				if (!aiebankstdbuttonhov) {
@@ -103,26 +94,20 @@ qx.Class.define("aie.theme.win7.decoration.button.TabViewButton",
 				dechtml = aiebankstdbuttonhov;
 				break;
 				
-			case "focused":
-				if (!aiebankdstdbuttonfocused) {
-  					aiebankdstdbuttonfocused = self.aiebankdstdbuttonfocused = this._generateBank("na", "default-focused");
+			case "defaultbtm":
+				if (!aiebankdefaultbuttonbtm) {
+  					aiebankdefaultbuttonbtm = self.aiebankdefaultbuttonbtm = this._generateBank("na", "defaultbtm");
   				}
-				dechtml = aiebankdstdbuttonfocused;
+				dechtml = aiebankdefaultbuttonbtm;
+				break;
+			
+			case "hoveredbtm":
+				if (!aiebankbuttonbtmhov) {
+  					aiebankbuttonbtmhov = self.aiebankbuttonbtmhov = this._generateBank("na", "default-hoveredbtm");
+  				}
+				dechtml = aiebankbuttonbtmhov;
 				break;
 				
-			case "disabled":
-				if (!aiebankdstdbuttondisabled) {
-  					aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled = this._generateBank("na", "default-disabled");
-  				}
-				dechtml = aiebankdstdbuttondisabled;
-				break;
-				
-			case "checked":
-				if (!aiebankdstdbuttonchecked) {
-  					aiebankdstdbuttonchecked = self.aiebankdstdbuttonchecked = this._generateBank("na", "default-checked");
-  				}
-				dechtml = aiebankdstdbuttonchecked;
-				break;
 		}
 		
 		//aiecanvasdiv = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:" + aiechkleft + ";top:" + aiechktop + "'>" + dechtml + "</div>";
@@ -144,14 +129,6 @@ qx.Class.define("aie.theme.win7.decoration.button.TabViewButton",
     // interface implementation
     tint : function(element, bgcolor)
     {
-
-      /*var Color = qx.theme.manager.Color.getInstance();
-
-      if (bgcolor == null) {
-        bgcolor = "yellow";
-      }
-
-      element.style.backgroundColor = Color.resolve(bgcolor) || "";*/
 
     },
 

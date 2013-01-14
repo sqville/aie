@@ -194,7 +194,7 @@ qx.Theme.define("aie.theme.win7.Decoration",
       {
         width : 1,
         /*top, right, bottom, left*/
-        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ]
+        color : [ "#898C95", "#898C95", "#898C95", "#898C95" ]
       }
     },
     
@@ -891,7 +891,7 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         width : 1,
-        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ],
+        color : [ "#898C95", "#898C95", "#898C95", "#898C95" ],
         widthBottom : 0
       }
     },
@@ -903,7 +903,7 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         width : 1,
-        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ],
+        color : [ "#898C95", "#898C95", "#898C95", "#898C95" ],
         widthTop : 0
       }
     },
@@ -915,7 +915,7 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         width : 1,
-        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ],
+        color : [ "#898C95", "#898C95", "#898C95", "#898C95" ],
         widthRight : 0
       }
     },
@@ -927,12 +927,50 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         width : 1,
-        color : [ "#8C8E94", "#8C8E94", "#8C8E94", "#8C8E94" ],
+        color : [ "#898C95", "#898C95", "#898C95", "#898C95" ],
         widthLeft : 0
       }
     },
+    
+    "aie-tabviewbutton-default" :
+    {
+      decorator : aie.theme.win7.decoration.button.TabViewButton,
 
+      style :
+      {
+        statename : "default"
+      }
+    },
 
+	"aie-tabviewbutton-default-hovered" :
+    {
+      decorator : aie.theme.win7.decoration.button.TabViewButton,
+
+      style :
+      {
+        statename : "hovered"
+      }
+    },
+    
+    "aie-tabviewbutton-default-bottom" :
+    {
+      decorator : aie.theme.win7.decoration.button.TabViewButton,
+
+      style :
+      {
+        statename : "defaultbtm"
+      }
+    },
+
+	"aie-tabviewbutton-default-bottom-hovered" :
+    {
+      decorator : aie.theme.win7.decoration.button.TabViewButton,
+
+      style :
+      {
+        statename : "hoveredbtm"
+      }
+    },
 
 
 
