@@ -1664,9 +1664,10 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           contentPadding : [ 10, 10, 10, 10 ],
-          backgroundColor : "background",
-          decorator : states.maximized ? undefined : "outset",
-          shadow : states.maximized ? undefined : "shadow-small"
+          backgroundColor : "transparent",
+          decorator : "aie-win7-std-window"
+          //decorator : states.maximized ? undefined : "outset",
+          //shadow : states.maximized ? undefined : "shadow-small"
         };
       }
     },
@@ -1681,7 +1682,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           padding : 1,
-          backgroundColor : states.active ? "window-active-caption" : "window-inactive-caption",
+          backgroundColor : "transparent",
+          //backgroundColor : states.active ? "window-active-caption" : "window-inactive-caption",
           textColor : states.active ? "window-active-caption-text" : "window-inactive-caption-text"
         };
       }
