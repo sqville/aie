@@ -37,7 +37,7 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
      *
      * @type member
      */
-    getWindow : function(vS)
+    getWindow : function(vS, vRed, vGrn, vBlu)
     {
   	    var h_whlt = [];
 		var h_whlb = [];
@@ -47,30 +47,32 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 		var h_lrtb = [];
 		var h_wltb = [];
 		var h_wrtb = [];
+		var h_hlrb = [];
 		
 		var fh_str = "";
 		
 		switch (vS) {
-			case "active-window-blue":
+			case "active-window":
 				//** Top Left Corner
 				
 				
 				//** Top
-				
+				h_hlrt.push([1,6,6,0,0,0,0,.93],
+					[1,6,6,1,255,255,255,.93]);
 				
 				//** Top Right Corner
 				
 								
 				//*** Left Side
-	            h_whlt.push();
-				
-				h_wltb.push([1,0,2,0,38,39,45]);
+				h_wltb.push([1,0,6,6,0,0,0,.93],
+					[1,1,6,6,255,255,255,.93]);
 				
 				//*** Header Middle
 				h_hlrt.push();
 				
 				//*** Right Side	           
-			
+				h_wrtb.push([1,0,6,6,0,0,0,.93],
+					[1,1,6,6,255,255,255,.93]);
 			
 				//*** Body
 				h_lrtb.push();
@@ -79,26 +81,27 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 				
 				
 				//*** Bottom
-				
+				h_hlrb.push([1,6,6,0,0,0,0,.93],
+					[1,6,6,1,255,255,255,.93]);
 				
 				//*** Bottom Right Corner
 				
 			
 				break;	
-		}
-    
-		var fh_at = h_whlt.map(this._whlt);
-	    var fh_at2 = h_wltb.map(this._wltb);
-		var fh_at4 = h_wrtb.map(this._wrtb);
-		var fh_ab = h_whlb.map(this._whlb);
-	    var fh_bt = h_whrt.map(this._whrt);
-		var fh_bb = h_whrb.map(this._whrb);	
-	    var fh_m = h_hlrt.map(this._hlrt);	
-		var fh_bod = h_lrtb.map(this._lrtb);
+		}		
 		
-		var fh = fh_at.concat(fh_at2,fh_at4,fh_ab,fh_bt,fh_bb,fh_m,fh_bod);	
-		
-		fh_str = fh.join("");
+		var fh = [];
+		fh_str = fh.concat(
+			h_whlt.map(this._whlt),
+			h_wltb.map(this._wltb_op),
+			h_wrtb.map(this._wrtb_op),
+			h_whlb.map(this._whlb),
+			h_whrt.map(this._whrt),
+			h_whrb.map(this._whrb),
+			h_hlrt.map(this._hlrt_op),
+			h_hlrb.map(this._hlrb_op),
+			h_lrtb.map(this._lrtb)
+		).join("");
 		
 		return fh_str;
     }

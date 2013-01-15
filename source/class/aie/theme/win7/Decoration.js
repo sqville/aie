@@ -717,7 +717,10 @@ qx.Theme.define("aie.theme.win7.Decoration",
 
       style :
       {
-        statename : "default"
+        statename : "default",
+        basecolorred : 171,
+        basecolorgreen : 205,
+        basecolorblue : 237
       }
     },
     

@@ -39,7 +39,45 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
       check : "String",
       nullable : true,
 	  themeable : true
+    },
+    
+    /** Windows base RGB value (color)
+     *  Red RGB value as a number
+     *   
+     * **/	
+	basecolorred :
+    {
+      check : "Integer",
+      nullable : true,
+	  themeable : true,
+	  init : 255
+    },
+    
+    /** Windows base RGB value (color)
+     *  Green RGB value as a number
+     *   
+     * **/	
+	basecolorgreen :
+    {
+      check : "Integer",
+      nullable : true,
+	  themeable : true,
+	  init : 255
+    },
+    
+    /** Windows base RGB value (color)
+     *  Blue RGB value as a number
+     *   
+     * **/	
+	basecolorblue :
+    {
+      check : "Integer",
+      nullable : true,
+	  themeable : true,
+	  init : 255
     }
+    
+    
   },
   
   /*
@@ -71,7 +109,7 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankactivewindowblue = self.aiebankactivewindowblue;
+  		var aiebankactivewindow = self.aiebankactivewindow;
 		var aiebankinactivewindowgray = self.aiebankinactivewindowgray;
 		var aiebankactivewindowstatusbarblue = self.activewindowstatusbarblue;
 		var aiebankinactivewindowstatusbarblue = self.inactivewindowstatusbarblue;
@@ -81,45 +119,38 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 		
 		switch (this.getStatename()) {
 			case "default":
-				if (!aiebankactivewindowblue) {
-  					aiebankactivewindowblue = self.aiebankactivewindowblue = this._generateBank("caption", "active-window-blue");
+				if (!aiebankactivewindow) {
+  					aiebankactivewindow = self.aiebankactivewindow = this._generateBank("active-window");
   				}
-				dechtml = aiebankactivewindowblue;
-				break;
-			
-			case "active-window-blue":
-				if (!aiebankactivewindowblue) {
-  					aiebankactivewindowblue = self.aiebankactivewindowblue = this._generateBank("caption", "active-window-blue");
-  				}
-				dechtml = aiebankactivewindowblue;
+				dechtml = aiebankactivewindow;
 				break;
 				
 			case "inactive-window-gray":
 				if (!aiebankinactivewindowgray) {
-  					aiebankinactivewindowgray = self.aiebankinactivewindowgray = this._generateBank("caption", "inactive-window-gray");
+  					aiebankinactivewindowgray = self.aiebankinactivewindowgray = this._generateBank("inactive-window-gray");
   				}
 				dechtml = aiebankinactivewindowgray;
 				break;
 				
 			case "active-window-statusbar-blue":
 				if (!aiebankactivewindowstatusbarblue) {
-  					aiebankactivewindowstatusbarblue = self.aiebankactivewindowstatusbarblue = this._generateBank("statusbar", "active-window-statusbar-blue");
+  					aiebankactivewindowstatusbarblue = self.aiebankactivewindowstatusbarblue = this._generateBank("active-window-statusbar-blue");
   				}
 				dechtml = aiebankactivewindowstatusbarblue;
 				break;
 				
 			case "inactive-window-statusbar-blue":
 				if (!aiebankinactivewindowstatusbarblue) {
-  					aiebankinactivewindowstatusbarblue = self.aiebankinactivewindowstatusbarblue = this._generateBank("statusbar", "inactive-window-statusbar-blue");
+  					aiebankinactivewindowstatusbarblue = self.aiebankinactivewindowstatusbarblue = this._generateBank("inactive-window-statusbar-blue");
   				}
 				dechtml = aiebankinactivewindowstatusbarblue;
 				break;
 			
 			default:
-				if (!aiebankactivewindowblue) {
-  					aiebankactivewindowblue = self.aiebankactivewindowblue = this._generateBank("active-window-blue");
+				if (!aiebankactivewindow) {
+  					aiebankactivewindow = self.aiebankactivewindow = this._generateBank("active-window-blue");
   				}
-				dechtml = aiebankactivewindowblue;
+				dechtml = aiebankactivewindow;
 		}
 		
 		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
@@ -167,15 +198,12 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
       return this.__insets;
     },
 	
-	_generateBank : function(area, s)
+	_generateBank : function(s)
 	{
 	  var bp = new aie.theme.win7.painter.window.Window(); 
 	  var str = "";
 	  
-	  if (area=="statusbar")
-	  	str = bp.getWindow(s);
-	  else
-	  	str = bp.getWindow(s);
+	  str = bp.getWindow(s, this.getBasecolorred(), this.getBasecolorgreen(), this.getBasecolorblue());
 	 
 	  return str;
 	}
