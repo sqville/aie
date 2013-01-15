@@ -1063,7 +1063,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         var marginTop=0, marginRight=0, marginBottom=0, marginLeft=0;
 
         if (states.barTop || states.barBottom) {
-          var paddingTop=1, paddingBottom=0, paddingLeft=1, paddingRight=5;
+          var paddingTop=1, paddingBottom=0, paddingLeft=2, paddingRight=5;
         } else {
           var paddingTop=6, paddingBottom=6, paddingLeft=6, paddingRight=6;
         }
@@ -1092,14 +1092,14 @@ qx.Theme.define("aie.theme.win7.Appearance",
           {
             paddingBottom = 1;
             paddingRight += 2;
-            paddingLeft += 2;
+            //paddingLeft += 2;
             marginBottom = 1;
           }
           else if (states.barBottom){
           	marginTop = 1;
             paddingLeft += 2;
             paddingRight += 2;
-            paddingTop = 1;
+            paddingTop = 3;
           }
           else if (states.barLeft){
           	marginRight = 1;
@@ -1128,6 +1128,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
             } else {
             	decorator = "aie-tabviewbutton-default-bottom";
             }
+            //paddingLeft += 1;
+            //paddingRight +=1; 
             marginTop = 2;
             marginBottom = 2;
             if (states.barTop){
@@ -1141,6 +1143,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
             
             if (states.firstTab) {
             	marginLeft = 2;
+            	
             }
           }
           else if (states.barLeft || states.barRight)
@@ -1173,8 +1176,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
           
           if (states.firstTab){
           	if (states.barTop || states.barBottom) {
-          		paddingLeft -= 0;
-          		paddingRight -= 0;
+          		paddingLeft += 1;
+            	paddingRight -= 1;
           	}
           }
         }
