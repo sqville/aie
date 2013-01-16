@@ -1681,7 +1681,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          padding : 1,
+          padding : 6,
+          paddingLeft : 7,
           backgroundColor : "transparent",
           //backgroundColor : states.active ? "window-active-caption" : "window-inactive-caption",
           textColor : states.active ? "window-active-caption-text" : "window-inactive-caption-text"

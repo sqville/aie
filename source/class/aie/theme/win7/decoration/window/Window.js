@@ -75,6 +75,14 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
       nullable : true,
 	  themeable : true,
 	  init : 255
+    },
+    
+    aieshadow :
+    {
+    	check : "Boolean",
+    	nullable : false,
+    	themeable : true,
+    	init : false
     }
     
     
@@ -114,6 +122,7 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 		var aiebankactivewindowstatusbarblue = self.activewindowstatusbarblue;
 		var aiebankinactivewindowstatusbarblue = self.inactivewindowstatusbarblue;
 				
+		var oldieflag = this.getAieshadow();
 		var dechtml;	
 		var wrappedhtml;
 		
@@ -153,8 +162,31 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 				dechtml = aiebankactivewindow;
 		}
 		
-		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
+		if (qx.core.Environment.get("browser.name") == "ie" && (qx.core.Environment.get("browser.version") == "8.0" || qx.core.Environment.get("browser.version") == "7.0")){
+			oldieflag = false;
+		}
 		
+		if (oldieflag == true) {
+			var bsh = 0;
+			var bsv = 0;
+			var bsb = 6;
+			var bss = 0;
+			var brad = 8;
+			var bsc = "#919191";
+			
+			var aiecanvasdiv = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px;";
+			aiecanvasdiv += "-moz-border-radius: " + brad + "px;";
+			aiecanvasdiv += "-webkit-border-radius: " + brad + "px;";
+			aiecanvasdiv += "border-radius: " + brad + "px;";
+			aiecanvasdiv += "-moz-box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
+			aiecanvasdiv += "-webkit-box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
+			aiecanvasdiv += "box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
+			aiecanvasdiv += "'>" + dechtml + "</div>";
+			
+			wrappedhtml = aiecanvasdiv;
+		} else {
+			wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
+		}
 	  return wrappedhtml;	  
 	  
     },

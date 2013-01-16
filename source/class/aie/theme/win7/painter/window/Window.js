@@ -54,7 +54,22 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 		switch (vS) {
 			case "active-window":
 				//** Top Left Corner
-				
+				h_whlt.push([1,1,5,0,0,0,0,.9],
+					[1,1,3,1,0,0,0,.9],
+					[1,1,4,1,0,0,0,.88],
+					[1,1,5,1,154,154,154,.98],
+					[1,1,2,2,0,0,0,.9],
+					[1,1,3,2,154,154,154,.9],
+					[1,1,4,2,255,255,255,.6],
+					[1,1,5,2,255,255,255,.2],
+					[1,1,1,3,0,0,0,.9],
+					[1,1,2,3,154,154,154,.98],
+					[1,1,3,3,255,255,255,.6],
+					[1,1,1,4,0,0,0,.98],
+					[1,1,2,4,255,255,255,.6],
+					[1,1,0,5,0,0,0,.9],
+					[1,1,1,5,154,154,154,.98],
+					[1,1,2,5,255,255,255,.2]);
 				
 				//** Top
 				h_hlrt.push([1,6,6,0,0,0,0,.93],
@@ -92,7 +107,7 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 		
 		var fh = [];
 		fh_str = fh.concat(
-			h_whlt.map(this._whlt),
+			h_whlt.map(this._whlt_op),
 			h_wltb.map(this._wltb_op),
 			h_wrtb.map(this._wrtb_op),
 			h_whlb.map(this._whlb),
