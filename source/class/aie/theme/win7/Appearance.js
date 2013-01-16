@@ -1775,7 +1775,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          decorator : "inset-thin",
+          //decorator : "inset-thin",
           padding : [ 2, 6 ]
         };
       }

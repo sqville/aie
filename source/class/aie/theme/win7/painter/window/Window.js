@@ -53,7 +53,7 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 		
 		switch (vS) {
 			case "active-window":
-				//** Top Left Corner
+				//** Top Left & Right Corners
 				h_whlt.push([1,1,5,0,0,0,0,.9],
 					[1,1,3,1,0,0,0,.9],
 					[1,1,4,1,0,0,0,.88],
@@ -71,33 +71,35 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 					[1,1,1,5,154,154,154,.98],
 					[1,1,2,5,255,255,255,.2]);
 				
-				//** Top
+				//** Top & Bottom
 				h_hlrt.push([1,6,6,0,0,0,0,.93],
 					[1,6,6,1,255,255,255,.93]);
-				
-				//** Top Right Corner
-				
 								
-				//*** Left Side
+				//*** Left & Right Sides
 				h_wltb.push([1,0,6,6,0,0,0,.93],
 					[1,1,6,6,255,255,255,.93]);
 				
-				//*** Header Middle
-				h_hlrt.push();
-				
-				//*** Right Side	           
-				h_wrtb.push([1,0,6,6,0,0,0,.93],
-					[1,1,6,6,255,255,255,.93]);
-			
 				//*** Body
-				h_lrtb.push();
+				h_lrtb.push([4,4,4,4,vRed,vGrn,vBlu,.2]);
 				
 				//*** Bottom Left Corner
+				h_whlb.push([1,1,0,5,0,0,0,.9],
+					[1,1,1,5,154,154,154,.98],
+					[1,1,2,5,255,255,255,.2],
+					[1,1,1,4,0,0,0,.9],
+					[1,1,2,4,255,255,255,.6],
+					[1,1,1,3,0,0,0,.9],
+					[1,1,2,3,154,154,154,.98],
+					[1,1,3,3,255,255,255,.6],
+					[1,1,2,2,0,0,0,.9],
+					[1,1,3,2,154,154,154,.98],
+					[1,1,4,2,255,255,255,.6],
+					[1,1,5,2,255,255,255,.2],
+					[1,1,3,1,0,0,0,.98],
+					[1,1,4,1,0,0,0,.9],
+					[1,1,5,1,154,154,154,.98],
+					[1,1,5,0,0,0,0,.9]);
 				
-				
-				//*** Bottom
-				h_hlrb.push([1,6,6,0,0,0,0,.93],
-					[1,6,6,1,255,255,255,.93]);
 				
 				//*** Bottom Right Corner
 				
@@ -109,13 +111,13 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 		fh_str = fh.concat(
 			h_whlt.map(this._whlt_op),
 			h_wltb.map(this._wltb_op),
-			h_wrtb.map(this._wrtb_op),
-			h_whlb.map(this._whlb),
-			h_whrt.map(this._whrt),
-			h_whrb.map(this._whrb),
+			h_wltb.map(this._wrtb_op),
+			h_whlb.map(this._whlb_op),
+			h_whlt.map(this._whrt_op),
+			h_whlb.map(this._whrb_op),
 			h_hlrt.map(this._hlrt_op),
-			h_hlrb.map(this._hlrb_op),
-			h_lrtb.map(this._lrtb)
+			h_hlrt.map(this._hlrb_op),
+			h_lrtb.map(this._lrtb_op)
 		).join("");
 		
 		return fh_str;
