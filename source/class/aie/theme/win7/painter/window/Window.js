@@ -126,6 +126,7 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 					[1,1,1,0,255,255,255,.6]);
 			
 				break;	
+				
 		}		
 		
 		var fh = [];

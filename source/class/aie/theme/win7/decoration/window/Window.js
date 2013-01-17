@@ -120,12 +120,14 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
   		var aiebankactivewindow = self.aiebankactivewindow;
 		var aiebankinactivewindow = self.aiebankinactivewindow;
 		var aiebankwindowpane = self.aiebankwindowpane;
+		var aiebankwindowtitle = self.aiebankwindowtitle;
 				
-		var oldieflag = this.getAieshadow();
+		var latestbrowser = this.getAieshadow();
 		var dechtml;	
 		var wrappedhtml;
+		var vStatename = this.getStatename();
 		
-		switch (this.getStatename()) {
+		switch (vStatename) {
 			case "default":
 				if (!aiebankactivewindow) {
   					aiebankactivewindow = self.aiebankactivewindow = this._generateBank("active-window");
@@ -145,6 +147,15 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
   					aiebankwindowpane = self.aiebankwindowpane = this._generateBank("windowpane");
   				}
 				dechtml = aiebankwindowpane;
+				latestbrowser = false;
+				break;
+				
+			case "windowtitle":
+				if (!aiebankwindowtitle) {
+  					aiebankwindowtitle = self.aiebankwindowtitle = this._generateBank("windowtitle");
+  				}
+				dechtml = aiebankwindowpane;
+				latestbrowser = false;
 				break;
 			
 			default:
@@ -155,10 +166,10 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 		}
 		
 		if (qx.core.Environment.get("browser.name") == "ie" && (qx.core.Environment.get("browser.version") == "8.0" || qx.core.Environment.get("browser.version") == "7.0")){
-			oldieflag = false;
+			latestbrowser = false;
 		}
 		
-		if (oldieflag == true) {
+		if (latestbrowser == true) {
 			var bsh = 0;
 			var bsv = 0;
 			var bsb = 6;
@@ -178,6 +189,18 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 			aiecanvasdiv += "'>" + dechtml + "</div>";
 			
 			wrappedhtml = aiecanvasdiv;
+		} else if (vStatename == "windowtitle") {
+			var aiecanvasdiv = "<div style='";
+			aiecanvasdiv += "no-repeat 6px 6px;";
+			aiecanvasdiv += "text-overflow:ellipsis;";
+			aiecanvasdiv += "overflow:hidden;";
+  			aiecanvasdiv += "padding:6px 0 6px 28px;";
+			aiecanvasdiv += "text-shadow:0 0 1px #fff, 3px 3px 5px #fff, -3px -3px 5px #fff, -3px 3px 5px #fff, 3px -3px 5px #fff;";
+  			aiecanvasdiv += "white-space:nowrap;";
+			aiecanvasdiv += "'>" + dechtml + "</div>";
+			
+			wrappedhtml = aiecanvasdiv;
+			
 		} else {
 			wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
 		}

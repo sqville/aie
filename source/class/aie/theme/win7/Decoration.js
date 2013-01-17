@@ -270,7 +270,7 @@ qx.Theme.define("aie.theme.win7.Decoration",
       decorator : qx.ui.decoration.Grid,
 
       style : {
-        baseImage : "decoration/shadow/shadow.png",
+        //baseImage : "decoration/shadow/shadow.png",
         insets    : [ 4, 8, 8, 4 ]
       }
     },
@@ -732,6 +732,16 @@ qx.Theme.define("aie.theme.win7.Decoration",
       style :
       {
         statename : "windowpane"
+      }
+    },
+    
+    "aie-win7-std-window-title" :
+    {
+      decorator : aie.theme.win7.decoration.window.Window,
+
+      style :
+      {
+        statename : "windowtitle"
       }
     },
     

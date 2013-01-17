@@ -1721,6 +1721,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
         return {
           cursor : "default",
           //font : "bold",
+          shadow : "shadow",
           marginRight : 20,
           alignY: "middle"
         };
@@ -1790,7 +1791,8 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           //decorator : "inset-thin",
-          padding : [ 2, 6 ]
+          paddingLeft : 8,
+          paddingBottom : 4
         };
       }
     },
