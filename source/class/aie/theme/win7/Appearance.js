@@ -1674,18 +1674,32 @@ qx.Theme.define("aie.theme.win7.Appearance",
 
     "window-resize-frame" : "resize-frame",
 
-    "window/pane" : {},
+    "window/pane" : 
+    {
+    	style : function(states)
+    	{
+    		return {
+    			//backgroundColor : "white",
+    			decorator : "aie-win7-std-window-pane",
+    			marginLeft : 6,
+    			marginRight : 6,
+    			marginBottom : 6
+    		};
+    	}
+    },
 
     "window/captionbar" :
     {
       style : function(states)
       {
         return {
-          padding : 6,
+          padding : 4,
           paddingLeft : 7,
+          paddingBottom : 3,
           backgroundColor : "transparent",
+          textColor : "black"
           //backgroundColor : states.active ? "window-active-caption" : "window-inactive-caption",
-          textColor : states.active ? "window-active-caption-text" : "window-inactive-caption-text"
+          //textColor : states.active ? "window-active-caption-text" : "window-inactive-caption-text"
         };
       }
     },
@@ -1706,7 +1720,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           cursor : "default",
-          font : "bold",
+          //font : "bold",
           marginRight : 20,
           alignY: "middle"
         };
@@ -1721,7 +1735,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          icon : "decoration/window/minimize.gif",
+          //icon : "decoration/window/minimize.gif",
           padding : states.pressed || states.abandoned ? [ 2, 1, 0, 3] : [ 1, 2 ]
         };
       }
@@ -1735,7 +1749,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          icon : "decoration/window/restore.gif",
+          //icon : "decoration/window/restore.gif",
           padding : states.pressed || states.abandoned ? [ 2, 1, 0, 3] : [ 1, 2 ]
         };
       }
@@ -1749,7 +1763,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       style : function(states)
       {
         return {
-          icon : "decoration/window/maximize.gif",
+          //icon : "decoration/window/maximize.gif",
           padding : states.pressed || states.abandoned ? [ 2, 1, 0, 3] : [ 1, 2 ]
         };
       }
@@ -1764,7 +1778,7 @@ qx.Theme.define("aie.theme.win7.Appearance",
       {
         return {
           marginLeft : 2,
-          icon : "decoration/window/close.gif",
+          //icon : "decoration/window/close.gif",
           padding : states.pressed || states.abandoned ? [ 2, 1, 0, 3] : [ 1, 2 ]
         };
       }

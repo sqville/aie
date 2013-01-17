@@ -118,9 +118,8 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 		var self = this.self(arguments);
 		
   		var aiebankactivewindow = self.aiebankactivewindow;
-		var aiebankinactivewindowgray = self.aiebankinactivewindowgray;
-		var aiebankactivewindowstatusbarblue = self.activewindowstatusbarblue;
-		var aiebankinactivewindowstatusbarblue = self.inactivewindowstatusbarblue;
+		var aiebankinactivewindow = self.aiebankinactivewindow;
+		var aiebankwindowpane = self.aiebankwindowpane;
 				
 		var oldieflag = this.getAieshadow();
 		var dechtml;	
@@ -134,30 +133,23 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 				dechtml = aiebankactivewindow;
 				break;
 				
-			case "inactive-window-gray":
-				if (!aiebankinactivewindowgray) {
-  					aiebankinactivewindowgray = self.aiebankinactivewindowgray = this._generateBank("inactive-window-gray");
+			case "inactive":
+				if (!aiebankinactivewindow) {
+  					aiebankinactivewindow = self.aiebankinactivewindow = this._generateBank("inactive");
   				}
-				dechtml = aiebankinactivewindowgray;
+				dechtml = aiebankinactivewindow;
 				break;
 				
-			case "active-window-statusbar-blue":
-				if (!aiebankactivewindowstatusbarblue) {
-  					aiebankactivewindowstatusbarblue = self.aiebankactivewindowstatusbarblue = this._generateBank("active-window-statusbar-blue");
+			case "windowpane":
+				if (!aiebankwindowpane) {
+  					aiebankwindowpane = self.aiebankwindowpane = this._generateBank("windowpane");
   				}
-				dechtml = aiebankactivewindowstatusbarblue;
-				break;
-				
-			case "inactive-window-statusbar-blue":
-				if (!aiebankinactivewindowstatusbarblue) {
-  					aiebankinactivewindowstatusbarblue = self.aiebankinactivewindowstatusbarblue = this._generateBank("inactive-window-statusbar-blue");
-  				}
-				dechtml = aiebankinactivewindowstatusbarblue;
+				dechtml = aiebankwindowpane;
 				break;
 			
 			default:
 				if (!aiebankactivewindow) {
-  					aiebankactivewindow = self.aiebankactivewindow = this._generateBank("active-window-blue");
+  					aiebankactivewindow = self.aiebankactivewindow = this._generateBank("active-window");
   				}
 				dechtml = aiebankactivewindow;
 		}
@@ -173,6 +165,7 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 			var bss = 0;
 			var brad = 8;
 			var bsc = "#919191";
+			var css3pat = new aie.theme.css3.Pattern();
 			
 			var aiecanvasdiv = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px;";
 			aiecanvasdiv += "-moz-border-radius: " + brad + "px;";
@@ -181,12 +174,7 @@ qx.Class.define("aie.theme.win7.decoration.window.Window",
 			aiecanvasdiv += "-moz-box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
 			aiecanvasdiv += "-webkit-box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
 			aiecanvasdiv += "box-shadow: " + bsh + "px " + bsv + "px " + bsb + "px " + bss + "px " + bsc + ";";
-			aiecanvasdiv += "background-color: gray;"+
-			"background-image: -webkit-linear-gradient(15deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"+
-			"background-image: -moz-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"+
-			"background-image: -ms-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"+
-			"background-image: -o-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"
-			//"background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"
+			aiecanvasdiv += css3pat.defaultWin7();
 			aiecanvasdiv += "'>" + dechtml + "</div>";
 			
 			wrappedhtml = aiecanvasdiv;

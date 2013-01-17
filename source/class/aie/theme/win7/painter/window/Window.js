@@ -80,7 +80,7 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 					[1,1,6,6,255,255,255,.93]);
 				
 				//*** Body
-				h_lrtb.push([4,4,4,4,vRed,vGrn,vBlu,.2]);
+				h_lrtb.push([4,4,4,4,vRed,vGrn,vBlu,0]);
 				
 				//*** Bottom Left Corner
 				h_whlb.push([1,1,0,5,0,0,0,.9],
@@ -99,10 +99,31 @@ qx.Class.define("aie.theme.win7.painter.window.Window",
 					[1,1,4,1,0,0,0,.9],
 					[1,1,5,1,154,154,154,.98],
 					[1,1,5,0,0,0,0,.9]);
+						
+				break;
 				
+			case "windowpane":
+				//** Top Left & Right Corners
+				h_whlt.push([1,1,1,0,255,255,255,.5],
+					[1,1,0,1,255,255,255,.5],
+					[1,1,1,1,154,154,154,.88]);
 				
-				//*** Bottom Right Corner
+				//** Top & Bottom
+				h_hlrt.push([1,2,2,0,255,255,255,.64],
+					[1,2,2,1,0,0,0,.78]);
+								
+				//*** Left & Right Sides
+				h_wltb.push([1,0,2,2,255,255,255,.64],
+					[1,1,2,2,0,0,0,.78]);
 				
+				//*** Body
+				h_lrtb.push([2,2,2,2,255,255,255,1]);
+				
+				//*** Bottom Left Corner
+				h_whlb.push([1,1,0,1,255,255,255,.6],
+					[1,1,1,1,154,154,154,.88],
+					[1,1,0,0,255,255,255,.2],
+					[1,1,1,0,255,255,255,.6]);
 			
 				break;	
 		}		

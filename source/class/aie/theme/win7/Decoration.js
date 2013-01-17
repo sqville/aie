@@ -725,6 +725,16 @@ qx.Theme.define("aie.theme.win7.Decoration",
       }
     },
     
+    "aie-win7-std-window-pane" :
+    {
+      decorator : aie.theme.win7.decoration.window.Window,
+
+      style :
+      {
+        statename : "windowpane"
+      }
+    },
+    
     /*
     ---------------------------------------------------------------------------
       LIST ITEM
