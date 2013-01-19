@@ -1,0 +1,5 @@
+*** AIE To Do list ***
+
+Window Label
+ - Need to find out a way to add text to style attribute of a Label object
+   - website to help - http://webstandard.kulando.de/post/2010/03/23/windows-7-fenster-mit-css3-und-jquery-tutorial-teil-1 
