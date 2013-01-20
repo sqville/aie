@@ -946,15 +946,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
     ---------------------------------------------------------------------------
     */
 
-    "tabview" : {
-       style : function(states)
-	   {
-	
-        return {
-          alignX: "center"
-        };
-	   }
-    },
+    "tabview" : {},
 
     "tabview/bar" :
     {
@@ -974,18 +966,17 @@ qx.Theme.define("aie.theme.osx.Appearance",
           marginRight = -2;
         }*/
 
-        return {
-          allowGrowX: true,
+        return {     
+          allowGrowX: false,
           allowGrowY: true,
           allowShrinkX: true,
           allowShrinkY: true,
-          allowStretchX: true,
           marginBottom : marginBottom,
           marginTop : marginTop,
           marginLeft : marginLeft,
           marginRight : marginRight,
-          right : 0,
-          left : 0
+          alignX: "center",
+          decorator : "outset"
         };
       }
     },
@@ -1054,6 +1045,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
         return {
           //backgroundColor : "transparent",
           //decorator : "aie-tabview-border",
+          alignX: "center",
           marginTop : -10,	
           padding : 4
         };
@@ -1208,7 +1200,9 @@ qx.Theme.define("aie.theme.osx.Appearance",
           padding : [ paddingTop, paddingRight, paddingBottom, paddingLeft ],
           margin : [ marginTop, marginRight, marginBottom, marginLeft ],
           textColor : states.disabled ? "text-disabled" : undefined,
-          height: 19
+          height: 19,
+          center: true,
+          alignX: "center"
         };
       }
     },
