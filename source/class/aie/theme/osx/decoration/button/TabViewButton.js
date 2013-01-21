@@ -71,41 +71,57 @@ qx.Class.define("aie.theme.osx.decoration.button.TabViewButton",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultstdbutton = self.aiebankdefaultstdbutton;
-		var aiebankstdbuttonhov = self.aiebankstdbuttonhov;
-		var aiebankdefaultbuttonbtm = self.aiebankdefaultbuttonbtm;
-		var aiebankbuttonbtmhov = self.aiebankbuttonbtmhov;
+  		var aiebankdefaultfirst = self.aiebankdefaultfirst;
+		var aiebankcheckedfirst = self.aiebankcheckedfirst;
+		var aiebankdefaultmiddle = self.aiebankdefaultmiddle;
+		var aiebankcheckedmiddle = self.aiebankcheckedmiddle;
+		var aiebankdefaultlast = self.aiebankdefaultlast;
+		var aiebankcheckedlast = self.aiebankcheckedlast;
 				
 		var dechtml;	
 		var aiecanvasdiv;
 		
 		switch (this.getStatename()) {
-			case "default":
-				if (!aiebankdefaultstdbutton) {
-  					aiebankdefaultstdbutton = self.aiebankdefaultstdbutton = this._generateBank("na", "default");
+			case "default-first":
+				if (!aiebankdefaultfirst) {
+  					aiebankdefaultfirst = self.aiebankdefaultfirst = this._generateBank("na", "default-first");
   				}
-				dechtml = aiebankdefaultstdbutton;
+				dechtml = aiebankdefaultfirst;
 				break;
 			
-			case "hovered":
-				if (!aiebankstdbuttonhov) {
-  					aiebankstdbuttonhov = self.aiebankstdbuttonhov = this._generateBank("na", "default-hovered");
+			case "checked-first":
+				if (!aiebankcheckedfirst) {
+  					aiebankcheckedfirst = self.aiebankcheckedfirst = this._generateBank("na", "checked-first");
   				}
-				dechtml = aiebankstdbuttonhov;
+				dechtml = aiebankcheckedfirst;
 				break;
 				
-			case "defaultbtm":
-				if (!aiebankdefaultbuttonbtm) {
-  					aiebankdefaultbuttonbtm = self.aiebankdefaultbuttonbtm = this._generateBank("na", "defaultbtm");
+			case "default-middle":
+				if (!aiebankdefaultmiddle) {
+  					aiebankdefaultmiddle = self.aiebankdefaultmiddle = this._generateBank("na", "default-middle");
   				}
-				dechtml = aiebankdefaultbuttonbtm;
+				dechtml = aiebankdefaultmiddle;
 				break;
 			
-			case "hoveredbtm":
-				if (!aiebankbuttonbtmhov) {
-  					aiebankbuttonbtmhov = self.aiebankbuttonbtmhov = this._generateBank("na", "default-hoveredbtm");
+			case "checked-middle":
+				if (!aiebankcheckedmiddle) {
+  					aiebankcheckedmiddle = self.aiebankcheckedmiddle = this._generateBank("na", "checked-middle");
   				}
-				dechtml = aiebankbuttonbtmhov;
+				dechtml = aiebankcheckedmiddle;
+				break;
+				
+			case "default-last":
+				if (!aiebankdefaultlast) {
+  					aiebankdefaultlast = self.aiebankdefaultlast = this._generateBank("na", "default-last");
+  				}
+				dechtml = aiebankcheckedmiddle;
+				break;
+				
+			case "checked-last":
+				if (!aiebankcheckedlast) {
+  					aiebankcheckedlast = self.aiebankcheckedlast = this._generateBank("na", "checked-last");
+  				}
+				dechtml = aiebankcheckedlast;
 				break;
 				
 		}

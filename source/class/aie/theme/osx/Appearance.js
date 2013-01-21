@@ -956,16 +956,6 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
         var marginTop=0, marginRight=0, marginBottom=0, marginLeft=0;
 
-        /*if (states.barTop) {
-          marginBottom = -2;
-        } else if (states.barBottom) {
-          marginTop = -2;
-        } else if (states.barRight) {
-          marginLeft = -2;
-        } else {
-          marginRight = -2;
-        }*/
-
         return {     
           allowGrowX: false,
           allowGrowY: true,
@@ -975,8 +965,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
           marginTop : marginTop,
           marginLeft : marginLeft,
           marginRight : marginRight,
-          alignX: "center",
-          decorator : "outset"
+          alignX: "center"
         };
       }
     },
@@ -1070,125 +1059,58 @@ qx.Theme.define("aie.theme.osx.Appearance",
       style : function(states)
       {
         var decorator;
-        var backgroundcolor = "background";
+        var backgroundcolor = "transparent";
         var marginTop=0, marginRight=0, marginBottom=0, marginLeft=0;
 
         if (states.barTop || states.barBottom) {
-          var paddingTop=1, paddingBottom=0, paddingLeft=2, paddingRight=5;
+          var paddingTop=1, paddingBottom=1, paddingLeft=1, paddingRight=5;
         } else {
           var paddingTop=6, paddingBottom=6, paddingLeft=6, paddingRight=6;
         }
 
-        if (states.barTop)
-        {
-          decorator = "tabview-page-button-top";
-        }
-        else if (states.barRight)
-        {
-          decorator = "tabview-page-button-right";
-        }
-        else if (states.barBottom)
-        {
-          decorator = "tabview-page-button-bottom";
-        }
-        else
-        {
-          decorator = "tabview-page-button-left";
-        }
-
         if (states.checked)
         {
-          backgroundcolor = "white";
-          if (states.barTop)
-          {
-            paddingBottom = 1;
-            paddingRight += 2;
-            //paddingLeft += 2;
-            marginBottom = 1;
-          }
-          else if (states.barBottom){
-          	marginTop = 1;
-            paddingLeft += 2;
-            paddingRight += 2;
-            paddingTop = 3;
-          }
-          else if (states.barLeft){
-          	marginRight = 1;
-          	paddingTop += 2;
-            paddingBottom += 2;
-          }
-          else
-          {
-            marginLeft = 1;
-            paddingTop += 2;
-            paddingBottom += 2;
-          }
-        }
-        else
-        {
-          if (states.barTop || states.barBottom)
-          {
-            /*NEED TO CHANGE decorator to aie-tabviewbutton-default
-             NOT Checked */
-            if (states.barTop && states.hovered){
-            	decorator = "aie-tabviewbutton-default-hovered";
-            } else if (states.barTop && !states.hovered) {
-            	decorator = "aie-tabviewbutton-default";
-            } else if (states.barBottom && states.hovered) {
-            	decorator = "aie-tabviewbutton-default-bottom-hovered";
-            } else {
-            	decorator = "aie-tabviewbutton-default-bottom";
-            }
-            //paddingLeft += 1;
-            //paddingRight +=1; 
-            marginTop = 2;
-            marginBottom = 2;
-            if (states.barTop){
-            	paddingTop = 2;
-            	
-            } else {
-            	paddingTop = 0;
-            	paddingBottom = 2;
-            	
-            }
-            
-            if (states.firstTab) {
-            	marginLeft = 2;
-            	
-            }
-          }
-          else if (states.barLeft || states.barRight)
-          {
-            marginRight += 2;
-            marginLeft += 2;
-          }
-        }
-
-        if (states.checked)
-        {
-          if (!states.firstTab)
+          if (states.firstTab)
           {
             if (states.barTop || states.barBottom) {
-              marginLeft = -2;
-              marginRight = -2;
-            } else {
-              marginTop = -4;
+            	decorator = "aie-tabviewbutton-checked-first";
             }
+
           }
 
-          if (!states.lastTab)
+          if (states.lastTab)
           {
             if (states.barTop || states.barBottom) {
-              marginRight = -2;
-            } else {
-              marginBottom = -4;
-            }
+
+            } 
           }
           
-          if (states.firstTab){
+          if (!states.firstTab && !states.lastTab){
           	if (states.barTop || states.barBottom) {
-          		paddingLeft += 1;
-            	paddingRight -= 1;
+
+          	}
+          }
+        }
+        else
+        {
+          if (states.firstTab)
+          {
+            if (states.barTop || states.barBottom) {
+            	decorator = "aie-tabviewbutton-default-first";
+            }
+
+          }
+
+          if (states.lastTab)
+          {
+            if (states.barTop || states.barBottom) {
+
+            } 
+          }
+          
+          if (!states.firstTab && !states.lastTab){
+          	if (states.barTop || states.barBottom) {
+
           	}
           }
         }
@@ -1200,9 +1122,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
           padding : [ paddingTop, paddingRight, paddingBottom, paddingLeft ],
           margin : [ marginTop, marginRight, marginBottom, marginLeft ],
           textColor : states.disabled ? "text-disabled" : undefined,
-          height: 19,
-          center: true,
-          alignX: "center"
+          height: 19
         };
       }
     },

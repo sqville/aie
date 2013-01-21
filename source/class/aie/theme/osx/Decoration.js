@@ -975,23 +975,63 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-tabviewbutton-default" :
+    "aie-tabviewbutton-default-first" :
     {
       decorator : aie.theme.osx.decoration.button.TabViewButton,
 
       style :
       {
-        statename : "default"
+        statename : "default-first"
       }
     },
 
-	"aie-tabviewbutton-default-hovered" :
+	"aie-tabviewbutton-checked-first" :
     {
       decorator : aie.theme.osx.decoration.button.TabViewButton,
 
       style :
       {
-        statename : "hovered"
+        statename : "checked-first"
+      }
+    },
+    
+    "aie-tabviewbutton-default-middle" :
+    {
+      decorator : aie.theme.osx.decoration.button.TabViewButton,
+
+      style :
+      {
+        statename : "default-middle"
+      }
+    },
+    
+    "aie-tabviewbutton-checked-middle" :
+    {
+      decorator : aie.theme.osx.decoration.button.TabViewButton,
+
+      style :
+      {
+        statename : "checked-middle"
+      }
+    },
+    
+    "aie-tabviewbutton-default-last" :
+    {
+      decorator : aie.theme.osx.decoration.button.TabViewButton,
+
+      style :
+      {
+        statename : "default-last"
+      }
+    },
+    
+    "aie-tabviewbutton-checked-last" :
+    {
+      decorator : aie.theme.osx.decoration.button.TabViewButton,
+
+      style :
+      {
+        statename : "checked-last"
       }
     },
     

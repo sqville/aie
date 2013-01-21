@@ -54,7 +54,7 @@ qx.Class.define("aie.theme.osx.painter.groupbox.GroupBox",
 			[1,2,2,2,0,0,0,.06],
 			[1,2,2,3,0,0,0,.02]);
 			
-		//*** Left Top Corner
+		//*** Left & Right Top Corner
 		h_whlt_op.push([1,1,1,0,0,0,0,.04],
 			[1,1,2,0,181,181,181,1],
 			[1,1,3,0,167,167,167,1],
@@ -70,7 +70,7 @@ qx.Class.define("aie.theme.osx.painter.groupbox.GroupBox",
 			[1,1,2,3,0,0,0,.032],
 			[1,1,3,3,0,0,0,.018]);
 		
-		//*** Left Side
+		//*** Left & Right Side
         h_wltb_op.push([1,0,2,2,184,184,184,1],
         	[1,1,2,2,0,0,0,.06],
         	[1,2,2,2,0,0,0,.02]);
@@ -82,7 +82,7 @@ qx.Class.define("aie.theme.osx.painter.groupbox.GroupBox",
 		h_hlrb_op.push([1,3,3,1,0,0,0,.04],
 			[1,3,3,0,199,199,199,1]);
 		
-		//*** Bottom Left Corner
+		//*** Bottom Left & Right Corner
 		h_whlb_op.push([1,1,0,2,194,194,194,1],
 			[1,1,1,2,0,0,0,.04],
 			[1,1,2,2,0,0,0,.032],
