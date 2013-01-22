@@ -31,6 +31,7 @@
   		"-moz-linear-gradient(45deg, #B8DBFD 0%, #BADCFD 20%, #BFDCF8 30%, #E5F0FA 40%, #D5EAFE 50%, #B9D7F6 60%, #B9D6F2 70%, #C6DDF3 80%, #DBEAF8 90%, #A5C4E2 100%); "+
   		"background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%; "+
   		"background-color: #BFDCF8;";
+  		
     },
     
     RainbowBubbles : function() //Default Windows 7 window pattern

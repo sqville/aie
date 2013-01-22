@@ -954,7 +954,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
       style : function(states)
       {
-        var marginTop=0, marginRight=0, marginBottom=0, marginLeft=0;
+        var marginTop=0, marginRight=0, marginBottom=1, marginLeft=0;
 
         return {     
           allowGrowX: false,
@@ -1035,7 +1035,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
           //backgroundColor : "transparent",
           //decorator : "aie-tabview-border",
           alignX: "center",
-          marginTop : -10,	
+          marginTop : -13,	
           padding : 4
         };
       }
@@ -1063,7 +1063,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
         var marginTop=0, marginRight=0, marginBottom=0, marginLeft=0;
 
         if (states.barTop || states.barBottom) {
-          var paddingTop=1, paddingBottom=1, paddingLeft=1, paddingRight=5;
+          var paddingTop=3, paddingBottom=1, paddingLeft=8, paddingRight=5;
         } else {
           var paddingTop=6, paddingBottom=6, paddingLeft=6, paddingRight=6;
         }
@@ -1087,7 +1087,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
           
           if (!states.firstTab && !states.lastTab){
           	if (states.barTop || states.barBottom) {
-
+				
           	}
           }
         }
@@ -1110,7 +1110,9 @@ qx.Theme.define("aie.theme.osx.Appearance",
           
           if (!states.firstTab && !states.lastTab){
           	if (states.barTop || states.barBottom) {
-
+				decorator = "aie-tabviewbutton-default-middle";
+				paddingLeft=6;
+				paddingRight=8;
           	}
           }
         }
@@ -1122,7 +1124,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
           padding : [ paddingTop, paddingRight, paddingBottom, paddingLeft ],
           margin : [ marginTop, marginRight, marginBottom, marginLeft ],
           textColor : states.disabled ? "text-disabled" : undefined,
-          height: 19
+          height: 22
         };
       }
     },
