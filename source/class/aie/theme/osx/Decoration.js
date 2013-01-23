@@ -78,13 +78,15 @@ qx.Theme.define("aie.theme.osx.Decoration",
 
     "inset" :
     {
-      decorator : qx.ui.decoration.Single,
+      decorator : qx.ui.decoration.Double,
 
       style :
       {
         width : 1,
+        innerWidth : 1,
         /*top, right, bottom, left*/
-        color : [ "border-default-top", "#DBDFE6", "#E3E9EF", "#E2E3EA" ]
+        color : [ "border-default-top", "#C6C6C6", "#AFAFAF", "#ABABAB" ],
+        innerColor : [ "#EAEAEA", "#F8F8F8", "#FFFFFF", "#F8F8F8" ]
       }
     },
 
@@ -151,12 +153,14 @@ qx.Theme.define("aie.theme.osx.Decoration",
 
     "focused-inset" :
     {
-      decorator : qx.ui.decoration.Single,
+      decorator : qx.ui.decoration.Double,
 
       style :
       {
         width : 1,
-        color : [ "#5794BF", "#B7D5EA", "#C7E2F1", "#C5DAED" ]
+        innerWidth : 1,
+        color : [ "#6498C9", "#6599CA", "#699DCE", "#669ACB" ],
+        innerColor : [ "#A9C6E1", "#B1D0EB", "#B6D5F2", "#B1D0EB" ]
       }
     },
 

@@ -218,10 +218,10 @@ qx.Theme.define("aie.theme.osx.Appearance",
           /*Supports ToggleButton's checked state*/
           decorator = "aie-osx-std-button-checked";
         }
-        else if (states.hovered)
+        /*else if (states.hovered)
         {
           decorator = "aie-osx-std-button-hovered";
-        }
+        }*/
         else if (states.focused && !states.inner)
         {
           decorator = "aie-osx-std-button-focused";

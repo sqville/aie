@@ -68,20 +68,12 @@ qx.Class.define("aie.theme.osx.decoration.textfield.TextField",
 		
 		var aiebankstdtextfielddefault = self.aiebankstdtextfielddefault;
 		var aiebankstdtextfieldfocused = self.aiebankstdtextfieldfocused;
-		//var aiebankstdtextfieldpressed = self.aiebankstdtextfieldpressed;
 				
 		var dechtml;	
 		var aiecanvasdiv;
 		
 		switch (this.getStatename()) {
 				
-			/*case "pressed":
-				if (!aiebankstdtextfieldpressed) {
-  					aiebankstdtextfieldpressed = self.aiebankstdtextfieldpressed = this._generateBank("na", "pressed");
-  				}
-				dechtml = aiebankstdtextfieldpressed;
-				break;*/
-			
 			case "focused":
 				if (!aiebankstdtextfieldfocused) {
   					aiebankstdtextfieldfocused = self.aiebankstdtextfieldfocused = this._generateBank("na", "focused");
@@ -161,36 +153,21 @@ qx.Class.define("aie.theme.osx.decoration.textfield.TextField",
 	  var h_hlrb = [];
 	  
 	  switch(vS) {
-	  	case "default" :
-	  		/** Top Left **/
-		  	h_whlt.push([1,1,0,0,214,215,217],
-		  		[1,1,1,0,187,189,194],
-		  		[1,1,1,1,233,236,240]);
-		  	
-		  	/** Top Right **/
-		  	h_whrt.push([1,1,0,0,214,215,217],
-		  		[1,1,1,0,187,189,194],
-		  		[1,1,1,1,233,236,240]);
-		  	
+	  	case "default" :		  	  	
 		  	/** Top **/
-		  	h_hlrt.push([1,2,2,0,171,173,179]);
+		  	h_hlrt.push([1,0,0,0,172,172,172],
+		  		[1,1,1,1,234,234,234]);
 		  	
 		  	/** Left Side **/
-		  	h_wltb.push([1,0,1,1,226,227,234]);
+		  	h_wltb.push([1,0,1,0,171,171,171],
+		  		[1,1,1,1,248,248,248]);
 		  	
 		  	/** Right Side **/
-		  	h_wrtb.push([1,0,1,1,219,223,230]);
-		  	
-		  	/** Bottom Left **/
-		  	h_whlb.push([1,1,0,0,235,235,238],
-		  		[1,1,1,1,233,236,240]);
-		  	
-		  	/** Bottom Right **/
-		  	h_whrb.push([1,1,0,0,235,235,238],
-		  		[1,1,1,1,233,236,240]);
+		  	h_wrtb.push([1,0,0,0,172,172,172],
+		  		[1,1,1,1,234,234,234]);
 		  	
 		  	/** Bottom **/
-		  	h_hlrb.push([1,1,1,0,227,233,239]);
+		  	h_hlrb.push([1,1,0,0,172,172,172]);
 		  	
 		  	var fh = [];
 			fh_str = fh.concat(
@@ -206,45 +183,22 @@ qx.Class.define("aie.theme.osx.decoration.textfield.TextField",
 	  	
 	  	break;
 	  	
-	  	/*case "pressed" :
-	  	
-		  	var h_whlt = [];
-			h_whlt.push([15,1,0,0,44,98,139]);
-			
-			fh_str = h_whlt.map(painter1._whlt).join("");
-	  	
-	  	break;*/
-	  	
 	  	case "focused" :
-	  		/** Top Left **/
-		  	h_whlt.push([1,1,0,0,173,196,215],
-		  		[1,1,1,0,92,147,188],
-		  		[1,1,1,1,198,222,238]);
-		  	
-		  	/** Top Right **/
-		  	h_whrt.push([1,1,0,0,173,196,215],
-		  		[1,1,1,0,92,147,188],
-		  		[1,1,1,1,198,222,238]);
-		  	
 		  	/** Top **/
-		  	h_hlrt.push([1,2,2,0,61,123,173]);
+		  	h_hlrt.push([1,0,0,0,100,152,201],
+		  		[1,1,1,1,169,198,225]);
 		  	
 		  	/** Left Side **/
-		  	h_wltb.push([1,0,1,1,181,207,231]);
+		  	h_wltb.push([1,0,1,0,101,153,202],
+		  		[1,1,1,1,177,208,235]);
 		  	
 		  	/** Right Side **/
-		  	h_wrtb.push([1,0,1,1,164,201,227]);
-		  	
-		  	/** Bottom Left **/
-		  	h_whlb.push([1,1,0,0,218,228,237],
-		  		[1,1,1,1,198,222,238]);
-		  	
-		  	/** Bottom Right **/
-		  	h_whrb.push([1,1,0,0,218,228,237],
-		  		[1,1,1,1,198,222,238]);
-		  	
+		  	h_wrtb.push([1,0,1,0,101,153,202],
+		  		[1,1,1,1,177,208,235]);
+
 		  	/** Bottom **/
-		  	h_hlrb.push([1,1,1,0,183,217,237]);
+		  	h_hlrb.push([1,1,0,0,105,157,206],
+		  		[1,1,1,1,182,213,242]);
 		  	
 		  	var fh = [];
 			fh_str = fh.concat(

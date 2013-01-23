@@ -43,7 +43,7 @@ qx.Theme.define("aie.theme.osx.Color",
     "border-dark-shadow" : "#ABADB3",
     "border-dark" : "#85878C",
     
-    "border-default-top" : "#ABADB3",
+    "border-default-top" : "#ACACAC",
 
     // alias for compatibility reasons
     "border-main" : "#85878C",
