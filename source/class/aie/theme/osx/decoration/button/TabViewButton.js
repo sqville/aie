@@ -114,7 +114,7 @@ qx.Class.define("aie.theme.osx.decoration.button.TabViewButton",
 				if (!aiebankdefaultlast) {
   					aiebankdefaultlast = self.aiebankdefaultlast = this._generateBank("na", "default-last");
   				}
-				dechtml = aiebankcheckedmiddle;
+				dechtml = aiebankdefaultlast;
 				break;
 				
 			case "checked-last":

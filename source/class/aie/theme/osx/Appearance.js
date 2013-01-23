@@ -955,7 +955,12 @@ qx.Theme.define("aie.theme.osx.Appearance",
       style : function(states)
       {
         var marginTop=0, marginRight=0, marginBottom=1, marginLeft=0;
-
+		if (states.barTop) {
+			marginBottom = -12;
+		} else if (states.barBottom) {
+			marginTop = - 13;
+		}
+		
         return {     
           allowGrowX: false,
           allowGrowY: true,
@@ -1031,11 +1036,10 @@ qx.Theme.define("aie.theme.osx.Appearance",
       
       style : function(states)
       {
+        
         return {
-          //backgroundColor : "transparent",
-          //decorator : "aie-tabview-border",
           alignX: "center",
-          marginTop : -13,	
+          marginTop : 0,	
           padding : 4
         };
       }
@@ -1081,13 +1085,18 @@ qx.Theme.define("aie.theme.osx.Appearance",
           if (states.lastTab)
           {
             if (states.barTop || states.barBottom) {
-
+				decorator = "aie-tabviewbutton-checked-last";
+				paddingLeft =5;
+				paddingRight =9;
             } 
           }
           
           if (!states.firstTab && !states.lastTab){
           	if (states.barTop || states.barBottom) {
-				
+				decorator = "aie-tabviewbutton-checked-middle";
+				paddingLeft=6;
+				paddingRight=9;
+				marginLeft=-1;
           	}
           }
         }
@@ -1104,7 +1113,10 @@ qx.Theme.define("aie.theme.osx.Appearance",
           if (states.lastTab)
           {
             if (states.barTop || states.barBottom) {
-
+				decorator = "aie-tabviewbutton-default-last";
+				marginLeft=-1;
+				paddingLeft =6;
+				paddingRight =9; 
             } 
           }
           
@@ -1112,7 +1124,8 @@ qx.Theme.define("aie.theme.osx.Appearance",
           	if (states.barTop || states.barBottom) {
 				decorator = "aie-tabviewbutton-default-middle";
 				paddingLeft=6;
-				paddingRight=8;
+				paddingRight=9;
+				marginLeft=-1;
           	}
           }
         }
@@ -1123,7 +1136,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
           backgroundColor : backgroundcolor,
           padding : [ paddingTop, paddingRight, paddingBottom, paddingLeft ],
           margin : [ marginTop, marginRight, marginBottom, marginLeft ],
-          textColor : states.disabled ? "text-disabled" : undefined,
+          textColor : states.checked ? "text-selected" : "text",
           height: 22
         };
       }
