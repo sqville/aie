@@ -30,10 +30,10 @@
 /**
  * The classic qooxdoo decoration theme.
  */
-qx.Theme.define("aie.theme.osx.Decoration",
+qx.Theme.define("aie.theme.stripes.Decoration",
 {
   aliases : {
-    decoration : "aie/decoration/OSX"
+    decoration : "aie/decoration/Stripes"
   },
 
   decorations :
@@ -78,15 +78,13 @@ qx.Theme.define("aie.theme.osx.Decoration",
 
     "inset" :
     {
-      decorator : qx.ui.decoration.Double,
+      decorator : qx.ui.decoration.Single,
 
       style :
       {
         width : 1,
-        innerWidth : 1,
         /*top, right, bottom, left*/
-        color : [ "border-default-top", "#C6C6C6", "#AFAFAF", "#ABABAB" ],
-        innerColor : [ "#EAEAEA", "#F8F8F8", "#FFFFFF", "#F8F8F8" ]
+        color : [ "border-default-top", "#DBDFE6", "#E3E9EF", "#E2E3EA" ]
       }
     },
 
@@ -153,14 +151,12 @@ qx.Theme.define("aie.theme.osx.Decoration",
 
     "focused-inset" :
     {
-      decorator : qx.ui.decoration.Double,
+      decorator : qx.ui.decoration.Single,
 
       style :
       {
         width : 1,
-        innerWidth : 1,
-        color : [ "#6498C9", "#6599CA", "#699DCE", "#669ACB" ],
-        innerColor : [ "#A9C6E1", "#B1D0EB", "#B6D5F2", "#B1D0EB" ]
+        color : [ "#5794BF", "#B7D5EA", "#C7E2F1", "#C5DAED" ]
       }
     },
 
@@ -190,7 +186,17 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-
+    "aie-tabview-border" :
+    {
+      decorator : qx.ui.decoration.Single,
+      
+      style :
+      {
+        width : 1,
+        /*top, right, bottom, left*/
+        color : [ "#898C95", "#898C95", "#898C95", "#898C95" ]
+      }
+    },
     
     
     /*
@@ -199,9 +205,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
     ---------------------------------------------------------------------------
     */
 
-	"aie-osx-groupbox" :
+	"aie-stripes-groupbox" :
     {
-      decorator: aie.theme.osx.decoration.groupbox.GroupBox
+      decorator: aie.theme.stripes.decoration.groupbox.GroupBox
 
       /*style :
       {
@@ -246,9 +252,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
     ---------------------------------------------------------------------------
     */
 
-    "aie-osx-shadow-small" :
+    "aie-stripes-shadow-small" :
     {
-      decorator : aie.theme.osx.decoration.shadow.Shadow,
+      decorator : aie.theme.stripes.decoration.shadow.Shadow,
 
       style : {
         boxshadowhorizontal : 2,
@@ -309,9 +315,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
     ---------------------------------------------------------------------------
     */
 
-    "aie-osx-std-button-disabled" :
+    "aie-stripes-std-button-disabled" :
     {
-      decorator : aie.theme.osx.decoration.button.Button,
+      decorator : aie.theme.stripes.decoration.button.Button,
 
       style :
       {
@@ -319,9 +325,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
 
-    "aie-osx-std-button-pressed" :
+    "aie-stripes-std-button-pressed" :
     {
-      decorator : aie.theme.osx.decoration.button.Button,
+      decorator : aie.theme.stripes.decoration.button.Button,
 
       style :
       {
@@ -329,9 +335,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
 	
-	"aie-osx-std-button-hovered" :
+	"aie-stripes-std-button-hovered" :
     {
-      decorator : aie.theme.osx.decoration.button.Button,
+      decorator : aie.theme.stripes.decoration.button.Button,
 
       style :
       {
@@ -339,9 +345,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
 	
-	"aie-osx-std-button-focused" :
+	"aie-stripes-std-button-focused" :
     {
-      decorator : aie.theme.osx.decoration.button.Button,
+      decorator : aie.theme.stripes.decoration.button.Button,
 
       style :
       {
@@ -349,9 +355,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-osx-std-button-checked" :
+    "aie-stripes-std-button-checked" :
     {
-      decorator : aie.theme.osx.decoration.button.Button,
+      decorator : aie.theme.stripes.decoration.button.Button,
 
       style :
       {
@@ -359,9 +365,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
 	
-	"aie-osx-std-button-default" :
+	"aie-stripes-std-button-default" :
     {
-      decorator : aie.theme.osx.decoration.button.Button,
+      decorator : aie.theme.stripes.decoration.button.Button,
 
       style :
       {
@@ -375,9 +381,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
     ---------------------------------------------------------------------------
     */
     
-    "aie-osx-std-scrollbarbuttonup-default" :
+    "aie-stripes-std-scrollbarbuttonup-default" :
     {
-      decorator : aie.theme.osx.decoration.button.ScrollbarButton,
+      decorator : aie.theme.stripes.decoration.button.ScrollbarButton,
 
       style :
       {
@@ -392,17 +398,17 @@ qx.Theme.define("aie.theme.osx.Decoration",
       BUTTON ARROWS
     ---------------------------------------------------------------------------
     */
-    "aie-osx-selectbox-down-arrow" :
+    "aie-stripes-selectbox-down-arrow" :
     {
-      decorator : aie.theme.osx.decoration.resource.DownArrow,
+      decorator : aie.theme.stripes.decoration.resource.DownArrow,
 
       style :
       {}
     },
     
-    "aie-osx-scrollbarbutton-up-arrow" :
+    "aie-stripes-scrollbarbutton-up-arrow" :
     {
-      decorator : aie.theme.osx.decoration.resource.ScrollUpArrow,
+      decorator : aie.theme.stripes.decoration.resource.ScrollUpArrow,
 
       style :
       {}
@@ -414,9 +420,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       COMBO BOX
     ---------------------------------------------------------------------------
     */
-    "aie-osx-std-cbobox-default" :
+    "aie-stripes-std-cbobox-default" :
     {
-      decorator : aie.theme.osx.decoration.textfield.TextField,
+      decorator : aie.theme.stripes.decoration.textfield.TextField,
 
       style :
       {
@@ -424,9 +430,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-osx-std-cbobox-focused" :
+    "aie-stripes-std-cbobox-focused" :
     {
-      decorator : aie.theme.osx.decoration.textfield.TextField,
+      decorator : aie.theme.stripes.decoration.textfield.TextField,
 
       style :
       {
@@ -434,17 +440,17 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-osx-std-cbobutton-default" :
+    "aie-stripes-std-cbobutton-default" :
     {
-      decorator : aie.theme.osx.decoration.resource.DownArrow,
+      decorator : aie.theme.stripes.decoration.resource.DownArrow,
 
       style :
       {}
     },
     
-    "aie-osx-std-cbobutton-hovered" :
+    "aie-stripes-std-cbobutton-hovered" :
     {
-      decorator : aie.theme.osx.decoration.button.ComboboxButton,
+      decorator : aie.theme.stripes.decoration.button.ComboboxButton,
 
       style :
       {
@@ -452,9 +458,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-osx-std-cbobutton-pressed" :
+    "aie-stripes-std-cbobutton-pressed" :
     {
-      decorator : aie.theme.osx.decoration.button.ComboboxButton,
+      decorator : aie.theme.stripes.decoration.button.ComboboxButton,
 
       style :
       {
@@ -470,105 +476,177 @@ qx.Theme.define("aie.theme.osx.Decoration",
     ---------------------------------------------------------------------------
     */
 
-	"aie-osx-std-checkbox" :
+	"aie-stripes-std-checkbox" :
     {
-      decorator: aie.theme.osx.decoration.checkbox.CheckBox,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
       style :
       {
         statename : "default"
       }
     },
     
-    "aie-osx-std-checkbox-chkd" :
+    "aie-stripes-std-checkbox-chkd" :
     {
-      decorator: aie.theme.osx.decoration.checkbox.CheckBox,
-      style :
-      {
-        statename : "default-checked"
-      }
-    },
-
-     /*
-    ---------------------------------------------------------------------------
-      RADIOBUTTON
-    ---------------------------------------------------------------------------
-    */
-
-	"aie-osx-std-radiobutton" :
-    {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
-      style :
-      {
-        statename : "default"
-      }
-    },
-    
-    "aie-osx-std-radiobutton-chkd" :
-    {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
       style :
       {
         statename : "default-checked"
       }
     },
     
-    "aie-osx-std-radiobutton-pressed" :
+    "aie-stripes-std-checkbox-pressed" :
     {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
       style :
       {
         statename : "default-pressed"
       }
     },
     
-    "aie-osx-std-radiobutton-chkd-pressed" :
+    "aie-stripes-std-checkbox-chkd-pressed" :
     {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
       style :
       {
         statename : "default-chked-pressed"
       }
     },
     
-    "aie-osx-std-radiobutton-chkd-hovered" :
+    "aie-stripes-std-checkbox-chkd-hovered" :
     {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
       style :
       {
         statename : "default-chked-hovered"
       }
     },
     
-    "aie-osx-std-radiobutton-mixed" :
+    "aie-stripes-std-checkbox-mixed" :
     {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
       style :
       {
         statename : "default-mixed"
       }
     },
-
-    "aie-osx-std-radiobutton-unchkd-hovered" :
+    
+    "aie-stripes-std-checkbox-mixed-disabled" :
     {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
+      style :
+      {
+        statename : "default-mixed-disabled"
+      }
+    },
+
+    "aie-stripes-std-checkbox-unchkd-hovered" :
+    {
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
       style :
       {
         statename : "default-hovered"
       }
     },
 
-	"aie-osx-std-radiobutton-disabled" :
+	"aie-stripes-std-checkbox-disabled" :
     {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
       style :
       {
         statename : "default-disabled"
       }
     },
     
-    "aie-osx-std-radiobutton-chkd-disabled" :
+    "aie-stripes-std-checkbox-chkd-disabled" :
     {
-      decorator: aie.theme.osx.decoration.radiobutton.RadioButton,
+      decorator: aie.theme.stripes.decoration.checkbox.CheckBox,
+      style :
+      {
+        statename : "default-chkd-disabled"
+      }
+    },
+    
+     /*
+    ---------------------------------------------------------------------------
+      RADIOBUTTON
+    ---------------------------------------------------------------------------
+    */
+
+	"aie-stripes-std-radiobutton" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default"
+      }
+    },
+    
+    "aie-stripes-std-radiobutton-chkd" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-checked"
+      }
+    },
+    
+    "aie-stripes-std-radiobutton-pressed" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-pressed"
+      }
+    },
+    
+    "aie-stripes-std-radiobutton-chkd-pressed" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-chked-pressed"
+      }
+    },
+    
+    "aie-stripes-std-radiobutton-chkd-hovered" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-chked-hovered"
+      }
+    },
+    
+    "aie-stripes-std-radiobutton-mixed" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-mixed"
+      }
+    },
+
+    "aie-stripes-std-radiobutton-unchkd-hovered" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-hovered"
+      }
+    },
+
+	"aie-stripes-std-radiobutton-disabled" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
+      style :
+      {
+        statename : "default-disabled"
+      }
+    },
+    
+    "aie-stripes-std-radiobutton-chkd-disabled" :
+    {
+      decorator: aie.theme.stripes.decoration.radiobutton.RadioButton,
       style :
       {
         statename : "default-chked-disabled"
@@ -581,9 +659,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       LIST
     ---------------------------------------------------------------------------
     */
-    "aie-osx-std-list-default" :
+    "aie-stripes-std-list-default" :
     {
-      decorator : aie.theme.osx.decoration.list.List,
+      decorator : aie.theme.stripes.decoration.list.List,
 
       style :
       {
@@ -591,9 +669,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-osx-std-list-focused" :
+    "aie-stripes-std-list-focused" :
     {
-      decorator : aie.theme.osx.decoration.list.List,
+      decorator : aie.theme.stripes.decoration.list.List,
 
       style :
       {
@@ -606,9 +684,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       SCROLLBAR
     ---------------------------------------------------------------------------
     */
-    "aie-osx-std-scrollbar-vertical" :
+    "aie-stripes-std-scrollbar-vertical" :
     {
-      decorator : aie.theme.osx.decoration.scrollbar.ScrollBar,
+      decorator : aie.theme.stripes.decoration.scrollbar.ScrollBar,
 
       style :
       {
@@ -616,9 +694,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-osx-std-scrollbar-horizontal" :
+    "aie-stripes-std-scrollbar-horizontal" :
     {
-      decorator : aie.theme.osx.decoration.scrollbar.ScrollBar,
+      decorator : aie.theme.stripes.decoration.scrollbar.ScrollBar,
 
       style :
       {
@@ -633,9 +711,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
     ---------------------------------------------------------------------------
     */
 
-    "aie-osx-std-window" :
+    "aie-stripes-std-window" :
     {
-      decorator : aie.theme.osx.decoration.window.Window,
+      decorator : aie.theme.stripes.decoration.window.Window,
 
       style :
       {
@@ -647,9 +725,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-osx-std-window-pane" :
+    "aie-stripes-std-window-pane" :
     {
-      decorator : aie.theme.osx.decoration.window.Window,
+      decorator : aie.theme.stripes.decoration.window.Window,
 
       style :
       {
@@ -657,9 +735,9 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-osx-std-window-title" :
+    "aie-stripes-std-window-title" :
     {
-      decorator : aie.theme.osx.decoration.window.Window,
+      decorator : aie.theme.stripes.decoration.window.Window,
 
       style :
       {
@@ -846,18 +924,6 @@ qx.Theme.define("aie.theme.osx.Decoration",
       TAB VIEW
     ---------------------------------------------------------------------------
     */
-   
-    "aie-tabview-border" :
-    {
-      decorator : qx.ui.decoration.Single,
-      
-      style :
-      {
-        width : 1,
-        /*top, right, bottom, left*/
-        color : [ "#898C95", "#898C95", "#898C95", "#898C95" ]
-      }
-    },
 
     "tabview-page-button-top" :
     {
@@ -907,69 +973,29 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
     
-    "aie-tabviewbutton-default-first" :
+    "aie-tabviewbutton-default" :
     {
-      decorator : aie.theme.osx.decoration.button.TabViewButton,
+      decorator : aie.theme.stripes.decoration.button.TabViewButton,
 
       style :
       {
-        statename : "default-first"
+        statename : "default"
       }
     },
 
-	"aie-tabviewbutton-checked-first" :
+	"aie-tabviewbutton-default-hovered" :
     {
-      decorator : aie.theme.osx.decoration.button.TabViewButton,
+      decorator : aie.theme.stripes.decoration.button.TabViewButton,
 
       style :
       {
-        statename : "checked-first"
-      }
-    },
-    
-    "aie-tabviewbutton-default-middle" :
-    {
-      decorator : aie.theme.osx.decoration.button.TabViewButton,
-
-      style :
-      {
-        statename : "default-middle"
-      }
-    },
-    
-    "aie-tabviewbutton-checked-middle" :
-    {
-      decorator : aie.theme.osx.decoration.button.TabViewButton,
-
-      style :
-      {
-        statename : "checked-middle"
-      }
-    },
-    
-    "aie-tabviewbutton-default-last" :
-    {
-      decorator : aie.theme.osx.decoration.button.TabViewButton,
-
-      style :
-      {
-        statename : "default-last"
-      }
-    },
-    
-    "aie-tabviewbutton-checked-last" :
-    {
-      decorator : aie.theme.osx.decoration.button.TabViewButton,
-
-      style :
-      {
-        statename : "checked-last"
+        statename : "hovered"
       }
     },
     
     "aie-tabviewbutton-default-bottom" :
     {
-      decorator : aie.theme.osx.decoration.button.TabViewButton,
+      decorator : aie.theme.stripes.decoration.button.TabViewButton,
 
       style :
       {
@@ -979,7 +1005,7 @@ qx.Theme.define("aie.theme.osx.Decoration",
 
 	"aie-tabviewbutton-default-bottom-hovered" :
     {
-      decorator : aie.theme.osx.decoration.button.TabViewButton,
+      decorator : aie.theme.stripes.decoration.button.TabViewButton,
 
       style :
       {

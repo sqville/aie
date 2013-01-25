@@ -18,29 +18,11 @@
 /**
  * 
  */
-qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
+qx.Class.define("aie.theme.stripes.decoration.resource.DownArrow",
 {
   extend : qx.core.Object,
   
   implement : [qx.ui.decoration.IDecorator],
-  
-    /*
-  *****************************************************************************
-     PROPERTIES
-  *****************************************************************************
-  */
-
-  properties :
-  {	
-	/** Directs Painter on how to paint the Decorator **/
-    statename :
-    {
-      check : "String",
-      nullable : true,
-	  themeable : true
-    }
-  },
-  
   
   /*
   *****************************************************************************
@@ -71,32 +53,19 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
-		var aiebankchkchked = self.aiebankchkchked;
+  		var aiebankbuttondownarrow = self.aiebankbuttondownarrow;
 				
 		var dechtml;	
-		var aiecanvasdiv;
+		var wrappedhtml;
 		
-		switch (this.getStatename()) {
-			case "default":
-				if (!aiebankdefaultstdchkbox) {
-  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
-  				}
-				dechtml = aiebankdefaultstdchkbox;
-				break;
-				
-			case "default-checked":
-				if (!aiebankchkchked) {
-  					aiebankchkchked = self.aiebankchkchked = this._generateBank("na", "default-checked");
-  				}
-				dechtml = aiebankchkchked;
-				break;
-				
-		}
+		if (!aiebankbuttondownarrow) {
+  			aiebankbuttondownarrow = self.aiebankbuttondownarrow = this._generateBank("default", "button-downarrow");
+  		}
+		dechtml = aiebankbuttondownarrow;
 		
-		aiecanvasdiv = "<div style='position:absolute;overflow:hidden'>" + dechtml + "</div>";
-
-	  return aiecanvasdiv;	  
+		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
+		
+	  return wrappedhtml;
 	  
     },
 
@@ -104,24 +73,14 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
      // interface implementation
     resize : function(element, width, height)
     {
-	  element.style.width = width + "px";
-      element.style.height = height + "px";
+	  //element.style.width = width + "px";
+      //element.style.height = height + "px";
     },
 
 
     // interface implementation
     tint : function(element, bgcolor)
-    {
-
-      /*var Color = qx.theme.manager.Color.getInstance();
-
-      if (bgcolor == null) {
-        bgcolor = "yellow";
-      }
-
-      element.style.backgroundColor = Color.resolve(bgcolor) || "";*/
-
-    },
+    {},
 
 
     // overridden
@@ -141,10 +100,19 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
 	
 	_generateBank : function(area, s)
 	{
-	  var bp = new aie.theme.osx.painter.checkbox.CheckBox(); 
+	  //var bp = new aie.theme.stripes.painter.groupbox.GroupBox(); 
 	  var str = "";
 	  
-	  str = bp.getDefaultCheckBox(s);
+	  //str = bp.getGroupBox(s);
+	  var painter1 = new aie.theme.Painter();
+	  var h_whlt = [];
+	  //*** Paint down arrow
+	  h_whlt.push([7,1,0,2,0,0,0],
+	  	[5,1,1,3,0,0,0],
+	  	[3,1,2,4,0,0,0],
+	  	[1,1,3,5,0,0,0]);
+	  	
+	  str = h_whlt.map(painter1._whlt).join("");
 
 	  return str;
 	}

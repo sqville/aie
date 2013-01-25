@@ -1,0 +1,4 @@
+/**
+ * aie.theme.Stripes package
+ *
+ */

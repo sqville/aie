@@ -18,7 +18,7 @@
 /**
  * 
  */
-qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
+qx.Class.define("aie.theme.stripes.decoration.button.Button",
 {
   extend : qx.core.Object,
   
@@ -71,29 +71,61 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
-		var aiebankchkchked = self.aiebankchkchked;
+  		var aiebankdefaultstdbutton = self.aiebankdefaultstdbutton;
+		var aiebankstdbuttonhov = self.aiebankstdbuttonhov;
+		var aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed;
+		var aiebankdstdbuttonfocused = self.aiebankdstdbuttonfocused;
+		var aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled;
+		var aiebankdstdbuttonchecked = self.aiebankdstdbuttonchecked;
 				
 		var dechtml;	
 		var aiecanvasdiv;
 		
 		switch (this.getStatename()) {
 			case "default":
-				if (!aiebankdefaultstdchkbox) {
-  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
+				if (!aiebankdefaultstdbutton) {
+  					aiebankdefaultstdbutton = self.aiebankdefaultstdbutton = this._generateBank("na", "default");
   				}
-				dechtml = aiebankdefaultstdchkbox;
+				dechtml = aiebankdefaultstdbutton;
 				break;
 				
-			case "default-checked":
-				if (!aiebankchkchked) {
-  					aiebankchkchked = self.aiebankchkchked = this._generateBank("na", "default-checked");
+			case "pressed":
+				if (!aiebankdstdbuttonpressed) {
+  					aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed = this._generateBank("na", "default-pressed");
   				}
-				dechtml = aiebankchkchked;
+				dechtml = aiebankdstdbuttonpressed;
+				break;
+			
+			case "hovered":
+				if (!aiebankstdbuttonhov) {
+  					aiebankstdbuttonhov = self.aiebankstdbuttonhov = this._generateBank("na", "default-hovered");
+  				}
+				dechtml = aiebankstdbuttonhov;
 				break;
 				
+			case "focused":
+				if (!aiebankdstdbuttonfocused) {
+  					aiebankdstdbuttonfocused = self.aiebankdstdbuttonfocused = this._generateBank("na", "default-focused");
+  				}
+				dechtml = aiebankdstdbuttonfocused;
+				break;
+				
+			case "disabled":
+				if (!aiebankdstdbuttondisabled) {
+  					aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled = this._generateBank("na", "default-disabled");
+  				}
+				dechtml = aiebankdstdbuttondisabled;
+				break;
+				
+			case "checked":
+				if (!aiebankdstdbuttonchecked) {
+  					aiebankdstdbuttonchecked = self.aiebankdstdbuttonchecked = this._generateBank("na", "default-checked");
+  				}
+				dechtml = aiebankdstdbuttonchecked;
+				break;
 		}
 		
+		//aiecanvasdiv = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:" + aiechkleft + ";top:" + aiechktop + "'>" + dechtml + "</div>";
 		aiecanvasdiv = "<div style='position:absolute;overflow:hidden'>" + dechtml + "</div>";
 
 	  return aiecanvasdiv;	  
@@ -141,10 +173,10 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
 	
 	_generateBank : function(area, s)
 	{
-	  var bp = new aie.theme.osx.painter.checkbox.CheckBox(); 
+	  var bp = new aie.theme.stripes.painter.button.Button(); 
 	  var str = "";
 	  
-	  str = bp.getDefaultCheckBox(s);
+	  str = bp.getDefaultButton(s);
 
 	  return str;
 	}

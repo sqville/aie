@@ -18,7 +18,7 @@
 /**
  * 
  */
-qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
+qx.Class.define("aie.theme.stripes.decoration.radiobutton.RadioButton",
 {
   extend : qx.core.Object,
   
@@ -71,18 +71,25 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
+  		var aiebankdefaultstdrdobut = self.aiebankdefaultstdrdobut;
+		var aiebankunchkhov = self.aiebankunchkhov;
 		var aiebankchkchked = self.aiebankchkchked;
+		var aiebankchkdisab = self.aiebankchkdisab;
+		var aiebankdisab = self.aiebankdisab;
+		var aiebankchkpressed = self.aiebankchkpressed;
+		var aiebankchkchkedpressed = self.aiebankchkchkedpressed;
+		var aiebankchkhov = self.aiebankchkhov;
+		var aiebankchkmixed = self.aiebankchkmixed;
 				
 		var dechtml;	
 		var aiecanvasdiv;
 		
 		switch (this.getStatename()) {
 			case "default":
-				if (!aiebankdefaultstdchkbox) {
-  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
+				if (!aiebankdefaultstdrdobut) {
+  					aiebankdefaultstdrdobut = self.aiebankdefaultstdrdobut = this._generateBank("na", "default");
   				}
-				dechtml = aiebankdefaultstdchkbox;
+				dechtml = aiebankdefaultstdrdobut;
 				break;
 				
 			case "default-checked":
@@ -92,8 +99,56 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
 				dechtml = aiebankchkchked;
 				break;
 				
+			case "default-pressed":
+				if (!aiebankchkpressed) {
+  					aiebankchkpressed = self.aiebankchkpressed = this._generateBank("na", "default-pressed");
+  				}
+				dechtml = aiebankchkpressed;
+				break;
+				
+			case "default-chked-pressed":
+				if (!aiebankchkchkedpressed) {
+  					aiebankchkchkedpressed = self.aiebankchkchkedpressed = this._generateBank("na", "default-chked-pressed");
+  				}
+				dechtml = aiebankchkchkedpressed;
+				break;
+				
+			case "default-chked-hovered":
+				if (!aiebankchkhov) {
+  					aiebankchkhov = self.aiebankchkhov = this._generateBank("na", "default-chked-hovered");
+  				}
+				dechtml = aiebankchkhov;
+				break;
+			
+			case "default-hovered":
+				if (!aiebankunchkhov) {
+  					aiebankunchkhov = self.aiebankunchkhov = this._generateBank("na", "default-hovered");
+  				}
+				dechtml = aiebankunchkhov;
+				break;
+				
+			case "default-mixed":
+				if (!aiebankchkmixed) {
+  					aiebankchkmixed = self.aiebankchkmixed = this._generateBank("na", "default-mixed");
+  				}
+				dechtml = aiebankchkmixed;
+				break;
+			
+			case "default-disabled":
+				if (!aiebankdisab) {
+  					aiebankdisab = self.aiebankdisab = aiebankdefaultstdrdobut + this._generateBank("na", "default-disabled");
+  				}
+				dechtml = aiebankdisab;
+				break;
+				
+			case "default-chked-disabled":
+				if (!aiebankchkdisab) {
+  					aiebankchkdisab = self.aiebankchkdisab = aiebankchkchked + this._generateBank("na", "default-chked-disabled");
+  				}
+				dechtml = aiebankchkdisab;
+				break;
 		}
-		
+	
 		aiecanvasdiv = "<div style='position:absolute;overflow:hidden'>" + dechtml + "</div>";
 
 	  return aiecanvasdiv;	  
@@ -141,10 +196,10 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
 	
 	_generateBank : function(area, s)
 	{
-	  var bp = new aie.theme.osx.painter.checkbox.CheckBox(); 
+	  var bp = new aie.theme.stripes.painter.radiobutton.RadioButton(); 
 	  var str = "";
 	  
-	  str = bp.getDefaultCheckBox(s);
+	  str = bp.getDefaultRadioButton(s);
 
 	  return str;
 	}

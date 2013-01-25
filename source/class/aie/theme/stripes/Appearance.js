@@ -39,7 +39,7 @@
 /**
  * The classic qooxdoo appearance theme.
  */
-qx.Theme.define("aie.theme.osx.Appearance",
+qx.Theme.define("aie.theme.stripes.Appearance",
 {
   appearances :
   {
@@ -94,7 +94,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
         return {
           //decorator : "main",
           backgroundColor : "background-pane",
-          shadow : "aie-osx-shadow-small"
+          shadow : "aie-stripes-shadow-small"
           //shadow : "shadow-small"
         }
       }
@@ -207,28 +207,28 @@ qx.Theme.define("aie.theme.osx.Appearance",
         }*/
         if (states.disabled)
         {
-          decorator = "aie-osx-std-button-disabled";
+          decorator = "aie-stripes-std-button-disabled";
         }
         else if (states.pressed)
         {
-          decorator = "aie-osx-std-button-pressed";
+          decorator = "aie-stripes-std-button-pressed";
         }
         else if (states.checked)
         {
           /*Supports ToggleButton's checked state*/
-          decorator = "aie-osx-std-button-checked";
+          decorator = "aie-stripes-std-button-checked";
         }
-        /*else if (states.hovered)
+        else if (states.hovered)
         {
-          decorator = "aie-osx-std-button-hovered";
-        }*/
+          decorator = "aie-stripes-std-button-hovered";
+        }
         else if (states.focused && !states.inner)
         {
-          decorator = "aie-osx-std-button-focused";
+          decorator = "aie-stripes-std-button-focused";
         }
         else
         {
-          decorator = "aie-osx-std-button-default";
+          decorator = "aie-stripes-std-button-default";
         }
 
         return {
@@ -293,7 +293,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
 
         return {
-          decorator : "aie-osx-selectbox-down-arrow",
+          decorator : "aie-stripes-selectbox-down-arrow",
           //padding:6,
           paddingRight : 6,
           paddingLeft : 7,
@@ -361,7 +361,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
         }
 
         return {
-          decorator       : states.focused ? "aie-osx-std-list-default" : "aie-osx-std-list-default",
+          decorator       : states.focused ? "aie-stripes-std-list-default" : "aie-stripes-std-list-default",
           backgroundColor : backgroundColor,
           paddingBottom: 1,
           paddingTop: 1
@@ -476,17 +476,43 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
         // Checked
         if (states.checked) {
-          decorator = "aie-osx-std-checkbox-chkd";
-        } else {
-          decorator = "aie-osx-std-checkbox";
+          if (states.disabled) {
+            decorator = "aie-stripes-std-checkbox-chkd-disabled";
+          } else if (states.pressed) {
+            decorator = "aie-stripes-std-checkbox-chkd-pressed";
+          } else if (states.hovered) {
+            decorator = "aie-stripes-std-checkbox-chkd-hovered";
+          } else {
+            decorator = "aie-stripes-std-checkbox-chkd";
+          }
+
+        // Undetermined
+        } else if (states.undetermined && !states.disabled) {
+          decorator = "aie-stripes-std-checkbox-mixed";
+          
+        } else if (states.undetermined && states.disabled) {
+            decorator = "aie-stripes-std-checkbox-mixed-disabled"
+
+        // Focused & Pressed & Hovered (when enabled)
+        } else if (!states.disabled) {
+            if (states.pressed) {
+            decorator = "aie-stripes-std-checkbox-pressed";
+          } else if (states.hovered ) {
+            decorator = "aie-stripes-std-checkbox-unchkd-hovered";
+          } else {
+            decorator = "aie-stripes-std-checkbox";
+          }
+        
+        } else if (states.disabled && !states.checked) {
+        	decorator = "aie-stripes-std-checkbox-disabled";
         }
 
         return {
           decorator : decorator,
           //padding : padding,
           alignY: "middle",
-          width: 15, // use 12 to allow the inset of the decorator to be applied
-          height: 17
+          width: 13, // use 12 to allow the inset of the decorator to be applied
+          height: 13
         }
       }
     },
@@ -516,31 +542,31 @@ qx.Theme.define("aie.theme.osx.Appearance",
         // Checked
         if (states.checked) {
           if (states.disabled) {
-            decorator = "aie-osx-std-radiobutton-chkd-disabled";
+            decorator = "aie-stripes-std-radiobutton-chkd-disabled";
           } else if (states.pressed) {
-            decorator = "aie-osx-std-radiobutton-chkd-pressed";
+            decorator = "aie-stripes-std-radiobutton-chkd-pressed";
           } else if (states.hovered) {
-            decorator = "aie-osx-std-radiobutton-chkd-hovered";
+            decorator = "aie-stripes-std-radiobutton-chkd-hovered";
           } else {
-            decorator = "aie-osx-std-radiobutton-chkd";
+            decorator = "aie-stripes-std-radiobutton-chkd";
           }
 
         // Undetermined
         } else if (states.undetermined) {
-          decorator = "aie-osx-std-radiobutton-mixed";
+          decorator = "aie-stripes-std-radiobutton-mixed";
 
         // Focused & Pressed & Hovered (when enabled)
         } else if (!states.disabled) {
             if (states.pressed) {
-            decorator = "aie-osx-std-radiobutton-pressed";
+            decorator = "aie-stripes-std-radiobutton-pressed";
           } else if (states.hovered ) {
-            decorator = "aie-osx-std-radiobutton-unchkd-hovered";
+            decorator = "aie-stripes-std-radiobutton-unchkd-hovered";
           } else {
-            decorator = "aie-osx-std-radiobutton";
+            decorator = "aie-stripes-std-radiobutton";
           }
           
         } else if (states.disabled && !states.checked) {
-        	decorator = "aie-osx-std-radiobutton-disabled";
+        	decorator = "aie-stripes-std-radiobutton-disabled";
         }
 
         return {
@@ -701,11 +727,10 @@ qx.Theme.define("aie.theme.osx.Appearance",
     {
       style : function(states)
       {
-        
         return {
           padding : [ 12, 19 ],
           marginTop: 10,
-          decorator  : "aie-osx-groupbox"
+          decorator  : "aie-stripes-groupbox"
         };
       }
     },
@@ -928,23 +953,23 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
       style : function(states)
       {
-        var marginTop=0, marginRight=0, marginBottom=1, marginLeft=0;
-		if (states.barTop) {
-			marginBottom = -12;
-		} else if (states.barBottom) {
-			marginTop = - 13;
-		}
-		
-        return {     
-          allowGrowX: false,
-          allowGrowY: true,
-          allowShrinkX: true,
-          allowShrinkY: true,
+        var marginTop=0, marginRight=0, marginBottom=0, marginLeft=0;
+
+        if (states.barTop) {
+          marginBottom = -2;
+        } else if (states.barBottom) {
+          marginTop = -2;
+        } else if (states.barRight) {
+          marginLeft = -2;
+        } else {
+          marginRight = -2;
+        }
+
+        return {
           marginBottom : marginBottom,
           marginTop : marginTop,
           marginLeft : marginLeft,
-          marginRight : marginRight,
-          alignX: "center"
+          marginRight : marginRight
         };
       }
     },
@@ -1006,14 +1031,11 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
     "tabview/pane" :
     {
-	  include : "groupbox/frame",
-      
       style : function(states)
       {
-        
         return {
-          alignX: "center",
-          marginTop : 0,	
+          backgroundColor : "white",
+          decorator : "aie-tabview-border",
           padding : 4
         };
       }
@@ -1027,7 +1049,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
         return {
           backgroundColor : "background",
-          padding : 14
+          padding : 4
         };
       }
    },
@@ -1037,69 +1059,125 @@ qx.Theme.define("aie.theme.osx.Appearance",
       style : function(states)
       {
         var decorator;
-        var backgroundcolor = "transparent";
+        var backgroundcolor = "background";
         var marginTop=0, marginRight=0, marginBottom=0, marginLeft=0;
 
         if (states.barTop || states.barBottom) {
-          var paddingTop=3, paddingBottom=1, paddingLeft=8, paddingRight=5;
+          var paddingTop=1, paddingBottom=0, paddingLeft=2, paddingRight=5;
         } else {
           var paddingTop=6, paddingBottom=6, paddingLeft=6, paddingRight=6;
         }
 
+        if (states.barTop)
+        {
+          decorator = "tabview-page-button-top";
+        }
+        else if (states.barRight)
+        {
+          decorator = "tabview-page-button-right";
+        }
+        else if (states.barBottom)
+        {
+          decorator = "tabview-page-button-bottom";
+        }
+        else
+        {
+          decorator = "tabview-page-button-left";
+        }
+
         if (states.checked)
         {
-          if (states.firstTab)
+          backgroundcolor = "white";
+          if (states.barTop)
           {
-            if (states.barTop || states.barBottom) {
-            	decorator = "aie-tabviewbutton-checked-first";
-            }
-
+            paddingBottom = 1;
+            paddingRight += 2;
+            //paddingLeft += 2;
+            marginBottom = 1;
           }
-
-          if (states.lastTab)
+          else if (states.barBottom){
+          	marginTop = 1;
+            paddingLeft += 2;
+            paddingRight += 2;
+            paddingTop = 3;
+          }
+          else if (states.barLeft){
+          	marginRight = 1;
+          	paddingTop += 2;
+            paddingBottom += 2;
+          }
+          else
           {
-            if (states.barTop || states.barBottom) {
-				decorator = "aie-tabviewbutton-checked-last";
-				paddingLeft =5;
-				paddingRight =9;
-            } 
-          }
-          
-          if (!states.firstTab && !states.lastTab){
-          	if (states.barTop || states.barBottom) {
-				decorator = "aie-tabviewbutton-checked-middle";
-				paddingLeft=6;
-				paddingRight=9;
-				marginLeft=-1;
-          	}
+            marginLeft = 1;
+            paddingTop += 2;
+            paddingBottom += 2;
           }
         }
         else
         {
-          if (states.firstTab)
+          if (states.barTop || states.barBottom)
+          {
+            /*NEED TO CHANGE decorator to aie-tabviewbutton-default
+             NOT Checked */
+            if (states.barTop && states.hovered){
+            	decorator = "aie-tabviewbutton-default-hovered";
+            } else if (states.barTop && !states.hovered) {
+            	decorator = "aie-tabviewbutton-default";
+            } else if (states.barBottom && states.hovered) {
+            	decorator = "aie-tabviewbutton-default-bottom-hovered";
+            } else {
+            	decorator = "aie-tabviewbutton-default-bottom";
+            }
+            //paddingLeft += 1;
+            //paddingRight +=1; 
+            marginTop = 2;
+            marginBottom = 2;
+            if (states.barTop){
+            	paddingTop = 2;
+            	
+            } else {
+            	paddingTop = 0;
+            	paddingBottom = 2;
+            	
+            }
+            
+            if (states.firstTab) {
+            	marginLeft = 2;
+            	
+            }
+          }
+          else if (states.barLeft || states.barRight)
+          {
+            marginRight += 2;
+            marginLeft += 2;
+          }
+        }
+
+        if (states.checked)
+        {
+          if (!states.firstTab)
           {
             if (states.barTop || states.barBottom) {
-            	decorator = "aie-tabviewbutton-default-first";
+              marginLeft = -2;
+              marginRight = -2;
+            } else {
+              marginTop = -4;
             }
-
           }
 
-          if (states.lastTab)
+          if (!states.lastTab)
           {
             if (states.barTop || states.barBottom) {
-				decorator = "aie-tabviewbutton-default-last";
-				marginLeft=-1;
-				paddingLeft =6;
-				paddingRight =9; 
-            } 
+              marginRight = -2;
+            } else {
+              marginBottom = -4;
+            }
           }
           
-          if (!states.firstTab && !states.lastTab){
+          if (states.firstTab){
           	if (states.barTop || states.barBottom) {
-				decorator = "aie-tabviewbutton-default-middle";
-				paddingLeft=6;
-				paddingRight=9;
-				marginLeft=-1;
+          		paddingLeft += 1;
+            	paddingRight -= 1;
           	}
           }
         }
@@ -1110,8 +1188,8 @@ qx.Theme.define("aie.theme.osx.Appearance",
           backgroundColor : backgroundcolor,
           padding : [ paddingTop, paddingRight, paddingBottom, paddingLeft ],
           margin : [ marginTop, marginRight, marginBottom, marginLeft ],
-          textColor : states.checked ? "text-selected" : "text",
-          height: 22
+          textColor : states.disabled ? "text-disabled" : undefined,
+          height: 19
         };
       }
     },
@@ -1160,10 +1238,10 @@ qx.Theme.define("aie.theme.osx.Appearance",
         var decorator = "";
         
         if (states.vertical) {
-        	decorator = "aie-osx-std-scrollbar-vertical";
+        	decorator = "aie-stripes-std-scrollbar-vertical";
         } 
         else if (states.horizontal) {
-        	decorator = "aie-osx-std-scrollbar-horizontal";
+        	decorator = "aie-stripes-std-scrollbar-horizontal";
         }
         
         return {
@@ -1204,23 +1282,23 @@ qx.Theme.define("aie.theme.osx.Appearance",
 	        {
 	          if (states.pressed)
 	        {
-	          decorator = "aie-osx-std-button-pressed";
+	          decorator = "aie-stripes-std-button-pressed";
 	        }
 	        else if (states.hovered)
 	        {
-	          decorator = "aie-osx-std-button-hovered";
+	          decorator = "aie-stripes-std-button-hovered";
 	        }
 	        else if (states.focused && !states.inner)
 	        {
-	          decorator = "aie-osx-std-button-focused";
+	          decorator = "aie-stripes-std-button-focused";
 	        }
 	        else if (states.disabled)
 	        {
-	          decorator = "aie-osx-std-button-disabled";
+	          decorator = "aie-stripes-std-button-disabled";
 	        }
 	        else
 	        {
-	          decorator = "aie-osx-std-scrollbarbuttonup-default";
+	          decorator = "aie-stripes-std-scrollbarbuttonup-default";
 	        }
 	        
           /*if (states.pressed || states.abandoned || states.checked) {
@@ -1258,7 +1336,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
 
         return {
-          decorator: "aie-osx-scrollbarbutton-up-arrow",
+          decorator: "aie-stripes-scrollbarbutton-up-arrow",
           width: 9,
           height: 6,
           alignX: "center"
@@ -1587,7 +1665,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
         return {
           contentPadding : [ 10, 10, 10, 10 ],
           backgroundColor : "transparent",
-          decorator : "aie-osx-std-window"
+          decorator : "aie-stripes-std-window"
           //decorator : states.maximized ? undefined : "outset",
           //shadow : states.maximized ? undefined : "shadow-small"
         };
@@ -1602,7 +1680,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
     	{
     		return {
     			//backgroundColor : "white",
-    			decorator : "aie-osx-std-window-pane",
+    			decorator : "aie-stripes-std-window-pane",
     			marginLeft : 6,
     			marginRight : 6,
     			marginBottom : 6
@@ -1830,7 +1908,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
         return {
           source : "",
-          decorator : "aie-osx-selectbox-down-arrow",
+          decorator : "aie-stripes-selectbox-down-arrow",
           //padding:6,
           paddingRight : 6,
           paddingLeft : 7,
@@ -2009,7 +2087,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
         }
 
         return {
-          decorator       : states.focused ? "aie-osx-std-cbobox-focused" : "aie-osx-std-cbobox-default",
+          decorator       : states.focused ? "aie-stripes-std-cbobox-focused" : "aie-stripes-std-cbobox-default",
           textColor       : states.disabled ? "text-disabled" : undefined,
           backgroundColor : backgroundColor,
           height: 21
@@ -2024,7 +2102,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
 
         return {
-          decorator: "aie-osx-std-cbobutton-default",
+          decorator: "aie-stripes-std-cbobutton-default",
           width: 7,
           height: 7,
           alignX: "center"
@@ -2043,11 +2121,11 @@ qx.Theme.define("aie.theme.osx.Appearance",
       	
       	if (states.pressed)
         {
-          decorator = "aie-osx-std-cbobutton-pressed";
+          decorator = "aie-stripes-std-cbobutton-pressed";
         }
         else if (states.hovered)
         {
-          decorator = "aie-osx-std-cbobutton-hovered";
+          decorator = "aie-stripes-std-cbobutton-hovered";
         }
 
       	

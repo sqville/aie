@@ -18,7 +18,7 @@
 /**
  * 
  */
-qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
+qx.Class.define("aie.theme.stripes.decoration.button.TabViewButton",
 {
   extend : qx.core.Object,
   
@@ -71,29 +71,46 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
-		var aiebankchkchked = self.aiebankchkchked;
+  		var aiebankdefaultstdbutton = self.aiebankdefaultstdbutton;
+		var aiebankstdbuttonhov = self.aiebankstdbuttonhov;
+		var aiebankdefaultbuttonbtm = self.aiebankdefaultbuttonbtm;
+		var aiebankbuttonbtmhov = self.aiebankbuttonbtmhov;
 				
 		var dechtml;	
 		var aiecanvasdiv;
 		
 		switch (this.getStatename()) {
 			case "default":
-				if (!aiebankdefaultstdchkbox) {
-  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
+				if (!aiebankdefaultstdbutton) {
+  					aiebankdefaultstdbutton = self.aiebankdefaultstdbutton = this._generateBank("na", "default");
   				}
-				dechtml = aiebankdefaultstdchkbox;
+				dechtml = aiebankdefaultstdbutton;
+				break;
+			
+			case "hovered":
+				if (!aiebankstdbuttonhov) {
+  					aiebankstdbuttonhov = self.aiebankstdbuttonhov = this._generateBank("na", "default-hovered");
+  				}
+				dechtml = aiebankstdbuttonhov;
 				break;
 				
-			case "default-checked":
-				if (!aiebankchkchked) {
-  					aiebankchkchked = self.aiebankchkchked = this._generateBank("na", "default-checked");
+			case "defaultbtm":
+				if (!aiebankdefaultbuttonbtm) {
+  					aiebankdefaultbuttonbtm = self.aiebankdefaultbuttonbtm = this._generateBank("na", "defaultbtm");
   				}
-				dechtml = aiebankchkchked;
+				dechtml = aiebankdefaultbuttonbtm;
+				break;
+			
+			case "hoveredbtm":
+				if (!aiebankbuttonbtmhov) {
+  					aiebankbuttonbtmhov = self.aiebankbuttonbtmhov = this._generateBank("na", "default-hoveredbtm");
+  				}
+				dechtml = aiebankbuttonbtmhov;
 				break;
 				
 		}
 		
+		//aiecanvasdiv = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:" + aiechkleft + ";top:" + aiechktop + "'>" + dechtml + "</div>";
 		aiecanvasdiv = "<div style='position:absolute;overflow:hidden'>" + dechtml + "</div>";
 
 	  return aiecanvasdiv;	  
@@ -112,14 +129,6 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
     // interface implementation
     tint : function(element, bgcolor)
     {
-
-      /*var Color = qx.theme.manager.Color.getInstance();
-
-      if (bgcolor == null) {
-        bgcolor = "yellow";
-      }
-
-      element.style.backgroundColor = Color.resolve(bgcolor) || "";*/
 
     },
 
@@ -141,10 +150,10 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
 	
 	_generateBank : function(area, s)
 	{
-	  var bp = new aie.theme.osx.painter.checkbox.CheckBox(); 
+	  var bp = new aie.theme.stripes.painter.button.TabViewButton(); 
 	  var str = "";
 	  
-	  str = bp.getDefaultCheckBox(s);
+	  str = bp.getDefaultButton(s);
 
 	  return str;
 	}

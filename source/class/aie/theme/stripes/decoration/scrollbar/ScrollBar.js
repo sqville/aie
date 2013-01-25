@@ -18,13 +18,13 @@
 /**
  * 
  */
-qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
+qx.Class.define("aie.theme.stripes.decoration.scrollbar.ScrollBar",
 {
   extend : qx.core.Object,
   
   implement : [qx.ui.decoration.IDecorator],
   
-    /*
+  /*
   *****************************************************************************
      PROPERTIES
   *****************************************************************************
@@ -40,7 +40,6 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
 	  themeable : true
     }
   },
-  
   
   /*
   *****************************************************************************
@@ -71,32 +70,36 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox;
-		var aiebankchkchked = self.aiebankchkchked;
+  		var aiebankscrollbarvertical = self.aiebankscrollbarvertical;
+  		var aiebankscrollbarhorizontal = self.aiebankscrollbarhorizontal;
 				
 		var dechtml;	
-		var aiecanvasdiv;
+		var wrappedhtml;
 		
 		switch (this.getStatename()) {
-			case "default":
-				if (!aiebankdefaultstdchkbox) {
-  					aiebankdefaultstdchkbox = self.aiebankdefaultstdchkbox = this._generateBank("na", "default");
+			case "vertical" :
+				if (!aiebankscrollbarvertical) {
+  					aiebankscrollbarvertical = self.aiebankscrollbarvertical = this._generateBank("default", "vertical");
   				}
-				dechtml = aiebankdefaultstdchkbox;
-				break;
-				
-			case "default-checked":
-				if (!aiebankchkchked) {
-  					aiebankchkchked = self.aiebankchkchked = this._generateBank("na", "default-checked");
+  				dechtml = aiebankscrollbarvertical;
+			
+			break;
+			
+			case "horizontal" :
+				if (!aiebankscrollbarhorizontal) {
+  					aiebankscrollbarhorizontal = self.aiebankscrollbarhorizontal = this._generateBank("default", "horizontal");
   				}
-				dechtml = aiebankchkchked;
-				break;
-				
+				dechtml = aiebankscrollbarhorizontal;
+			break;
+			
+			default :
+				dechtml = "";
 		}
 		
-		aiecanvasdiv = "<div style='position:absolute;overflow:hidden'>" + dechtml + "</div>";
-
-	  return aiecanvasdiv;	  
+		//wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
+		wrappedhtml = "<div style='position:absolute;overflow:hidden'>" + dechtml + "</div>";
+	  
+	  return wrappedhtml;
 	  
     },
 
@@ -111,17 +114,7 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
 
     // interface implementation
     tint : function(element, bgcolor)
-    {
-
-      /*var Color = qx.theme.manager.Color.getInstance();
-
-      if (bgcolor == null) {
-        bgcolor = "yellow";
-      }
-
-      element.style.backgroundColor = Color.resolve(bgcolor) || "";*/
-
-    },
+    {},
 
 
     // overridden
@@ -141,12 +134,43 @@ qx.Class.define("aie.theme.osx.decoration.checkbox.CheckBox",
 	
 	_generateBank : function(area, s)
 	{
-	  var bp = new aie.theme.osx.painter.checkbox.CheckBox(); 
-	  var str = "";
-	  
-	  str = bp.getDefaultCheckBox(s);
 
-	  return str;
+	  var fh_str = "";
+	  
+	  var painter1 = new aie.theme.Painter();
+	  
+	  switch (s){
+	  	case "vertical" :
+	  		var h_wltb_op = [];
+	  		h_wltb_op.push([1,0,0,0,227,227,227,.24]);
+	  		
+	  		var h_wltb = [];
+		  	h_wltb.push([1,1,0,0,227,227,227],
+		  	[1,2,0,0,231,231,231],
+		  	[1,3,0,0,237,237,237],
+		  	[4,4,0,0,239,239,239],
+		  	[1,8,0,0,240,240,240],
+		  	[1,9,0,0,239,239,239],
+		  	[4,10,0,0,240,240,240],
+		  	[1,14,0,0,241,241,241],
+		  	[1,15,0,0,242,242,242],
+		  	[1,16,0,0,234,234,234]);
+		  	
+		  	var fh = [];
+			fh_str = fh.concat(
+				h_wltb_op.map(painter1._wltb_op),
+				h_wltb.map(painter1._wltb)
+			).join("");
+	  	
+	  	break;
+	  	
+	  	case "horizontal" :
+	  	
+	  	break;
+	  }
+	  
+	  return fh_str;
+	  
 	}
   }
 });
