@@ -72,7 +72,6 @@ qx.Class.define("aie.theme.osx.decoration.button.Button",
 		var self = this.self(arguments);
 		
   		var aiebankdefaultstdbutton = self.aiebankdefaultstdbutton;
-		var aiebankstdbuttonhov = self.aiebankstdbuttonhov;
 		var aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed;
 		var aiebankdstdbuttonfocused = self.aiebankdstdbuttonfocused;
 		var aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled;
@@ -94,13 +93,6 @@ qx.Class.define("aie.theme.osx.decoration.button.Button",
   					aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed = this._generateBank("na", "default-pressed");
   				}
 				dechtml = aiebankdstdbuttonpressed;
-				break;
-			
-			case "hovered":
-				if (!aiebankstdbuttonhov) {
-  					aiebankstdbuttonhov = self.aiebankstdbuttonhov = this._generateBank("na", "default-hovered");
-  				}
-				dechtml = aiebankstdbuttonhov;
 				break;
 				
 			case "focused":

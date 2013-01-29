@@ -329,16 +329,6 @@ qx.Theme.define("aie.theme.osx.Decoration",
       }
     },
 	
-	"aie-osx-std-button-hovered" :
-    {
-      decorator : aie.theme.osx.decoration.button.Button,
-
-      style :
-      {
-        statename : "hovered"
-      }
-    },
-	
 	"aie-osx-std-button-focused" :
     {
       decorator : aie.theme.osx.decoration.button.Button,

@@ -201,10 +201,6 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
         var decorator;
 
-        /*if (states.checked && states.focused && !states.inner)
-        {
-        	
-        }*/
         if (states.disabled)
         {
           decorator = "aie-osx-std-button-disabled";
@@ -217,14 +213,6 @@ qx.Theme.define("aie.theme.osx.Appearance",
         {
           /*Supports ToggleButton's checked state*/
           decorator = "aie-osx-std-button-checked";
-        }
-        /*else if (states.hovered)
-        {
-          decorator = "aie-osx-std-button-hovered";
-        }*/
-        else if (states.focused && !states.inner)
-        {
-          decorator = "aie-osx-std-button-focused";
         }
         else
         {
@@ -248,9 +236,11 @@ qx.Theme.define("aie.theme.osx.Appearance",
         return {
           center : true,
           padding : [0, 0],
-          paddingRight: 14,
+          paddingRight: 12,
           paddingLeft: 12,
-          height : 21,
+          paddingTop: 0,
+          paddingBottom: 2,
+          height : 22,
           icon : ""
         };
       }
@@ -1789,7 +1779,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
         return {
           //decorator : decorator,
-          height : 21,
+          height : 22,
           paddingLeft : 4
         };
       }
