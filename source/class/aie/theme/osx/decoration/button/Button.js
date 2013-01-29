@@ -104,7 +104,7 @@ qx.Class.define("aie.theme.osx.decoration.button.Button",
 				
 			case "disabled":
 				if (!aiebankdstdbuttondisabled) {
-  					aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled = this._generateBank("na", "default-disabled");
+  					aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled = aiebankdefaultstdbutton + this._generateBank("na", "default-disabled");
   				}
 				dechtml = aiebankdstdbuttondisabled;
 				break;
