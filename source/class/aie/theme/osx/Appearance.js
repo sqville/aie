@@ -515,40 +515,17 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
         // Checked
         if (states.checked) {
-          if (states.disabled) {
-            decorator = "aie-osx-std-radiobutton-chkd-disabled";
-          } else if (states.pressed) {
-            decorator = "aie-osx-std-radiobutton-chkd-pressed";
-          } else if (states.hovered) {
-            decorator = "aie-osx-std-radiobutton-chkd-hovered";
-          } else {
-            decorator = "aie-osx-std-radiobutton-chkd";
-          }
-
-        // Undetermined
-        } else if (states.undetermined) {
-          decorator = "aie-osx-std-radiobutton-mixed";
-
-        // Focused & Pressed & Hovered (when enabled)
-        } else if (!states.disabled) {
-            if (states.pressed) {
-            decorator = "aie-osx-std-radiobutton-pressed";
-          } else if (states.hovered ) {
-            decorator = "aie-osx-std-radiobutton-unchkd-hovered";
-          } else {
-            decorator = "aie-osx-std-radiobutton";
-          }
-          
-        } else if (states.disabled && !states.checked) {
-        	decorator = "aie-osx-std-radiobutton-disabled";
+          decorator = "aie-osx-std-radiobutton-chkd";
+        } else {
+          decorator = "aie-osx-std-radiobutton";
         }
 
         return {
           decorator : decorator,
           //padding : padding,
           alignY: "middle",
-          width: 12, // use 12 to allow the inset of the decorator to be applied
-          height: 12
+          width: 16,
+          height: 17
         }
       }
     },

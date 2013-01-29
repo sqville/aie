@@ -39,7 +39,6 @@ qx.Class.define("aie.theme.osx.painter.checkbox.CheckBox",
      */
     getDefaultCheckBox: function(vS){
 		
-		var h_whlt = [];
 		var h_whlt_op = [];
 		
 		var fh_str = "";
@@ -257,14 +256,7 @@ qx.Class.define("aie.theme.osx.painter.checkbox.CheckBox",
 				
 			}
 			
-		
-		
-		var fh = [];
-		fh_str = fh.concat(
-			h_whlt.map(this._whlt),
-			h_whlt_op.map(this._whlt_op)
-		).join("");
-		/*fh_str = h_whlt.map(this._whlt).join("");*/
+		fh_str = h_whlt_op.map(this._whlt_op).join("");
 		
 		return fh_str;
 	}
