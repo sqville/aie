@@ -1135,7 +1135,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
         
         return {
           //backgroundColor : "background-light",
-          width : 18,
+          width : 28,
           decorator : decorator
         }
       }
@@ -1249,21 +1249,10 @@ qx.Theme.define("aie.theme.osx.Appearance",
     {
       style : function(states)
       {
-        var backgroundColor;
-
-        if (states.disabled) {
-          backgroundColor = "background-disabled";
-        } else if (states.invalid) {
-          backgroundColor = "background-invalid";
-        } else if (states.focused) {
-          backgroundColor = "background-light";
-        } else {
-          backgroundColor = "background-field";
-        }
 
         return {
-          backgroundColor :  backgroundColor,
-          decorator : states.focused ? "focused-inset" : "inset"
+          height :  5/*,
+          decorator : "aie-osx-slider-bar-default"*/
         }
       }
     },
