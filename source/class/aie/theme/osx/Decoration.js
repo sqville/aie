@@ -432,13 +432,13 @@ qx.Theme.define("aie.theme.osx.Decoration",
       {}
     },
     
-    "aie-osx-std-cbobutton-hovered" :
+    "aie-osx-std-cbobutton-default-btn" :
     {
       decorator : aie.theme.osx.decoration.button.ComboboxButton,
 
       style :
       {
-        statename : "hovered"
+        statename : "default"
       }
     },
     

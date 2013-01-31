@@ -66,7 +66,7 @@ qx.Class.define("aie.theme.osx.decoration.button.ComboboxButton",
     {
 		var self = this.self(arguments);
 		
-		var aiebankstdcbobuttonhov = self.aiebankstdcbobuttonhov;
+		var aiebankstdcbobuttondefault = self.aiebankstdcbobuttondefault;
 		var aiebankdstdcbobuttonpressed = self.aiebankdstdcbobuttonpressed;
 				
 		var dechtml;	
@@ -81,11 +81,11 @@ qx.Class.define("aie.theme.osx.decoration.button.ComboboxButton",
 				dechtml = aiebankdstdcbobuttonpressed;
 				break;
 			
-			case "hovered":
-				if (!aiebankstdcbobuttonhov) {
-  					aiebankstdcbobuttonhov = self.aiebankstdcbobuttonhov = this._generateBank("na", "hovered");
+			case "default":
+				if (!aiebankstdcbobuttondefault) {
+  					aiebankstdcbobuttondefault = self.aiebankstdcbobuttondefault = this._generateBank("na", "default");
   				}
-				dechtml = aiebankstdcbobuttonhov;
+				dechtml = aiebankstdcbobuttondefault;
 				break;
 		}
 		
@@ -235,43 +235,10 @@ qx.Class.define("aie.theme.osx.decoration.button.ComboboxButton",
 	  	
 	  	break;
 	  	
-	  	case "hovered" :
+	  	case "default" :
 	  	
 	  		var h_whlt = [];
-		    h_whlt.push([15,1,0,0,60,127,177],
-			[1,1,15,0,82,133,171],
-			[1,1,16,0,173,196,215],
-			[1,19,0,1,60,127,177],
-			[14,1,1,1,250,253,254],
-			[1,1,15,1,106,157,195],
-			[1,1,16,1,119,161,191],
-			[1,17,1,2,250,253,254],
-			[13,1,2,2,234,246,253],
-			[1,17,15,2,250,253,254],
-			[1,17,16,2,60,127,177],
-			[13,1,2,3,232,246,253],
-			[13,1,2,4,230,245,253],
-			[13,1,2,5,228,244,252],
-			[13,1,2,6,225,243,252],
-			[13,1,2,7,222,242,252],
-			[13,1,2,8,220,241,252],
-			[13,1,2,9,217,240,252],
-			[13,1,2,10,190,230,253],
-			[13,1,2,11,188,229,252],
-			[13,1,2,12,185,227,251],
-			[13,1,2,13,181,226,250],
-			[13,1,2,14,178,224,249],
-			[13,1,2,15,175,222,248],
-			[13,1,2,16,172,220,247],
-			[13,1,2,17,169,219,246],
-			[12,1,2,18,167,217,245],
-			[1,1,14,18,169,219,246],
-			[14,1,1,19,250,253,254],
-			[1,1,15,19,112,160,196],
-			[1,1,16,19,119,162,192],
-			[15,1,0,20,60,127,177],
-			[1,1,15,20,130,170,196],
-			[1,1,16,20,218,228,237]);
+		    h_whlt.push();
 	  	
 	  		str = h_whlt.map(painter1._whlt).join("");
 	  	

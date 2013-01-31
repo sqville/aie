@@ -271,7 +271,7 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
         return {
           paddingRight : 1,
-          paddingLeft : 7
+          paddingLeft : 5
         };
       }
     },
@@ -285,8 +285,8 @@ qx.Theme.define("aie.theme.osx.Appearance",
         return {
           decorator : "aie-osx-selectbox-down-arrow",
           //padding:6,
-          paddingRight : 6,
-          paddingLeft : 7,
+          paddingRight : 7,
+          paddingLeft : 4,
           width: 7,
           height: 7
         }
@@ -2002,28 +2002,17 @@ qx.Theme.define("aie.theme.osx.Appearance",
     "combobox/button" :
     {
       //alias : "button",
-      //include : "button",
+      include : "button",
 
       style : function(states)
       {
-      	var decorator;
-      	
-      	if (states.pressed)
-        {
-          decorator = "aie-osx-std-cbobutton-pressed";
-        }
-        else if (states.hovered)
-        {
-          decorator = "aie-osx-std-cbobutton-hovered";
-        }
-
-      	
+      	      	
         return {
-          decorator : decorator,
           width: 17,
           height: 21,
-          icon : "",
-          paddingLeft: 5,
+          paddingLeft: 6,
+          paddingRight: 6,
+          paddingTop: 2,
           alignX: "center"
         };
       }
