@@ -3,6 +3,14 @@ About
 
 aie (Appearance Is Everything) is a collection of advanced themes for the Qooxdoo javascript framework.
 
+Demos
+===========
+
+Demo Desktop: http://sqville.com/examples/widgetbrowser/index.html
+
+Demo Mobile: http://sqville.com/examples/mobileshowcase/index.html
+
+More to come in the future.
 
 Roadmap
 =======
@@ -29,12 +37,6 @@ Public License (LGPL) or the Eclipse Public License (EPL).
 
 This is to keep in line with qooxdoo's licensing structure.
 
-Demos
-===========
-
-Demo: www.sqville.com/examples/index.html
-
-More to come in the future.
 
 How it Works
 ============
