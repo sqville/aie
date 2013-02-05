@@ -1251,22 +1251,22 @@ qx.Theme.define("aie.theme.osx.Appearance",
       {
 
         return {
-          height :  5/*,
-          decorator : "aie-osx-slider-bar-default"*/
+          height :  5,
+          decorator : "aie-osx-slider-bar-default"
         }
       }
     },
 
     "slider/knob" :
     {
-      include : "button-frame",
+      /*include : "button-frame",*/
 
       style : function(states)
       {
         return {
-          width: 14,
-          height: 14,
-          decorator : "outset"
+          width: 16,
+          height: 17,
+          decorator : "aie-osx-std-radiobutton"
         }
       }
     },
