@@ -561,12 +561,18 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
       style : function(states)
       {
+      	var decorator;
+      
+	    if (states.pressed) {
+	    	decorator = "aie-osx-spinner-upbutton-pressed";
+	    } else {
+	    	decorator = "aie-osx-spinner-upbutton";
+	    }
         return {
-          icon : "decoration/arrows/up-small.gif",
-          padding : states.pressed ? [2, 2, 0, 4] : [1, 3, 1, 3],
-          backgroundColor : states.hovered ? "button-hovered" : "button",
-          height: 6,
-          width: 17
+          decorator: decorator,
+          padding : 0,
+          height: 10,
+          width: 13
         }
       }
     },
@@ -578,13 +584,19 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
       style : function(states)
       {
+        var decorator;
+      
+	    if (states.pressed) {
+	    	decorator = "aie-osx-spinner-downbutton-pressed";
+	    } else {
+	    	decorator = "aie-osx-spinner-downbutton";
+	    }
         return {
-          icon : "decoration/arrows/down-small.gif",
-          padding : states.pressed ? [2, 2, 0, 4] : [1, 3, 1, 3],
-          backgroundColor : states.hovered ? "button-hovered" : "button",
-          height: 6,
-          width: 17
-        };
+          decorator: decorator,
+          padding : 0,
+          height: 10,
+          width: 13
+        }
       }
     },
 

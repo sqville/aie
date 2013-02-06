@@ -611,6 +611,53 @@ qx.Theme.define("aie.theme.osx.Decoration",
     
     /*
     ---------------------------------------------------------------------------
+      SPINNER
+    ---------------------------------------------------------------------------
+    */
+    
+    "aie-osx-spinner-upbutton" : 
+    {
+      decorator : aie.theme.osx.decoration.button.SpinnerButton,
+
+      style :
+      {
+        statename : "default-up"
+      }
+    },
+    
+    "aie-osx-spinner-upbutton-pressed" : 
+    {
+      decorator : aie.theme.osx.decoration.button.SpinnerButton,
+
+      style :
+      {
+        statename : "pressed-up"
+      }
+    },
+    
+    "aie-osx-spinner-downbutton" : 
+    {
+      decorator : aie.theme.osx.decoration.button.SpinnerButton,
+
+      style :
+      {
+        statename : "default-down"
+      }
+    },
+    
+    "aie-osx-spinner-downbutton-pressed" : 
+    {
+      decorator : aie.theme.osx.decoration.button.SpinnerButton,
+
+      style :
+      {
+        statename : "pressed-down"
+      }
+    },
+    
+    
+    /*
+    ---------------------------------------------------------------------------
       LIST ITEM
     ---------------------------------------------------------------------------
     */

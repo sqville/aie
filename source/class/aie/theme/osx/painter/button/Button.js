@@ -107,9 +107,12 @@ qx.Class.define("aie.theme.osx.painter.button.Button",
 				[1,4,4,20,154,154,154,1],
 				[1,3,3,21,0,0,0,.09]);
 				
+				h_hlrb.push([1,4,4,1,154,154,154,1]);
+				
 				
 				//*** Left Side  
-		        h_whlt.push([1,13,0,4,154,154,154,1]);
+		        //h_whlt.push([1,13,0,4,154,154,154,1]);
+		        h_wltb.push([1,0,4,4,154,154,154,1]);
 				
 				
 				break;
@@ -171,9 +174,12 @@ qx.Class.define("aie.theme.osx.painter.button.Button",
 				[1,4,4,20,79,82,119,1],
 				[1,3,3,21,0,0,0,.09]);
 				
+				h_hlrb.push([1,4,4,1,79,82,119,1]);
+				
 				
 				//*** Left Side  
-		        h_whlt.push([1,13,0,4,85,89,157]);
+		        //h_whlt.push([1,13,0,4,85,89,157]);
+		        h_wltb.push([1,0,4,4,85,89,157,1]);
 				
 				break;
 			
