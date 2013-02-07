@@ -24,6 +24,24 @@ qx.Class.define("aie.theme.osx.decoration.resource.SpinnerArrows",
   
   implement : [qx.ui.decoration.IDecorator],
   
+  
+  /*
+  *****************************************************************************
+     PROPERTIES
+  *****************************************************************************
+  */
+
+  properties :
+  {	
+	/** Directs Painter on how to paint the Decorator **/
+    statename :
+    {
+      check : "String",
+      nullable : true,
+	  themeable : true
+    }
+  },
+  
   /*
   *****************************************************************************
      CONSTRUCTOR
@@ -59,18 +77,25 @@ qx.Class.define("aie.theme.osx.decoration.resource.SpinnerArrows",
 		var dechtml;	
 		var wrappedhtml;
 		
-		if (!aiebankspinneruparrow) {
-  			aiebankspinneruparrow = self.aiebankspinneruparrow = this._generateBank("default", "up");
-  			dechtml = aiebankspinneruparrow;
-  		}
-  		
-  		if (!aiebankspinnerdownarrow) {
-  			aiebankspinnerdownarrow = self.aiebankspinnerdownarrow = this._generateBank("default", "down");
-  			dechtml = aiebankspinnerdownarrow;
-  		}		
+		switch (this.getStatename()) {
+			
+			case "up":
+				if (!aiebankspinneruparrow) {
+		  			aiebankspinneruparrow = self.aiebankspinneruparrow = this._generateBank("default", "up");
+		  			dechtml = aiebankspinneruparrow;
+		  		}
+	  		break;
+	  		
+  			case "down":
+		  		if (!aiebankspinnerdownarrow) {
+		  			aiebankspinnerdownarrow = self.aiebankspinnerdownarrow = this._generateBank("default", "down");
+		  			dechtml = aiebankspinnerdownarrow;
+		  		}		
+	  		break;
+		}
 		
-		wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
-		
+	  wrappedhtml = "<div style='width:100%;height:100%;position:absolute;overflow:hidden;left:0px;top:0px'>" + dechtml + "</div>";
+	  
 	  return wrappedhtml;
 	  
     },
@@ -113,31 +138,31 @@ qx.Class.define("aie.theme.osx.decoration.resource.SpinnerArrows",
 	  var painter1 = new aie.theme.Painter();
 	  var h_whlt = [];
 	  
-	  switch (vS) {
+	  switch (s) {
 			case "up":
 			  //*** Paint down arrow
-			  h_whlt.push([1,1,2,0,0,0,0,.3],
-			  	[1,1,1,1,0,0,0,.1],
-			  	[1,1,2,1,0,0,0,.5],
-			  	[1,1,3,1,0,0,0,.1],
-			  	[1,1,0,2,0,0,0,.034],
-			  	[3,2,1,2,0,0,0,.4],
-			  	[1,1,4,2,0,0,0,.034],
-			  	[1,1,0,3,0,0,0,.3],
-			  	[1,1,4,3,0,0,0,.3]);
+			  h_whlt.push([1,1,2,0,0,0,0,.6],
+			  	[1,1,1,1,0,0,0,.3],
+			  	[1,1,2,1,0,0,0,.8],
+			  	[1,1,3,1,0,0,0,.3],
+			  	[1,1,0,2,0,0,0,.04],
+			  	[3,2,1,2,0,0,0,.7],
+			  	[1,1,4,2,0,0,0,.04],
+			  	[1,1,0,3,0,0,0,.6],
+			  	[1,1,4,3,0,0,0,.6]);
 			  	
 			break;
 			  
 			case "down":
-				h_whlt.push([1,1,2,3,0,0,0,.3],
-			  	[1,1,1,2,0,0,0,.1],
-			  	[1,1,2,2,0,0,0,.5],
-			  	[1,1,3,2,0,0,0,.1],
-			  	[1,1,0,1,0,0,0,.034],
-			  	[3,2,1,1,0,0,0,.4],
-			  	[1,1,4,1,0,0,0,.034],
-			  	[1,1,0,0,0,0,0,.3],
-			  	[1,1,4,0,0,0,0,.3]);
+				h_whlt.push([1,1,2,3,0,0,0,.6],
+			  	[1,1,1,2,0,0,0,.3],
+			  	[1,1,2,2,0,0,0,.8],
+			  	[1,1,3,2,0,0,0,.3],
+			  	[1,1,0,1,0,0,0,.04],
+			  	[3,2,1,0,0,0,0,.6],
+			  	[1,1,4,1,0,0,0,.04],
+			  	[1,1,0,0,0,0,0,.6],
+			  	[1,1,4,0,0,0,0,.6]);
 			  	
 			break;
 			  

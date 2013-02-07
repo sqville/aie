@@ -615,43 +615,23 @@ qx.Theme.define("aie.theme.osx.Decoration",
     ---------------------------------------------------------------------------
     */
     
-    "aie-osx-spinner-upbutton" : 
+    "aie-osx-spinner-up-arrow" : 
     {
-      decorator : aie.theme.osx.decoration.button.SpinnerButton,
+      decorator : aie.theme.osx.decoration.resource.SpinnerArrows,
 
       style :
       {
-        statename : "default-up"
+        statename : "up"
       }
     },
     
-    "aie-osx-spinner-upbutton-pressed" : 
+    "aie-osx-spinner-down-arrow" : 
     {
-      decorator : aie.theme.osx.decoration.button.SpinnerButton,
+      decorator : aie.theme.osx.decoration.resource.SpinnerArrows,
 
       style :
       {
-        statename : "pressed-up"
-      }
-    },
-    
-    "aie-osx-spinner-downbutton" : 
-    {
-      decorator : aie.theme.osx.decoration.button.SpinnerButton,
-
-      style :
-      {
-        statename : "default-down"
-      }
-    },
-    
-    "aie-osx-spinner-downbutton-pressed" : 
-    {
-      decorator : aie.theme.osx.decoration.button.SpinnerButton,
-
-      style :
-      {
-        statename : "pressed-down"
+        statename : "down"
       }
     },
     

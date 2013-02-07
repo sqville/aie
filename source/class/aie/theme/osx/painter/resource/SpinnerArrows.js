@@ -72,8 +72,7 @@ qx.Class.define("aie.theme.osx.painter.resource.SpinnerArrows",
 			  	alert("hi");
 			  	
 			break;
-			  
-			  
+		
 		}
 		
 		str = h_whlt.map(this._whlt_op).join("");

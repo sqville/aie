@@ -561,15 +561,8 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
       style : function(states)
       {
-      	var decorator;
-      
-	    if (states.pressed) {
-	    	decorator = "aie-osx-spinner-upbutton-pressed";
-	    } else {
-	    	decorator = "aie-osx-spinner-upbutton";
-	    }
+      	
         return {
-          decorator: decorator,
           padding : 0,
           height: 10,
           width: 13
@@ -584,24 +577,47 @@ qx.Theme.define("aie.theme.osx.Appearance",
 
       style : function(states)
       {
-        var decorator;
-      
-	    if (states.pressed) {
-	    	decorator = "aie-osx-spinner-downbutton-pressed";
-	    } else {
-	    	decorator = "aie-osx-spinner-downbutton";
-	    }
+        
         return {
-          decorator: decorator,
           padding : 0,
           height: 10,
           width: 13
         }
       }
     },
+    
+    "spinner/upbutton/icon" :
+	{
 
+      style : function(states)
+      {
 
+        return {
+          decorator : "aie-osx-spinner-up-arrow",
+          paddingRight : 2,
+          paddingLeft : 4,
+          width: 5,
+          height: 5
+        }
+      }
+    },
+    
+    "spinner/downbutton/icon" :
+	{
 
+      style : function(states)
+      {
+
+        return {
+          decorator : "aie-osx-spinner-down-arrow",
+          //padding:6,
+          paddingRight : 2,
+          paddingLeft : 4,
+          width: 5,
+          height: 5
+        }
+      }
+    },
 
 
 

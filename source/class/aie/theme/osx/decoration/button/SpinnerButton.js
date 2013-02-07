@@ -71,35 +71,40 @@ qx.Class.define("aie.theme.osx.decoration.button.SpinnerButton",
     {
 		var self = this.self(arguments);
 		
-  		var aiebankdefaultstdbuttonup = self.aiebankdefaultstdbuttonup;
-  		var aiebankdefaultstdbuttondown = self.aiebankdefaultstdbuttondown;
+  		var aiebankdefaultstdbutton = self.aiebankdefaultstdbutton;
 		var aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed;
 		var aiebankdstdbuttondisabled = self.aiebankdstdbuttondisabled;
+		
+		var aiebankarrowup = self.aiebankarrowup;
+		var aiebankarrowdown = self.airbankarrowdown;
 				
 		var dechtml;	
 		var aiecanvasdiv;
 				
 		switch (this.getStatename()) {
 			case "default-up":
-				if (!aiebankdefaultstdbuttonup) {
-  					aiebankdefaultstdbuttonup = self.aiebankdefaultstdbuttonup = this._generateBank("na", "default");
+				if (!aiebankdefaultstdbutton) {
+  					aiebankdefaultstdbutton = self.aiebankdefaultstdbutton = this._generateBank("na", "default");
   				}
-				dechtml = aiebankdefaultstdbuttonup;
+				dechtml = aiebankdefaultstdbutton;
+				
 				break;
 				
 			case "default-down":
-				if (!aiebankdefaultstdbuttondown) {
-  					if (aiebankdefaultstdbuttonup) {
-  						aiebankdefaultstdbuttondown = self.aiebankdefaultstdbuttondown = aiebankdefaultstdbuttonup
-  					} else {
-  						aiebankdefaultstdbuttondown = self.aiebankdefaultstdbuttondown = this._generateBank("na", "default");
-  					}
+				if (!aiebankdefaultstdbutton) {
+  					aiebankdefaultstdbutton = self.aiebankdefaultstdbutton = this._generateBank("na", "default");
   				}
-  				
-				dechtml = aiebankdefaultstdbuttondown;
+				dechtml = aiebankdefaultstdbutton;
 				break;
 			
-			case "pressed":
+			case "pressed-up":
+				if (!aiebankdstdbuttonpressed) {
+  					aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed = this._generateBank("na", "default-pressed");
+  				}
+				dechtml = aiebankdstdbuttonpressed;
+				break;
+				
+			case "pressed-down":
 				if (!aiebankdstdbuttonpressed) {
   					aiebankdstdbuttonpressed = self.aiebankdstdbuttonpressed = this._generateBank("na", "default-pressed");
   				}
@@ -168,13 +173,6 @@ qx.Class.define("aie.theme.osx.decoration.button.SpinnerButton",
 	  var str = "";
 	  
 	  str = bp.getDefaultButton(s);
-
-	  //** add arrows
-	  if (this.getStatename() == "default-up") {
-	  	str += sa.getSpinnerArrow("up");
-	  } else {
-	  	str += sa.getSpinnerArrow("down");
-	  }
 
 	  return str;
 	}
